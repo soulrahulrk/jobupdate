@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tricity Fresher Hiring Database - June 2026</title>
+<style>
+@page {
+  size: A4 landscape;
+  margin: 14mm 12mm;
+  @bottom-center { content: "Page " counter(page) " of " counter(pages); font-size: 9px; color: #888; }
+}
+body { font-family: Arial, Helvetica, sans-serif; font-size: 10.5px; color: #1a1a1a; line-height: 1.45; }
+h1 { font-size: 24px; color: #0b3d91; page-break-before: always; margin-bottom: 6px; }
+h1:first-child { page-break-before: avoid; }
+h2 { font-size: 16px; margin-top: 20px; margin-bottom: 10px; background: #2c3e50; color: #fff; padding: 6px 10px; border-radius: 3px; page-break-after: avoid; }
+h3 { font-size: 13px; color: #1a5fb4; margin-top: 14px; }
+p, li { font-size: 11px; line-height: 1.55; }
+table { border-collapse: collapse; width: 100%; margin-bottom: 16px; table-layout: fixed; }
+.tablewrap { page-break-inside: auto; }
+thead { display: table-header-group; }
+tr { page-break-inside: avoid; }
+th, td { border: 1px solid #999; padding: 4px 5px; text-align: left; vertical-align: top; word-wrap: break-word; overflow-wrap: anywhere; font-size: 8.5px; }
+th { background: #2c3e50; color: #fff; }
+tr:nth-child(even) td { background: #f4f4f4; }
+.namecol { font-weight: 700; color: #0b3d91; font-size: 9px; }
+.linkcol { font-size: 7px; color: #666; }
+.muted { color: #aaa; font-style: italic; }
+a { color: #1a5fb4; word-break: break-all; }
+hr { page-break-after: always; border: none; }
+code { background: #eee; padding: 1px 3px; }
+.toc { font-size: 13px; line-height: 2.2; list-style: decimal; }
+.toc a { text-decoration: none; color: #1a5fb4; font-weight: 600; }
+</style>
+</head>
+<body>
+<section id="readme"><h1>Tricity Fresher Hiring Database — B.Tech CSE (AI/ML), June 2026</h1>
+<p>Built for 6 fresher job-seekers targeting Chandigarh, Mohali, Panchkula, Zirakpur, Kharar, Derabassi and surrounding Punjab/Haryana IT clusters.</p>
+<h2>What's in here</h2>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Deliverable</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="data/01_recruitment_agencies.csv">data/01_recruitment_agencies.csv</a></td>
+<td>D1: Recruitment agencies</td>
+<td>35 real, sourced agencies (27 Tricity + 8 Delhi-NCR), most with phone numbers</td>
+</tr>
+<tr>
+<td><a href="data/02_companies.csv">data/02_companies.csv</a></td>
+<td>D2: Companies hiring</td>
+<td>95 real, sourced companies (64 Tricity + 20 NCR enterprises + 11 mid-size NCR product startups)</td>
+</tr>
+<tr>
+<td><a href="data/10_paid_training_placement_programs.md">data/10_paid_training_placement_programs.md</a></td>
+<td>Fee-based options</td>
+<td>Honest assessment of paid training/placement programs + scam-avoidance checklist</td>
+</tr>
+<tr>
+<td><a href="data/03_active_openings.csv">data/03_active_openings.csv</a></td>
+<td>D3: Active openings</td>
+<td>2 real findings + live search-link toolkit for all 16 roles (refreshes daily, never goes stale)</td>
+</tr>
+<tr>
+<td><a href="data/04_recruiter_search_toolkit.md">data/04_recruiter_search_toolkit.md</a></td>
+<td>D4: Recruiters/HR/TA</td>
+<td>Search-string toolkit per named company (not a scraped 300-person list — see scope note)</td>
+</tr>
+<tr>
+<td><a href="data/05_walkin_visit_plan.md">data/05_walkin_visit_plan.md</a></td>
+<td>D5: Walk-in routes</td>
+<td>3-day route plan from real addresses, clustered by area</td>
+</tr>
+<tr>
+<td><a href="data/06_events_job_fairs.csv">data/06_events_job_fairs.csv</a></td>
+<td>D6: Events/job fairs</td>
+<td>6 confirmed live meetups (June 2026) + monitoring sources</td>
+</tr>
+<tr>
+<td><a href="data/07_job_communities.csv">data/07_job_communities.csv</a></td>
+<td>D7: Job communities</td>
+<td>Verified communities + scam-avoidance notes</td>
+</tr>
+<tr>
+<td><a href="data/08_30day_execution_plan.md">data/08_30day_execution_plan.md</a></td>
+<td>D8: 30-day plan</td>
+<td>Full daily/weekly plan with KPIs</td>
+</tr>
+<tr>
+<td><a href="data/09_rankings.md">data/09_rankings.md</a></td>
+<td>D9: Rankings</td>
+<td>Top 15 agencies, Top 28 companies ranked</td>
+</tr>
+</tbody>
+</table>
+<p>D10 (structured tables) = all of the above are CSV/Markdown tables, ready to paste into a spreadsheet.</p>
+<h2>Scope note — read this before relying on the numbers</h2>
+<p>The original brief asked for 100 agencies, 200 companies, 300 named recruiters, live June-2026 job postings with hiring-manager names, and Google-Maps-optimized routes with travel times. After testing, several of these targets aren't achievable <strong>without fabricating data</strong>:</p>
+<ul>
+<li><strong>Phone/WhatsApp numbers, named contacts, ratings for 100 agencies</strong>: most agencies don't publish this. What's in 01 is everything verifiable today, with source URLs.</li>
+<li><strong>HR/recruitment emails for 200 companies</strong>: almost none are publicly listed; companies route hiring through ATS portals (linked in the Careers Page column).</li>
+<li><strong>300 named recruiters with LinkedIn URLs</strong>: building this as a static scrape is a mass people-search exercise we won't do. The toolkit in 04 lets each person generate this themselves, which also gets better (personalized) results.</li>
+<li><strong>Live job postings with deadlines/hiring managers</strong>: these change hourly. 03 instead gives live search links per role/portal that always show current results.</li>
+<li><strong>Maps travel times</strong>: 05 sequences real addresses by geographic cluster; exact times need a live Maps query on the day of travel.</li>
+</ul>
+<h2>Verification log</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>What was verified</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-06-11</td>
+<td>All entries in 01, 02, 06, 07</td>
+<td>Web search + page fetches, source URL recorded per row</td>
+</tr>
+<tr>
+<td>2026-06-11</td>
+<td>Search-link formats in 03, 04</td>
+<td>Based on observed live URL patterns from Naukri/Indeed/LinkedIn/Internshala search results</td>
+</tr>
+<tr>
+<td>2026-06-14</td>
+<td>7 new agencies added to 01 (now 27 Tricity), 6 new companies added to 02 (now 64 Tricity), 4 new active openings added to 03</td>
+<td>Web search + page fetches, source URL recorded per row</td>
+</tr>
+<tr>
+<td>2026-06-14</td>
+<td>Delhi-NCR expansion: 8 NCR agencies added to 01 (now 35 total, most with phone numbers), 20 NCR companies added to 02 (now 84 total). Phone numbers surfaced in both the Tricity database HTML and the interactive Hiring_Dashboard.html (clickable tel: links + a "call agencies directly" panel).</td>
+<td>Web search + page fetches; blog/directory-sourced phone numbers flagged "verify"</td>
+</tr>
+<tr>
+<td>2026-06-14</td>
+<td>11 mid-size NCR product startups added to 02 (now 95 total) — IndiaMART, Info Edge, PhysicsWallah, Innovaccer, Cars24, Urban Company, MobiKwik, Lenskart, Delhivery, Cvent, Pristyn Care; corporate phones included where published.</td>
+<td>Web search + page fetches, source URL recorded per row</td>
+</tr>
+</tbody>
+</table>
+<h2>Recommended next steps</h2>
+<ol>
+<li>Each person picks 1-2 areas from <a href="data/05_walkin_visit_plan.md">05_walkin_visit_plan.md</a> and <strong>calls ahead</strong> before visiting.</li>
+<li>Start Week 1 of <a href="data/08_30day_execution_plan.md">08_30day_execution_plan.md</a> immediately — don't wait for the database to be "complete."</li>
+<li>As responses come in, add an "Actual Response" column to 01/02 and feed back into <a href="data/09_rankings.md">09_rankings.md</a>.</li>
+<li>Periodically re-run the searches in 02/06 to expand the company list toward 200 — each new verified entry should include a source URL and date, same format as the existing rows.</li>
+</ol></section><hr><h1>Table of Contents</h1>
+<ol class="toc">
+<li><a href="#readme">Overview &amp; Scope Notes</a></li>
+<li><a href="#d1">Deliverable 1: Recruitment Agencies &amp; Placement Consultancies</a></li><li><a href="#d2">Deliverable 2: Companies Hiring in the Tricity IT Ecosystem</a></li><li><a href="#d3">Deliverable 3: Active Openings &amp; Live Search-Link Toolkit</a></li><li><a href="#d4">Deliverable 4: Recruiter / HR / TA Search Toolkit</a></li><li><a href="#d5">Deliverable 5: Walk-in Visit Plan</a></li><li><a href="#d6">Deliverable 6: Job Fairs, Recruitment Drives &amp; Tech Meetups</a></li><li><a href="#d7">Deliverable 7: Job Communities</a></li><li><a href="#d8">Deliverable 8: 30-Day Execution Plan</a></li><li><a href="#d9">Deliverable 9: Rankings</a></li><li><a href="#d10">Deliverable 10: Paid Training &amp; Placement Programs</a></li>
+</ol><hr><h2 id="d1">Deliverable 1: Recruitment Agencies &amp; Placement Consultancies</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Agency Name</th><th>Category</th><th>Full Address</th><th>Google Maps Link</th><th>Contact Number</th><th>WhatsApp Number</th><th>Email</th><th>Website</th><th>LinkedIn Page</th><th>Contact Person</th><th>Designation</th><th>Candidate Fee Policy</th><th>Freshers Accepted</th><th>IT Hiring Supported</th><th>AI/ML Hiring Supported</th><th>Walk-in Allowed</th><th>Rating</th><th>Reviews</th><th>Last Verified</th><th>Source URL</th></tr></thead>
+<tbody>
+<tr><td class="namecol">TDS Group / TDS Placements &amp; Services Pvt Ltd</td><td>IT Recruitment Specialist</td><td>TDS Tower, E-193, IT Park, Industrial Area, Sector 74, Phase 8-B, Mohali, Punjab</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=TDS+Tower+E-193+IT+Park+Sector+74+Phase+8B+Mohali</td><td>0172-5090668</td><td class="muted">Not published</td><td>info@tdsgroup.in</td><td class="linkcol">https://www.tdsgroup.in/</td><td class="linkcol muted">Not confirmed - search linkedin.com/company/tds-group</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (industry norm: no candidate fees - treat fee requests as scam)</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed - call to verify</td><td class="muted">Not confirmed - call to verify</td><td>N/A (Mohali listing)</td><td class="muted">N/A</td><td class="linkcol">2026-06-11</td><td class="linkcol">https://www.tdsgroup.in/top-5-staffing-companies-in-mohali/</td></tr>
+<tr><td class="namecol">Arch Recruiters</td><td>IT Recruitment Specialist</td><td>E-328, Ground Floor, Landmark MySOHO, Sector-75, Industrial Area, SAS Nagar, Punjab 160055</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=E-328+Landmark+MySOHO+Sector+75+Industrial+Area+SAS+Nagar+Mohali</td><td>09888923477</td><td class="muted">Not published</td><td>info@archrecruiters.com</td><td class="linkcol">http://archrecruiters.com/</td><td class="linkcol muted">Not confirmed - search linkedin.com/company/arch-recruiters</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (industry norm: no candidate fees)</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed - call to verify</td><td class="muted">Not confirmed - call to verify</td><td class="muted">N/A</td><td class="muted">N/A</td><td class="linkcol">2026-06-11</td><td class="linkcol">https://www.tdsgroup.in/top-5-staffing-companies-in-mohali/</td></tr>
+<tr><td class="namecol">Adecco India (Mohali Branch)</td><td>Bulk Hiring Agency / IT Recruitment Specialist</td><td>ST Square Building, Plot No C-167, Office 204-206, 1st Floor, Industrial Area, Sector 74, SAS Nagar, Punjab 140308</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=ST+Square+Building+Plot+C-167+Sector+74+Industrial+Area+SAS+Nagar+Mohali</td><td>0172 491 7000</td><td class="muted">Not published</td><td>asc@adecco.co.in</td><td class="linkcol">https://www.adecco.co.in/</td><td class="linkcol">https://www.linkedin.com/company/adecco</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (Adecco is candidate-fee-free; paid by employers)</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed - call to verify</td><td class="muted">Not confirmed - call to verify</td><td class="muted">N/A</td><td class="muted">N/A</td><td class="linkcol">2026-06-11</td><td class="linkcol">https://www.tdsgroup.in/top-5-staffing-companies-in-mohali/</td></tr>
+<tr><td class="namecol">Miles Ahead 91 Consultants</td><td>Executive Search Firm</td><td>C-210, 2nd Floor, Sebiz Square, Sector 67, SAS Nagar, Mohali 160062</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=C-210+Sebiz+Square+Sector+67+SAS+Nagar+Mohali</td><td>8872006878</td><td class="muted">Not published</td><td>Info@miles-ahead.co.in</td><td class="linkcol">https://miles-ahead.co.in/</td><td class="linkcol muted">Not confirmed - search linkedin.com/company/miles-ahead-91-consultants</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (industry norm: no candidate fees)</td><td class="muted">Not confirmed - verify (often mid/senior focus)</td><td>Yes</td><td class="muted">Not confirmed - call to verify</td><td class="muted">Not confirmed - call to verify</td><td class="muted">N/A</td><td class="muted">N/A</td><td class="linkcol">2026-06-11</td><td class="linkcol">https://www.tdsgroup.in/top-5-staffing-companies-in-mohali/</td></tr>
+<tr><td class="namecol">Chandigarh Recruiters</td><td>Fresher Placement Agency / Bulk Hiring Agency</td><td>SCO 657, Sector 70, SAS Nagar, Mohali, Punjab 160070</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=SCO+657+Sector+70+SAS+Nagar+Mohali</td><td>099154 68755</td><td class="muted">Not published</td><td>chandigarhrecruiters03@gmail.com</td><td class="linkcol">https://chandigarhrecruiters.com/</td><td class="linkcol muted">Not confirmed - search linkedin.com/company/chandigarh-recruiters</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (industry norm: no candidate fees)</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed - call to verify</td><td class="muted">Not confirmed - call to verify</td><td>4.3</td><td>29 (per PlacementIndia aggregator listing)</td><td class="linkcol">2026-06-11</td><td class="linkcol">http://www.placementindia.com/recruitment-agency/placement-services-in-mohali</td></tr>
+<tr><td class="namecol">CIEL HR Services</td><td>IT Recruitment Specialist / Bulk Hiring Agency</td><td>Pan-India - 38+ branches; Tricity branch location not confirmed in search, HQ Bengaluru</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=CIEL+HR+Services+Mohali+Chandigarh</td><td>+91 7816 000 111</td><td>+91 7816 000 111 (listed as Call &amp; WhatsApp)</td><td>info@cielhr.com</td><td class="linkcol">https://www.cielhr.com/</td><td class="linkcol">https://in.linkedin.com/company/cielhr</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (industry norm: no candidate fees - CIEL is employer-funded)</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed - call to verify</td><td class="muted">Not confirmed - call to verify</td><td class="muted">N/A</td><td class="muted">N/A</td><td class="linkcol">2026-06-11</td><td class="linkcol">https://www.cielhr.com/placement-agencies-in-mohali</td></tr>
+<tr><td class="namecol">Destiny HR Group Services</td><td>IT Recruitment Specialist</td><td>HQ: Near Metro Pillar No 777, New Delhi 110059; serves Mohali IT clients (no confirmed local branch address)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Destiny+HR+Group+Services+New+Delhi</td><td>7503866196</td><td class="muted">Not published</td><td>pankaj@destinyhrgroup.com / info@destinyhrgroup.com</td><td class="linkcol">http://www.destinyhrgroup.com/</td><td class="linkcol">https://in.linkedin.com/company/destiny-hr-group-services</td><td>Pankaj Narula; Priya Sharma</td><td class="muted">Not confirmed (recruiters/founders per web listings)</td><td class="muted">Not published (industry norm: no candidate fees)</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed - ask directly</td><td class="muted">Not confirmed - call to verify</td><td class="muted">N/A</td><td class="muted">N/A</td><td class="linkcol">2026-06-11</td><td class="linkcol">https://www.destinyhrgroup.com/it-recruitment-agency-in-mohali</td></tr>
+<tr><td class="namecol">HRD Talent Corner</td><td>Fresher Placement Agency</td><td>SCO-8 Plaza, Sector-117, SAS Nagar, Mohali</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=SCO-8+Plaza+Sector+117+SAS+Nagar+Mohali</td><td>08047021897 (aggregator call-tracking number - verify)</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not published - search &quot;HRD Talent Corner Mohali&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (industry norm: no candidate fees)</td><td>Yes</td><td class="muted">Not confirmed - verify</td><td class="muted">Not confirmed - verify</td><td class="muted">Not confirmed - call to verify</td><td>4.5</td><td>30 (per PlacementIndia aggregator listing)</td><td class="linkcol">2026-06-11</td><td class="linkcol">http://www.placementindia.com/recruitment-agency/placement-services-in-mohali</td></tr>
+<tr><td class="namecol">AB Placement Services</td><td>Fresher Placement Agency</td><td>C-4, SCF 103, 3rd Floor, Sector 65, SAS Nagar, Phase 11, Mohali</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=C-4+SCF+103+Sector+65+SAS+Nagar+Phase+11+Mohali</td><td class="muted">Not published - aggregator listing only</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not published</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (industry norm: no candidate fees)</td><td>Yes</td><td class="muted">Not confirmed - verify</td><td class="muted">Not confirmed - verify</td><td class="muted">Not confirmed - call to verify</td><td>4.3</td><td>3 (per PlacementIndia aggregator listing)</td><td class="linkcol">2026-06-11</td><td class="linkcol">http://www.placementindia.com/recruitment-agency/placement-services-in-mohali</td></tr>
+<tr><td class="namecol">Skilllabs</td><td>IT Recruitment Specialist</td><td>Bestech Business Tower, A-309, Sector 66, SAS Nagar, Mohali</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Bestech+Business+Tower+A-309+Sector+66+SAS+Nagar+Mohali</td><td class="muted">Not published - aggregator listing only</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not published</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (industry norm: no candidate fees)</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed - verify</td><td class="muted">Not confirmed - call to verify</td><td>4.6</td><td>7 (per PlacementIndia aggregator listing)</td><td class="linkcol">2026-06-11</td><td class="linkcol">http://www.placementindia.com/recruitment-agency/placement-services-in-mohali</td></tr>
+<tr><td class="namecol">AllianceGrow Staffing Pvt Ltd</td><td>Bulk Hiring Agency</td><td>SCF-11, 2nd Floor, Phase 2, SAS Nagar, Mohali</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=SCF-11+2nd+Floor+Phase+2+SAS+Nagar+Mohali</td><td class="muted">Not published - aggregator listing only</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not published</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (industry norm: no candidate fees)</td><td>Yes</td><td class="muted">Not confirmed - verify</td><td class="muted">Not confirmed - verify</td><td class="muted">Not confirmed - call to verify</td><td>4.8</td><td>9 (per PlacementIndia aggregator listing)</td><td class="linkcol">2026-06-11</td><td class="linkcol">http://www.placementindia.com/recruitment-agency/placement-services-in-mohali</td></tr>
+<tr><td class="namecol">Career Concepts</td><td>Fresher Placement Agency</td><td>Location not confirmed - listed under Mohali aggregator results</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Career+Concepts+placement+consultancy+Mohali</td><td class="muted">Not published - aggregator listing only</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not published</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (industry norm: no candidate fees)</td><td>Yes</td><td class="muted">Not confirmed - verify</td><td class="muted">Not confirmed - verify</td><td class="muted">Not confirmed - call to verify</td><td>4.4</td><td>16 (per PlacementIndia aggregator listing)</td><td class="linkcol">2026-06-11</td><td class="linkcol">http://www.placementindia.com/recruitment-agency/placement-services-in-mohali</td></tr>
+<tr><td class="namecol">ABP Empower</td><td>Fresher Placement Agency / Bulk Hiring Agency</td><td>Sector 47-D, Chandigarh</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=ABP+Empower+Sector+47D+Chandigarh</td><td>08048771060 (aggregator call-tracking number - verify)</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not published</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (industry norm: no candidate fees)</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed - verify</td><td class="muted">Not confirmed - call to verify</td><td>4.3</td><td>30 (per PlacementIndia aggregator listing; 99+ active jobs shown)</td><td class="linkcol">2026-06-11</td><td class="linkcol">http://www.placementindia.com/recruitment-agency/placement-services-in-chandigarh</td></tr>
+<tr><td class="namecol">TDS Placements And Services Pvt Ltd (Chandigarh branch)</td><td>IT Recruitment Specialist</td><td>SCO-910, NAC Manimajra, Chandigarh</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=SCO-910+NAC+Manimajra+Chandigarh</td><td class="muted">Not published - aggregator listing only</td><td class="muted">Not published</td><td>info@tdsgroup.in (shared with Mohali HQ - verify)</td><td class="linkcol">https://www.tdsgroup.in/</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (industry norm: no candidate fees)</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed - verify</td><td class="muted">Not confirmed - call to verify</td><td>4.4</td><td>30 (per PlacementIndia aggregator listing; 23 yrs experience claimed)</td><td class="linkcol">2026-06-11</td><td class="linkcol">http://www.placementindia.com/recruitment-agency/placement-services-in-chandigarh</td></tr>
+<tr><td class="namecol">EduSoft Technology</td><td>Fresher Placement Agency / Internship Placement Agency</td><td>SCF-10, Wadhawa Nagar, Ambala Highway, Chandigarh</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=SCF-10+Wadhawa+Nagar+Ambala+Highway+Chandigarh</td><td class="muted">Not published - aggregator listing only</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not published</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (industry norm: no candidate fees - if this agency runs paid &#x27;training programs&#x27; verify carefully before paying anything)</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed - verify</td><td class="muted">Not confirmed - call to verify</td><td>3.8</td><td>4 (per PlacementIndia aggregator listing; 21 yrs experience claimed)</td><td class="linkcol">2026-06-11</td><td class="linkcol">http://www.placementindia.com/recruitment-agency/placement-services-in-chandigarh</td></tr>
+<tr><td class="namecol">Upgrade Careers</td><td>IT Recruitment Specialist</td><td>261, First Floor, Sector 32, Chandigarh</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=261+First+Floor+Sector+32+Chandigarh</td><td class="muted">Not published - aggregator listing only</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not published</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (industry norm: no candidate fees)</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed - verify</td><td class="muted">Not confirmed - call to verify</td><td>4.6</td><td>29 (per PlacementIndia aggregator listing; 11 yrs experience claimed)</td><td class="linkcol">2026-06-11</td><td class="linkcol">http://www.placementindia.com/recruitment-agency/placement-services-in-chandigarh</td></tr>
+<tr><td class="namecol">RTEX HR Services Pvt Ltd</td><td>IT Recruitment Specialist</td><td>SCO 333-334, Sector 35-B, Chandigarh</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=SCO+333-334+Sector+35B+Chandigarh</td><td class="muted">Not published - aggregator listing only</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not published</td><td class="linkcol muted">Not confirmed</td><td>Abhishek Mishra</td><td>Founder/Director (per Sulekha listing - verify)</td><td class="muted">Not published (industry norm: no candidate fees)</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed - verify</td><td class="muted">Not confirmed - call to verify</td><td>4.3</td><td>7 (per PlacementIndia aggregator listing; 10 yrs experience claimed; operating since 2016 per Sulekha)</td><td class="linkcol">2026-06-11</td><td class="linkcol">http://www.placementindia.com/recruitment-agency/placement-services-in-chandigarh ; https://www.sulekha.com/placement-consultants/sector-35-chandigarh</td></tr>
+<tr><td class="namecol">Vish International</td><td>Bulk Hiring Agency / IT Recruitment Specialist</td><td>Plot 70, Godrej Eternia Tower A, Industrial Area Phase-1, Chandigarh</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Plot+70+Godrej+Eternia+Tower+A+Industrial+Area+Phase+1+Chandigarh</td><td class="muted">Not published - aggregator listing only</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not published</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (industry norm: no candidate fees)</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed - verify</td><td class="muted">Not confirmed - call to verify</td><td>4.6</td><td>13 (per PlacementIndia aggregator listing; 253+ active jobs shown - largest volume found)</td><td class="linkcol">2026-06-11</td><td class="linkcol">http://www.placementindia.com/recruitment-agency/placement-services-in-chandigarh</td></tr>
+<tr><td class="namecol">Career Choice Solution</td><td>Fresher Placement Agency</td><td>Zirakpur, Punjab (exact address not confirmed)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Career+Choice+Solution+Zirakpur</td><td>+91-9768991515</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol">https://www.careerchoicesolution.com/</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (industry norm: no candidate fees)</td><td>Yes</td><td class="muted">Not confirmed - verify</td><td class="muted">Not confirmed - verify</td><td class="muted">Not confirmed - call to verify</td><td class="muted">N/A</td><td class="muted">N/A</td><td class="linkcol">2026-06-11</td><td class="linkcol">https://www.careerchoicesolution.com/blog/top-recruitment-agency-in-zirakpur-punjab-placement-consultants-in-zirakpur-punjab_17477.htm</td></tr>
+<tr><td class="namecol">Webhopers Infotech Pvt Ltd</td><td>Internship Placement Agency / IT Recruitment Specialist</td><td>Sector 11, Panchkula, Haryana (training + placement combo - verify placement vs training-fee model before engaging)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Webhopers+Infotech+Sector+11+Panchkula</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed - search &quot;Webhopers Infotech&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td>CAUTION: combo training+placement firms often charge candidates - verify fee structure before paying anything</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed - verify</td><td class="muted">Not confirmed - call to verify</td><td class="muted">N/A</td><td class="muted">N/A</td><td class="linkcol">2026-06-11</td><td class="linkcol">https://www.placementindia.com/recruitment-agency/panchkula-recruitment-agency.htm</td></tr>
+<tr><td class="namecol">Talentpull &amp; Infrastructure Pvt Ltd</td><td>IT Recruitment Specialist / Bulk Hiring Agency</td><td>SCF 14, Gillco Valley, Near Gillco Valley Main Gate, Sector 4, Kharar, Mohali, Punjab 140301</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=SCF+14+Gillco+Valley+Sector+4+Kharar+Mohali</td><td>7888571643</td><td class="muted">Not published</td><td>pratishtha@talentpull.in</td><td class="linkcol">https://talentpull.in/</td><td class="linkcol">https://in.linkedin.com/company/talentpull-and-infrastructure-pvt-ltd</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (industry norm: no candidate fees)</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed - call to verify</td><td class="muted">Not confirmed - call to verify</td><td class="muted">N/A</td><td class="muted">N/A</td><td class="linkcol">2026-06-14</td><td class="linkcol">https://talentpull.in/contact-us/</td></tr>
+<tr><td class="namecol">Team Plus Staffing Solution Pvt Ltd</td><td>IT Recruitment Specialist / RPO</td><td>HQ: Rajiv Gandhi Infotech Park, Phase II, Hinjawadi, Pune; markets recruitment services for Chandigarh IT Park, Quark City, Rajiv Gandhi Chandigarh Technology Park and Elante IT Park clients</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Team+Plus+Staffing+Solution+Chandigarh+IT+Park</td><td>+91 80 8760 6363</td><td class="muted">Not published</td><td>hr@teamplusindia.in</td><td class="linkcol">https://www.teamplusindia.in/</td><td class="linkcol muted">Not confirmed - search linkedin.com/company/team-plus-staffing-solution</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (industry norm: no candidate fees)</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed - call to verify</td><td class="muted">Not confirmed - call to verify</td><td class="muted">N/A</td><td class="muted">N/A</td><td class="linkcol">2026-06-14</td><td class="linkcol">https://www.teamplusindia.in/recruitment-consultants-chandigarh/</td></tr>
+<tr><td class="namecol">NLB Services</td><td>IT Staffing / RPO / Executive Search</td><td>Chandigarh office (exact street address not published; HQ: 1st Floor, A-154A, Sector-63, Noida 201301)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=NLB+Services+Chandigarh</td><td class="muted">Not published</td><td class="muted">Not published</td><td>info@nlbservices.com</td><td class="linkcol">https://www.nlbservices.com/</td><td class="linkcol">https://in.linkedin.com/company/nlb-services</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (industry norm: no candidate fees)</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed - call to verify</td><td>Yes (markets AI-powered hiring/screening)</td><td class="muted">N/A</td><td class="muted">N/A</td><td class="linkcol">2026-06-14</td><td class="linkcol">https://www.nlbservices.com/recruitment-agency-in-chandigarh/</td></tr>
+<tr><td class="namecol">Wes Career</td><td>Bulk Hiring Agency / RPO</td><td>Mohali, Punjab (Pune office: Office 614, Rama Equator, Morwadi Chowk, Pimpri Chinchwad, Maharashtra 411018; exact Mohali address not published)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Wes+Career+Mohali</td><td>+91-9876543234</td><td class="muted">Not published</td><td>connect@wes.careers</td><td class="linkcol">https://wes.careers/</td><td class="linkcol muted">Not confirmed - search linkedin.com/company/wes-careers</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (industry norm: no candidate fees)</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed - call to verify</td><td class="muted">Not confirmed - call to verify</td><td class="muted">N/A</td><td class="muted">N/A</td><td class="linkcol">2026-06-14</td><td class="linkcol">https://wes.careers/recruitment-agency-in-mohali/</td></tr>
+<tr><td class="namecol">Endeavour Career Point</td><td>Fresher Placement Agency / Employment Agency</td><td>Chandigarh / Mohali / Panchkula (exact address not confirmed - verify via Facebook/Chandigarh Herald listing)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Endeavour+Career+Point+Chandigarh+Mohali+Panchkula</td><td class="muted">Not published - check Chandigarh Herald listing</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed</td><td class="linkcol">https://www.facebook.com/endeavourcareerpoint/</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (industry norm: no candidate fees)</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed - verify</td><td class="muted">Not confirmed - verify</td><td class="muted">N/A</td><td class="muted">N/A</td><td class="linkcol">2026-06-14</td><td class="linkcol">https://chandigarhherald.com/listing/endeavour-career-point-best-job-consultant-in-chandigarh/</td></tr>
+<tr><td class="namecol">Placewell Careers</td><td>Fresher Placement Agency / HR Services</td><td>Chandigarh (exact address not confirmed)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Placewell+Careers+Chandigarh</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed - search &quot;Placewell Careers Chandigarh&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (industry norm: no candidate fees)</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed - verify</td><td class="muted">Not confirmed - verify</td><td class="muted">N/A</td><td class="muted">N/A</td><td class="linkcol">2026-06-14</td><td class="linkcol">https://www.teamplusindia.in/recruitment-consultants-chandigarh/</td></tr>
+<tr><td class="namecol">Vision Unlimited</td><td>IT Recruitment Specialist / Bulk Hiring Agency</td><td>Chandigarh (exact address not confirmed; operating since 2003)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Vision+Unlimited+placement+Chandigarh</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed - search &quot;Vision Unlimited Chandigarh placement&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (industry norm: no candidate fees)</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed - verify</td><td class="muted">Not confirmed - verify</td><td class="muted">N/A</td><td class="muted">N/A</td><td class="linkcol">2026-06-14</td><td class="linkcol">https://www.teamplusindia.in/recruitment-consultants-chandigarh/</td></tr>
+<tr><td class="namecol">NCR_SECTION</td><td>--- The agencies below are in the Delhi-NCR region (Noida / Gurugram / Delhi), added 2026-06-14. Many are large national staffing brands with NCR branches; phone numbers from blog/aggregator sources are flagged &#x27;verify&#x27;. Industry norm: legitimate agencies never charge candidates a placement fee.</td><td></td><td class="linkcol"></td><td></td><td></td><td></td><td class="linkcol"></td><td class="linkcol"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="linkcol"></td><td class="linkcol"></td></tr>
+<tr><td class="namecol">ABC Consultants Pvt Ltd</td><td>Executive Search Firm / IT Recruitment Specialist (NCR)</td><td>Gurgaon: Unit 23, Tower B, Spaze iTech Park, Sector 49, Gurgaon, Haryana; Delhi: 33 &amp; 33A, Rama Road, Industrial Area, near Kirti Nagar Metro, New Delhi 110015</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=ABC+Consultants+Spaze+iTech+Park+Sector+49+Gurgaon</td><td>+91 124 456 8000 (Gurgaon) / 1800-123-4841 (Delhi toll-free)</td><td class="muted">Not published</td><td>info@abcconsultants.in</td><td class="linkcol">https://www.abcconsultants.in/</td><td class="linkcol">https://in.linkedin.com/company/abc-consultants</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (no candidate fees - employer-funded)</td><td class="muted">Not confirmed - verify (strong on mid/senior + leadership search)</td><td>Yes</td><td class="muted">Not confirmed - call to verify</td><td class="muted">Not confirmed - call to verify</td><td class="muted">N/A</td><td class="muted">N/A</td><td class="linkcol">2026-06-14</td><td class="linkcol">https://www.abcconsultants.in/</td></tr>
+<tr><td class="namecol">Randstad India Pvt Ltd</td><td>Bulk Hiring Agency / IT Recruitment Specialist (NCR)</td><td>Gurgaon: 1st Floor, Tower B, Unitech Business Park, near Huda Metro Station, Gurgaon 122001; Delhi: Ground Floor, Copia Corporate Suites, Building 9, Jasola District Centre, New Delhi 110025; also Noida</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Randstad+India+Unitech+Business+Park+Gurgaon</td><td class="muted">Not published - use randstad.in/contact-us (call-back form)</td><td class="muted">Not published</td><td class="muted">Not published - use website form</td><td class="linkcol">https://www.randstad.in/</td><td class="linkcol">https://in.linkedin.com/company/randstad-india</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (global staffing - employer-funded</td><td> no candidate fees)</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed - call to verify</td><td class="muted">Not confirmed - call to verify</td><td class="muted">N/A</td><td class="linkcol muted">N/A</td><td class="linkcol">2026-06-14</td><td>https://www.randstad.in/our-offices/recruitment-agency-gurgaon_644/</td></tr>
+<tr><td class="namecol">Spectrum Talent Management Pvt Ltd</td><td>IT Recruitment Specialist / Bulk Hiring Agency (NCR)</td><td>Spectrum House, C-151, C Block, Sector 63, Noida, Uttar Pradesh 201301</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Spectrum+House+C-151+Sector+63+Noida</td><td>+91-7065-060-428</td><td class="muted">Not published</td><td>info@stmpl.co.in</td><td class="linkcol">https://www.stmpl.co.in/</td><td class="linkcol">https://in.linkedin.com/company/spectrumtalentmanagement</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (no candidate fees - employer-funded)</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed - call to verify</td><td class="muted">Not confirmed - call to verify</td><td class="muted">N/A</td><td class="muted">N/A</td><td class="linkcol">2026-06-14</td><td class="linkcol">https://www.stmpl.co.in/contact/</td></tr>
+<tr><td class="namecol">Adecco India (Gurgaon / Noida)</td><td>Bulk Hiring Agency / IT Recruitment Specialist (NCR)</td><td>Gurgaon: Unit 144 &amp; 145, 1st Floor, Centrum Plaza, Sector 53, Gurgaon 122002; also branch in Sector 18, Noida</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Adecco+India+Centrum+Plaza+Sector+53+Gurgaon</td><td>+91 124 454 3000</td><td class="muted">Not published</td><td>marcom@adecco.co.in</td><td class="linkcol">https://www.adecco.co.in/</td><td class="linkcol">https://www.linkedin.com/company/adecco</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (Adecco is candidate-fee-free; paid by employers)</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed - call to verify</td><td class="muted">Not confirmed - call to verify</td><td class="muted">N/A</td><td class="muted">N/A</td><td class="linkcol">2026-06-14</td><td class="linkcol">https://www.sulekha.com/adecco-india-dlf-city-gurgaon-contact-address</td></tr>
+<tr><td class="namecol">TeamLease Services Ltd</td><td>Bulk Hiring Agency / Staffing (NCR)</td><td>Delhi: 303, Vishwadeep Tower, District Centre, Janakpuri, New Delhi (verify); large pan-India staffing firm with NCR coverage</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=TeamLease+Vishwadeep+Tower+Janakpuri+Delhi</td><td>+91-11-6600-6000 (blog-sourced - verify)</td><td class="muted">Not published</td><td class="muted">Not published - use teamlease.com</td><td class="linkcol">https://www.teamlease.com/</td><td class="linkcol">https://in.linkedin.com/company/teamlease</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (large staffing firm - employer-funded</td><td> no candidate fees)</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed - call to verify</td><td class="muted">Not confirmed - call to verify</td><td class="muted">N/A</td><td class="linkcol muted">N/A</td><td class="linkcol">2026-06-14</td><td>https://www.placementindia.com/blog/top-rated-placement-consultants-in-delhi-for-freshers-and-experienced-professionals.htm</td></tr>
+<tr><td class="namecol">CareerNet Consulting</td><td>IT Recruitment Specialist / Talent Solutions (NCR)</td><td>Delhi-NCR presence (HQ Bengaluru); tech &amp; BFSI talent focus (exact NCR address not confirmed)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=CareerNet+Consulting+Delhi+NCR</td><td>+91-11-6610-2200 (blog-sourced - verify)</td><td class="muted">Not published</td><td class="muted">Not published - use careernet.in</td><td class="linkcol">https://www.careernet.in/</td><td class="linkcol">https://in.linkedin.com/company/careernet</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="muted">Not published (no candidate fees - employer-funded)</td><td>Yes</td><td>Yes</td><td>Yes (strong tech/data hiring practice)</td><td class="muted">Not confirmed - call to verify</td><td class="muted">N/A</td><td class="muted">N/A</td><td class="linkcol">2026-06-14</td><td class="linkcol">https://www.placementindia.com/blog/top-rated-placement-consultants-in-delhi-for-freshers-and-experienced-professionals.htm</td></tr>
+<tr><td class="namecol">HR International</td><td>IT Recruitment Specialist / Multi-sector (NCR)</td><td>1st Floor, Eros Corporate Tower, Nehru Place, New Delhi 110019</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=HR+International+Eros+Corporate+Tower+Nehru+Place+New+Delhi</td><td>+91 11 4934 3900 (blog-sourced - verify)</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed - search &quot;HR International Nehru Place&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published (no candidate fees - employer-funded)</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed - call to verify</td><td class="muted">Not confirmed - call to verify</td><td class="muted">N/A</td><td class="muted">N/A</td><td>2026-06-14</td><td class="linkcol">https://www.placementindia.com/blog/top-rated-placement-consultants-in-delhi-for-freshers-and-experienced-professionals.htm</td></tr>
+<tr><td class="namecol">AIM Multiskills Jobs Pvt Ltd</td><td>IT Recruitment Specialist / Fresher Placement (NCR)</td><td>Noida, Uttar Pradesh 201301 (exact address not confirmed - aggregator listing)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=AIM+Multiskills+Jobs+Noida</td><td>08069874894 (aggregator call-tracking number - verify)</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed - search &quot;AIM Multiskills Jobs Noida&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published (industry norm: no candidate fees)</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed - call to verify</td><td class="muted">Not confirmed - call to verify</td><td class="muted">N/A</td><td class="muted">N/A</td><td>2026-06-14</td><td class="linkcol">https://www.sulekha.com/it-recruitment-consultants/noida</td></tr>
+</tbody></table></div><hr><h2 id="d2">Deliverable 2: Companies Hiring in the Tricity IT Ecosystem</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Company Name</th><th>Office Address</th><th>Google Maps Link</th><th>Website</th><th>Careers Page</th><th>HR/Recruitment Email</th><th>Phone Number</th><th>LinkedIn Company Page</th><th>Industry</th><th>Company Size (approx.)</th><th>Fresher Friendly Score (1-10</th><th> est.)</th><th>AI/ML Friendly Score (1-10</th><th> est.)</th><th>Remote</th><th>Hybrid</th><th>Internship</th><th>Last Verified</th><th>Source URL</th></tr></thead>
+<tbody>
+<tr><td class="namecol">smartData Enterprises</td><td>Plot No. I-23, IT City, Sector-83 Alpha, SAS Nagar, Mohali, Punjab 140306</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Plot+I-23+IT+City+Sector+83+Alpha+SAS+Nagar+Mohali</td><td class="linkcol">https://www.smartdatainc.com/</td><td class="linkcol">https://www.smartdatainc.com/careers/</td><td class="muted">Not published - use careers page form</td><td class="muted">Not published</td><td class="linkcol">https://in.linkedin.com/company/smartdata-enterprises</td><td>IT Services / Custom Software / Healthcare-Fintech AI</td><td>1000-5000 (multiple India locations)</td><td>8</td><td>7</td><td>Yes</td><td>Yes</td><td>Yes</td><td>2026-06-11</td><td>https://www.glassdoor.co.in/Reviews/smartData-Enterprises-Mohali-Reviews-EI_IE508375.0</td><td class="linkcol">21_IL.22</td><td class="linkcol">28_IC4469455.htm</td></tr>
+<tr><td class="namecol">Net Solutions</td><td>Multiple Tricity offices: Mohali, Chandigarh, Panchkula (exact street address not confirmed in search)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Net+Solutions+Mohali+Chandigarh+office</td><td class="linkcol">https://www.netsolutions.com/</td><td class="linkcol">https://www.netsolutions.com/careers/</td><td class="muted">Not published - use careers page</td><td class="muted">Not published</td><td class="linkcol">https://in.linkedin.com/company/net-solutions</td><td>Digital Product Engineering / Web &amp; Mobile Dev</td><td>1000-2500</td><td>7</td><td>6</td><td>Yes</td><td>Yes</td><td>Yes</td><td>2026-06-11</td><td>https://www.naukri.com/net-solutions-overview-33704</td></tr>
+<tr><td class="namecol">IDS Infotech Ltd</td><td>Plot No. EL 643, Industrial Area, Phase 9, Mohali, Punjab 160065</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Plot+EL+643+Industrial+Area+Phase+9+Mohali</td><td class="linkcol">https://idsil.com/</td><td class="linkcol">https://idsil.com/careers/ (verify path)</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed - search linkedin.com/company/ids-infotech</td><td>IT Services / AI / Healthcare / Engineering Solutions</td><td>1000-2000 (2000+ professionals globally)</td><td>7</td><td>7</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes (offers internships per company site)</td><td>2026-06-11</td><td>https://idsil.com/about-us/</td></tr>
+<tr><td class="namecol">Bebo Technologies Pvt Ltd</td><td>Sector 34, Chandigarh (exact address: verify via Sulekha listing)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Bebo+Technologies+Sector+34+Chandigarh</td><td class="linkcol">https://www.bebotechnologies.com/</td><td class="linkcol">https://www.bebotechnologies.com/careers (verify path)</td><td class="muted">Not published - use contact form</td><td class="muted">Not published</td><td class="linkcol">https://in.linkedin.com/company/bebo-technologies-pvt-ltd</td><td>Software Development &amp; QA Outsourcing</td><td>200-500</td><td>7</td><td>5</td><td class="muted">Not confirmed</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://www.sulekha.com/bebo-technologies-pvt-ltd-sector-34-chandigarh-contact-address</td></tr>
+<tr><td class="namecol">ToXSL Technologies Pvt Ltd</td><td>C-127, Phase 8, Industrial Area, Sector 73, Mohali, Punjab</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=C-127+Phase+8+Industrial+Area+Sector+73+Mohali</td><td class="linkcol">https://toxsl.com/</td><td class="linkcol">https://talent.toxsl.com/jobs</td><td class="muted">Not published - use careers portal</td><td class="muted">Not published</td><td class="linkcol">https://in.linkedin.com/company/toxsl-technologies</td><td>Custom Software / Mobile &amp; Web Development</td><td>200-500</td><td>9</td><td>5</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes (active Off-Campus Hiring Batch 2026-27 found)</td><td>2026-06-11</td><td>https://talent.toxsl.com/jobs</td></tr>
+<tr><td class="namecol">Quark Software Inc. (Quark Technologies India)</td><td>A-45, Industrial Area, Phase-VIII-B, Sector 74, SAS Nagar, Mohali, Punjab 160059</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=A-45+Industrial+Area+Phase+8B+Sector+74+SAS+Nagar+Mohali</td><td class="linkcol">https://www.quark.com/</td><td class="linkcol">https://www.quark.com/About-Us/Careers (verify path)</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol">https://in.linkedin.com/company/quarkcity-india-pvt-limited</td><td>Content Automation / Publishing Software</td><td>500-1000</td><td>6</td><td>6</td><td class="muted">Not confirmed</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://chandigarhupdates.com/list-of-companies-in-quark-city-mohali/</td></tr>
+<tr><td class="namecol">Sourcefuse Technologies</td><td>Quark Atrium, A-45, Phase VIII Extension, Industrial Focal Point, SAS Nagar, Mohali, Punjab 160071</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Quark+Atrium+A-45+Phase+8+Extension+Industrial+Focal+Point+SAS+Nagar+Mohali</td><td class="linkcol muted">Not confirmed - search &quot;Sourcefuse Technologies&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed - search linkedin.com/company/sourcefuse</td><td>Cloud / DevOps Consulting (AWS partner)</td><td>500-1000</td><td>7</td><td>6</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://chandigarhupdates.com/list-of-companies-in-quark-city-mohali/</td></tr>
+<tr><td class="namecol">Net Quall Technologies</td><td>Quark City, Industrial Area, Sector 74, SAS Nagar, Mohali, Punjab 140308</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Quark+City+Industrial+Area+Sector+74+SAS+Nagar+Mohali+Net+Quall</td><td class="linkcol muted">Not confirmed</td><td class="linkcol muted">Not confirmed</td><td>info@netquall.com</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed</td><td>IT Services</td><td>50-200</td><td>6</td><td>5</td><td class="muted">Not confirmed</td><td class="muted">Not confirmed</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://chandigarhupdates.com/list-of-companies-in-quark-city-mohali/</td></tr>
+<tr><td class="namecol">Emerson Information Technology Solutions</td><td>3rd Floor, F-3 Tower, Landmark Plaza, Plot A-40A, Phase-VIII B, Industrial Area, SAS Nagar, Mohali, Punjab 160059</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Landmark+Plaza+F3+Tower+A-40A+Phase+8B+Industrial+Area+SAS+Nagar+Mohali</td><td class="linkcol muted">Not confirmed</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed</td><td>IT / Engineering Services (captive unit of Emerson Electric)</td><td>500-2000</td><td>5</td><td>4</td><td class="muted">Not confirmed</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://chandigarhupdates.com/list-of-companies-in-quark-city-mohali/</td></tr>
+<tr><td class="namecol">EVRY India Pvt Ltd</td><td>7th &amp; 8th Floor, Landmark Plaza, F3 Towers, SEZ A-40A, Sector 62, SAS Nagar, Mohali, Punjab 160062</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Landmark+Plaza+F3+Towers+SEZ+A-40A+Sector+62+SAS+Nagar+Mohali</td><td class="linkcol muted">Not confirmed</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed</td><td>IT Services (Nordic-origin</td><td> now part of Tietoevry)</td><td>500-1500</td><td>5</td><td>4</td><td class="muted">Not confirmed</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td class="linkcol">https://chandigarhupdates.com/list-of-companies-in-quark-city-mohali/</td></tr>
+<tr><td class="namecol">Shine Dezign Infotech</td><td>Plot F-353, Phase 8B, Industrial Area, SAS Nagar, Mohali, Punjab 140603</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Plot+F-353+Phase+8B+Industrial+Area+SAS+Nagar+Mohali</td><td class="linkcol muted">Not confirmed</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed</td><td>Web/Mobile App Development</td><td>50-200</td><td>6</td><td>4</td><td class="muted">Not confirmed</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://chandigarhupdates.com/list-of-companies-in-quark-city-mohali/</td></tr>
+<tr><td class="namecol">Suffescom Solutions Inc</td><td>D-256, 3rd Floor, Phase 8A, Industrial Area, Mohali, Punjab 160055</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=D-256+3rd+Floor+Phase+8A+Industrial+Area+Mohali</td><td class="linkcol muted">Not confirmed - search &quot;Suffescom Solutions&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed - search linkedin.com/company/suffescom-solutions</td><td>Blockchain / Web3 / App Development</td><td>200-500</td><td>6</td><td>5</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://www.justdial.com/Mohali/Suffescom-Solutions-Inc/0172PX172-X172-230804170603-J2K6_BZDET</td></tr>
+<tr><td class="namecol">Growth Natives</td><td>Mohali, Punjab (recently relocated office; exact address not confirmed)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Growth+Natives+Mohali</td><td class="linkcol">https://growthnatives.com/</td><td class="linkcol">https://growthnatives.com/careers (verify path)</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed - search linkedin.com/company/growth-natives</td><td>Digital Marketing / AI-driven Growth</td><td>200-500</td><td>6</td><td>6</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://growthnatives.com/blogs/press-release/growth-natives-expands-horizons-with-a-sparkling-new-office-space/</td></tr>
+<tr><td class="namecol">CrossML Pvt Ltd</td><td>Industrial Area Phase 1, Chandigarh (opp. Hyatt Regency)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=CrossML+Industrial+Area+Phase+1+Chandigarh+opposite+Hyatt+Regency</td><td class="linkcol">https://www.crossml.com/</td><td class="linkcol">https://www.crossml.com/contact-us/</td><td class="muted">Not published - use contact form</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed - search linkedin.com/company/crossml</td><td>AI/ML Consulting &amp; Development</td><td>50-200</td><td>7</td><td>9</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://www.crossml.com/contact-us/</td></tr>
+<tr><td class="namecol">Softleoai</td><td>Mohali, Punjab (exact address not confirmed)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Softleoai+Mohali</td><td class="linkcol muted">Not confirmed - search &quot;Softleoai&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed</td><td>Custom Software / AI / ML Solutions</td><td>11-50</td><td>6</td><td>8</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://www.designrush.com/agency/ai-companies/in/mohali</td></tr>
+<tr><td class="namecol">MoogleLabs</td><td>Mohali, Punjab (also has Ontario, Canada office; exact India address not confirmed)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=MoogleLabs+Mohali</td><td class="linkcol muted">Not confirmed - search &quot;MoogleLabs&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed - search linkedin.com/company/mooglelabs</td><td>AI / Blockchain / ML / DevOps Consulting</td><td>50-200</td><td>6</td><td>8</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://www.designrush.com/agency/ai-companies/in/mohali</td></tr>
+<tr><td class="namecol">Apptunix</td><td>Mohali, Punjab (global offices in US/UK/UAE; exact India address not confirmed)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Apptunix+Mohali</td><td class="linkcol muted">Not confirmed - search &quot;Apptunix&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed - search linkedin.com/company/apptunix</td><td>AI-Powered Product Engineering</td><td>200-500</td><td>6</td><td>7</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://www.designrush.com/agency/ai-companies/in/mohali</td></tr>
+<tr><td class="namecol">Fusion Informatics</td><td>Chandigarh (HQ Ahmedabad; exact Chandigarh address not confirmed)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Fusion+Informatics+Chandigarh</td><td class="linkcol">https://www.fusioninformatics.com/</td><td class="linkcol muted">Not confirmed - use contact form</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed - search linkedin.com/company/fusion-informatics</td><td>AI / Mobile App Development</td><td>200-500</td><td>5</td><td>7</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://www.fusioninformatics.com/top-artificial-intelligence-development-company-in-ludhiana-chandigarh.html</td></tr>
+<tr><td class="namecol">Webtunix AI</td><td>Chandigarh (exact address not confirmed)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Webtunix+AI+Chandigarh</td><td class="linkcol">https://www.webtunix.com/</td><td class="linkcol muted">Not confirmed - use contact form</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed - search linkedin.com/company/webtunix</td><td>AI / Data Science Consulting</td><td>11-50</td><td>6</td><td>8</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://www.webtunix.com/</td></tr>
+<tr><td class="namecol">Tech Mahindra</td><td>Quark City / IT Park area, Mohali-Chandigarh (large multi-site employer; exact unit address not confirmed)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Tech+Mahindra+Mohali+Chandigarh</td><td class="linkcol">https://www.techmahindra.com/</td><td class="linkcol">https://careers.techmahindra.com/</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/tech-mahindra</td><td>IT Services / BPO / Telecom</td><td>100000+ (global)</td><td>7</td><td>5</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes</td><td>2026-06-11</td><td>https://chandigarhupdates.com/list-of-companies-in-quark-city-mohali/</td></tr>
+<tr><td class="namecol">Infosys BPM (Chandigarh)</td><td>Plot No. 22 &amp; 23, Block A-B, Ground Floor, DLF Building, Rajiv Gandhi Chandigarh Technology Park, Kishangarh, Chandigarh</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Plot+22+23+DLF+Building+Rajiv+Gandhi+Chandigarh+Technology+Park+Kishangarh+Chandigarh</td><td class="linkcol">https://www.infosysbpm.com/</td><td class="linkcol">https://career.infosysbpm.com/</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/infosysbpm</td><td>IT/BPM Services</td><td>100000+ (global)</td><td>8</td><td>5</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes</td><td>2026-06-11</td><td>https://www.brandveda.in/blog/it-companies-in-chandigarh</td></tr>
+<tr><td class="namecol">Sebiz Infotech</td><td>Sebiz Square, Sector 67, SAS Nagar, Mohali, Punjab</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Sebiz+Square+Sector+67+SAS+Nagar+Mohali</td><td class="linkcol muted">Not confirmed - search &quot;Sebiz Infotech&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed - search linkedin.com/company/sebiz-infotech</td><td>Web Development / Digital Marketing / E-learning</td><td>200-500</td><td>6</td><td>4</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://360digitmg.com/blog/what-are-the-best-it-companies-in-mohali</td></tr>
+<tr><td class="namecol">Vismaad Labs</td><td>Mohali, Punjab (exact address not confirmed)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Vismaad+Labs+Mohali</td><td class="linkcol muted">Not confirmed - search &quot;Vismaad Labs&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed</td><td>Web &amp; Mobile App Development / Digital Agency</td><td>50-200</td><td>6</td><td>4</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://360digitmg.com/blog/what-are-the-best-it-companies-in-mohali</td></tr>
+<tr><td class="namecol">Webguruz Technologies</td><td>Mohali, Punjab (exact address not confirmed)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Webguruz+Technologies+Mohali</td><td class="linkcol muted">Not confirmed - search &quot;Webguruz Technologies&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed</td><td>Web/Mobile Development / Digital Marketing</td><td>50-200</td><td>6</td><td>4</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://360digitmg.com/blog/what-are-the-best-it-companies-in-mohali</td></tr>
+<tr><td class="namecol">RV Technologies</td><td>Mohali, Punjab (exact address not confirmed)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=RV+Technologies+Mohali</td><td class="linkcol muted">Not confirmed - search &quot;RV Technologies Mohali&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed</td><td>Software / Web / Mobile / E-commerce Development</td><td>50-200</td><td>6</td><td>4</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://360digitmg.com/blog/what-are-the-best-it-companies-in-mohali</td></tr>
+<tr><td class="namecol">NetSet Software Solutions</td><td>Mohali, Punjab (exact address not confirmed)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=NetSet+Software+Solutions+Mohali</td><td class="linkcol muted">Not confirmed - search &quot;NetSet Software Solutions&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/netsetsoftware</td><td>Custom Software / Cloud Computing</td><td>50-200</td><td>6</td><td>5</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://360digitmg.com/blog/what-are-the-best-it-companies-in-mohali</td></tr>
+<tr><td class="namecol">Code Brew Labs</td><td>Mohali, Punjab (exact address not confirmed)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Code+Brew+Labs+Mohali</td><td class="linkcol muted">Not confirmed - search &quot;Code Brew Labs&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed</td><td>Mobile App Development</td><td>200-500</td><td>6</td><td>5</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://360digitmg.com/blog/what-are-the-best-it-companies-in-mohali</td></tr>
+<tr><td class="namecol">Debut Infotech</td><td>Mohali, Punjab (exact address not confirmed)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Debut+Infotech+Mohali</td><td class="linkcol muted">Not confirmed - search &quot;Debut Infotech&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed</td><td>Web Dev / Blockchain / Enterprise Software</td><td>200-500</td><td>6</td><td>6</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://360digitmg.com/blog/what-are-the-best-it-companies-in-mohali</td></tr>
+<tr><td class="namecol">Mindfire Solutions</td><td>Mohali/Chandigarh, Punjab (exact address not confirmed; HQ Bhubaneswar)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Mindfire+Solutions+Mohali+Chandigarh</td><td class="linkcol muted">Not confirmed - search &quot;Mindfire Solutions&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/mindfire-solutions</td><td>Offshore Software Development</td><td>500-1000</td><td>6</td><td>5</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://360digitmg.com/blog/what-are-the-best-it-companies-in-mohali</td></tr>
+<tr><td class="namecol">PTC India</td><td>Rajiv Gandhi Chandigarh Technology Park, Chandigarh (exact unit not confirmed)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=PTC+Rajiv+Gandhi+Chandigarh+Technology+Park</td><td class="linkcol">https://www.ptc.com/</td><td class="linkcol">https://www.ptc.com/en/careers</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/ptc</td><td>Product Development Software / IoT / AR</td><td>10000+ (global)</td><td>6</td><td>6</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes</td><td>2026-06-11</td><td>https://360digitmg.com/blog/what-are-the-best-it-companies-in-mohali</td></tr>
+<tr></tr>
+<tr><td class="namecol">Seasia Infotech</td><td>C-136, Industrial Area, Phase 8, Mohali, Punjab</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=C-136+Industrial+Area+Phase+8+Mohali</td><td class="linkcol">https://www.seasiainfotech.com/</td><td class="linkcol">https://www.seasiainfotech.com/careers (verify path)</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol">https://in.linkedin.com/company/seasia-infotech</td><td>IT Consulting / Software Solutions (CMMI Level 5)</td><td>1000+ (multiple global offices: Australia/Canada/US/UK/Ghana)</td><td>8</td><td>6</td><td>Yes</td><td>Yes</td><td>Yes (typical for CMMI-5 firms - verify)</td><td>2026-06-11</td><td>https://www.justdial.com/jdmart/Chandigarh/Seasia-Infotech-NEAR-VODAFONE-OFFICE-Industrial-Area-Phase-7/0172PX172-X172-170922203558-G7V1_BZDET/catalogue</td></tr>
+<tr><td class="namecol">TaskUs (Mohali)</td><td>Airport Road, Sector 82, Mohali, Punjab</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=TaskUs+Airport+Road+Sector+82+Mohali</td><td class="linkcol">https://www.taskus.com/locations/india/mohali/</td><td class="linkcol">https://www.taskus.com/careers/</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/taskus</td><td>BPO / Technical Support / Customer Experience</td><td>1000+ (large global BPO)</td><td>8</td><td>3</td><td class="muted">Not confirmed</td><td class="muted">Not confirmed</td><td>Yes (entry-level hiring common at BPOs)</td><td>2026-06-11</td><td>https://www.taskus.com/locations/india/mohali/</td></tr>
+<tr><td class="namecol">Connecting The Dots</td><td>Chandigarh &amp; Mohali (multiple BPO sites; exact address not confirmed)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Connecting+The+Dots+BPO+Chandigarh+Mohali</td><td class="linkcol muted">Not confirmed - search &quot;Connecting The Dots BPO&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed</td><td>BPO / Call Centre (Inbound</td><td> Email</td><td> Chat</td><td> Tech Support)</td><td>200-1000</td><td>9</td><td>2</td><td class="muted">Not confirmed</td><td class="muted">Not confirmed</td><td class="linkcol muted">Not confirmed</td><td class="linkcol">2026-06-11</td><td>https://www.naukri.com/job-listings-bpo-call-centre-hiring-salary-upto-33-k-in-chandigarh-mohali-connecting-the-dots-mohali-chandigarh-panchkula-0-to-5-years-041119000221</td></tr>
+<tr><td class="namecol">Pyramid Global Technologies</td><td>Mohali, Punjab (exact address not confirmed)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Pyramid+Global+Technologies+Mohali</td><td class="linkcol">https://www.pyramidglobaltechnologies.com/</td><td class="linkcol">https://www.pyramidglobaltechnologies.com/current-openings.html</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed - search linkedin.com/company/pyramid-global-technologies</td><td>Managed IT Services / Power BI &amp; Data roles</td><td>200-500</td><td>7</td><td>6</td><td class="muted">Not confirmed</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://www.pyramidglobaltechnologies.com/current-openings.html</td></tr>
+<tr><td class="namecol">Webdew</td><td>World Tech Tower, C-203, Sector 74, SAS Nagar, Mohali, Punjab 160055</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=World+Tech+Tower+C-203+Sector+74+SAS+Nagar+Mohali</td><td class="linkcol">https://www.webdew.com/</td><td class="linkcol">https://careers.webdew.com/</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/webdew</td><td>Digital Marketing Agency / Web Dev</td><td>50-200</td><td>6</td><td>4</td><td>Yes</td><td>Yes</td><td>Yes (careers blog actively posts hiring content)</td><td>2026-06-11</td><td>https://careers.webdew.com/blogs/top-it-companies-in-chandigarh/</td></tr>
+<tr><td class="namecol">Net Gains Pvt Ltd</td><td>Rajiv Gandhi IT Park, Chandigarh (exact plot not confirmed)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Net+Gains+Rajiv+Gandhi+IT+Park+Chandigarh</td><td class="linkcol muted">Not confirmed - search &quot;Net Gains Chandigarh&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed</td><td>Business Consulting IT Services (BFSI focus)</td><td>200-500</td><td>6</td><td>5</td><td class="muted">Not confirmed</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://www.brandveda.in/blog/it-companies-in-chandigarh</td></tr>
+<tr><td class="namecol">Omninos Technologies</td><td>Mohali/Tricity, Punjab (exact address not confirmed)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Omninos+Technologies+Mohali</td><td class="linkcol muted">Not confirmed - search &quot;Omninos Technologies&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed</td><td>Mobile App Development</td><td>50-200</td><td>6</td><td>4</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://kharar.punjabonline.in/software-companies/34738</td></tr>
+<tr><td class="namecol">Weavebytes</td><td>SCO 48-49, Above Dominos Pizza, Sector 127, Kharar, Punjab 140301</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=SCO+48-49+Above+Dominos+Pizza+Sector+127+Kharar</td><td class="linkcol muted">Not confirmed - search &quot;Weavebytes&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed</td><td>Software Development (small/local)</td><td>11-50</td><td>7</td><td>4</td><td class="muted">Not confirmed</td><td class="muted">Not confirmed</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://kharar.punjabonline.in/software-companies/34738</td></tr>
+<tr></tr>
+<tr><td class="namecol">Wits Innovation Lab</td><td>SCO 73-B, 1st Floor, City Heart, Mohali, Punjab 140301</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=SCO+73-B+1st+Floor+City+Heart+Mohali</td><td class="linkcol">https://www.thewitslab.com/</td><td class="linkcol">https://www.thewitslab.com/careers (verify path)</td><td>info@thewitslab.com</td><td class="muted">Not published</td><td class="linkcol">https://in.linkedin.com/company/thewitslab</td><td>Digital Transformation / IoT / BI / Custom Software</td><td>500-1000 (600+ engineers per Wellfound)</td><td>8</td><td>6</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes (CS/AI fresher positions found)</td><td>2026-06-11</td><td>https://www.glassdoor.co.in/Location/WITS-Innovation-Lab-Mohali-Location-EI_IE5911867.0</td><td class="linkcol">19_IL.20</td><td class="linkcol">26_IC4469455.htm</td></tr>
+<tr><td class="namecol">Drish Infotech</td><td>SCO 104-106, 4th Floor, Sub City Center, Sector 34A, Chandigarh 160034</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=SCO+104-106+4th+Floor+Sub+City+Center+Sector+34A+Chandigarh</td><td class="linkcol muted">Not confirmed - search &quot;Drish Infotech&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed</td><td>Software Development / IT Services</td><td>50-200</td><td>6</td><td>4</td><td class="muted">Not confirmed</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://yellowpages.webindia123.com/local-dpy/Chandigarh/Chandigarh/Sector-34/160022/IT-Companies-577/1/</td></tr>
+<tr><td class="namecol">ThinkNEXT Technologies</td><td>SCO 112-113, 1st Floor, Sector 34A, Chandigarh 160022</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=SCO+112-113+1st+Floor+Sector+34A+Chandigarh</td><td class="linkcol">https://www.thinknext.co.in/</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed - search linkedin.com/company/thinknext-technologies</td><td>IT Services + Training Institute (verify which division is hiring vs. selling courses)</td><td>50-200</td><td>6</td><td>5</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes - but primarily known as a paid training institute, see Deliverable 10b for fee caveats</td><td>2026-06-11</td><td>https://yellowpages.webindia123.com/local-dpy/Chandigarh/Chandigarh/Sector-34/160022/IT-Companies-577/1/</td></tr>
+<tr><td class="namecol">Ink Web Solutions</td><td>SCO 58-59, 3rd Floor, Sector 34-A, Chandigarh</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=SCO+58-59+3rd+Floor+Sector+34A+Chandigarh</td><td class="linkcol muted">Not confirmed - search &quot;Ink Web Solutions Chandigarh&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed</td><td>Web Development</td><td>11-50</td><td>6</td><td>3</td><td class="muted">Not confirmed</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://yellowpages.webindia123.com/local-dpy/Chandigarh/Chandigarh/Sector-34/160022/IT-Companies-577/1/</td></tr>
+<tr><td class="namecol">CS Soft Solutions</td><td>SCO 2451, Sector 22-C, Chandigarh 160022 (also listed at 217/6 Acme Height Extension 2, Sector 117, SAS Nagar - verify which is current)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=SCO+2451+Sector+22C+Chandigarh</td><td class="linkcol muted">Not confirmed - search &quot;CS Soft Solutions Chandigarh&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed</td><td>IT Services (founded 2009)</td><td>50-200</td><td>6</td><td>4</td><td class="muted">Not confirmed</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://yellowpages.webindia123.com/local-dpy/Chandigarh/Chandigarh/Sector-34/160022/IT-Companies-577/1/ ; https://www.justdial.com/Mohali/Software-Companies-in-Mohali-Sector-91/nct-10443565/page-2</td></tr>
+<tr><td class="namecol">TCIL IT</td><td>SCO 301718, 2nd Floor, Opp. Kisan Bhavan (Bijwara Market), Sector-22D, Chandigarh 160022</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=SCO+301718+Sector+22D+Chandigarh+opposite+Kisan+Bhavan</td><td class="linkcol muted">Not confirmed - search &quot;TCIL IT Chandigarh&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed</td><td>IT Services</td><td>50-200</td><td>5</td><td>3</td><td class="muted">Not confirmed</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://yellowpages.webindia123.com/local-dpy/Chandigarh/Chandigarh/Sector-34/160022/IT-Companies-577/1/</td></tr>
+<tr><td class="namecol">JewelnMe Private Limited</td><td>Mohali, Punjab (exact address not confirmed - small startup, formed Aug 2021)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=JewelnMe+Private+Limited+Mohali</td><td class="linkcol muted">Not confirmed - search &quot;JewelnMe Mohali&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed</td><td>Fintech / Payments Startup</td><td>11-50</td><td>5</td><td>3</td><td class="muted">Not confirmed</td><td class="muted">Not confirmed</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://wellfound.com/startups/location/chandigarh</td></tr>
+<tr></tr>
+<tr><td class="namecol">Trigma</td><td>Plot No. 228, JLPL Industrial Estate, Sector 82, SAS Nagar, Mohali, Punjab</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Plot+No+228+JLPL+Industrial+Estate+Sector+82+Mohali</td><td class="linkcol">https://trigma.com/</td><td class="linkcol">https://trigma.com/careers/</td><td class="muted">Not published - use careers page form</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/trigma</td><td>AI Development / Custom Software &amp; App Development</td><td>200-500 (200+ professionals)</td><td>7</td><td>7</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://trigma.com/contact-us/</td></tr>
+<tr><td class="namecol">Relinns Technologies</td><td>303, C-184, STPI Building, 3rd Floor, Sector 75 (Phase 8A Industrial Area), SAS Nagar, Mohali, Punjab 160055</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=C-184+STPI+Building+Sector+75+Phase+8A+Industrial+Area+Mohali</td><td class="linkcol">https://relinns.com/</td><td class="linkcol">https://careers.relinns.com/</td><td>hr@relinns.com</td><td>+91 70090 75311</td><td class="linkcol">https://in.linkedin.com/company/relinns-technologies</td><td>Software Development / AI-ML / Mobile &amp; Web Dev</td><td>100-250</td><td>8</td><td>7</td><td>Yes</td><td>Yes</td><td>Yes (paid internships incl. AI/ML</td><td> video editing)</td><td>2026-06-11</td><td class="linkcol">https://careers.relinns.com/</td></tr>
+<tr><td class="namecol">Bits in Glass</td><td>Plot No. C-212, Ground Floor, Phase 8-B, Industrial Area, Sector 74, SAS Nagar, Mohali, Punjab 160055</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Plot+C-212+Phase+8B+Industrial+Area+Sector+74+Mohali</td><td class="linkcol">https://bitsinglass.com/</td><td class="linkcol">https://bitsinglass.com/careers/</td><td class="muted">Not published - use careers page form</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/bits-in-glass</td><td>Digital Transformation / Low-Code (Appian</td><td> Salesforce) Consulting</td><td>250-500 (global</td><td> India delivery center in Mohali)</td><td>6</td><td>5</td><td class="muted">Not confirmed</td><td>Yes</td><td class="muted">Not confirmed</td><td class="linkcol">2026-06-11</td><td class="linkcol">https://bitsinglass.com/contact-us/</td></tr>
+<tr><td class="namecol">Code Garage Tech</td><td>Cabin Number 2, D-185, Near Industrial Area, SAS Nagar, Mohali, Punjab 160055</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=D-185+Near+Industrial+Area+SAS+Nagar+Mohali</td><td class="linkcol muted">Not confirmed - search &quot;Code Garage Tech Mohali&quot;</td><td class="linkcol muted">Not published - email CV directly</td><td>hr@codegaragetech.com</td><td>8288983623</td><td class="linkcol">https://in.linkedin.com/company/codegarage-tech</td><td>Open Source / Ruby on Rails Web Development</td><td>11-50</td><td>7</td><td>4</td><td class="muted">Not confirmed</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://www.justdial.com/Mohali/Code-Garage-Tech-Near-Industrial-Area-Mohali-Sas-Nagar/0172PX172-X172-180531193857-R1U1_BZDET</td></tr>
+<tr><td class="namecol">Tech Arch Softwares Pvt Ltd</td><td>Twin Tower, Plot No. 7, 6th Floor, IT Park, Sector 22, Panchkula, Haryana</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Twin+Tower+Plot+7+6th+Floor+IT+Park+Sector+22+Panchkula</td><td class="linkcol muted">Not confirmed - search &quot;Tech Arch Softwares Panchkula&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed - search linkedin.com/company/tech-arch-softwares</td><td>IT Services / Software Development</td><td>51-200</td><td>7</td><td>5</td><td class="muted">Not confirmed</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://7knetwork.com/it-companies-in-panchkula/</td></tr>
+<tr><td class="namecol">Netqom Software</td><td>Twin Tower, Plot No. 7, 6th Floor, IT Park, Sector 22, Panchkula, Haryana</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Twin+Tower+Plot+7+6th+Floor+IT+Park+Sector+22+Panchkula</td><td class="linkcol muted">Not confirmed - search &quot;Netqom Software Panchkula&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed - search linkedin.com/company/netqom-software</td><td>IT Services / Software Development (offers ~3-4.5 LPA to freshers per source)</td><td>51-200</td><td>7</td><td>5</td><td class="muted">Not confirmed</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://7knetwork.com/it-companies-in-panchkula/</td></tr>
+<tr><td class="namecol">SB Innovations</td><td>HSIDC, Plot No. 09, Ground Floor, DLF Square, Sector 22, IT Park Road, Panchkula, Haryana</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=HSIDC+Plot+9+DLF+Square+Sector+22+IT+Park+Road+Panchkula</td><td class="linkcol muted">Not confirmed - search &quot;SB Innovations Panchkula&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed - search linkedin.com/company/sb-innovations</td><td>IT Services / Software Development (offers ~2.5-4 LPA to freshers per source)</td><td>11-50</td><td>6</td><td>4</td><td class="muted">Not confirmed</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://7knetwork.com/it-companies-in-panchkula/</td></tr>
+<tr></tr>
+<tr><td class="namecol">Nagarro</td><td>Room No. 11, W2L, 2nd Floor, Magnet Cowork, Godrej Eternia, Industrial Area Phase 1, Chandigarh 160002</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Magnet+Cowork+Godrej+Eternia+Industrial+Area+Phase+1+Chandigarh</td><td class="linkcol">https://www.nagarro.com/</td><td class="linkcol">https://www.nagarro.com/en/careers/job-search</td><td class="muted">Not published - use careers page form</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/nagarro</td><td>IT Services / Digital Product Engineering</td><td>17000+ globally (Chandigarh is a smaller hub office)</td><td>6</td><td>6</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://www.glassdoor.co.in/Location/All-Nagarro-Office-Locations-E240077.htm</td></tr>
+<tr><td class="namecol">Grazitti Interactive</td><td>Chandigarh / Panchkula (exact street address not confirmed in search - check careers page)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Grazitti+Interactive+Chandigarh+Panchkula</td><td class="linkcol">https://www.grazitti.com/</td><td class="linkcol">https://www.grazitti.com/company/careers/job-listing/</td><td class="muted">Not published - use careers page form</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/grazitti-interactive</td><td>Digital Marketing / Salesforce &amp; Marketing Tech Consulting</td><td>500-1000</td><td>7</td><td>5</td><td>Yes</td><td>Yes</td><td>Yes (regularly posts fresher PHP/QA roles)</td><td>2026-06-11</td><td>https://www.naukri.com/grazitti-interactive-jobs-careers-911276</td></tr>
+<tr><td class="namecol">Safaltek</td><td>SCO 66-67, 2nd Floor, 17A, Sector 17, Chandigarh 160017</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=SCO+66-67+2nd+Floor+17A+Sector+17+Chandigarh</td><td class="linkcol muted">Not confirmed - search &quot;Safaltek Chandigarh&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed - search linkedin.com/company/safaltek</td><td>IT Services / Web &amp; Software Development</td><td>51-200</td><td>6</td><td>4</td><td class="muted">Not confirmed</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://careers.webdew.com/blogs/top-it-companies-in-chandigarh/</td></tr>
+<tr><td class="namecol">Multi Dimension Web Solutions Pvt Ltd</td><td>SCO 89-D, City Heart, Janta Nagar, Kharar, SAS Nagar, Punjab 140301</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=SCO+89-D+City+Heart+Janta+Nagar+Kharar</td><td class="linkcol">https://www.multidimensionwebsolutions.com/</td><td class="linkcol muted">Not confirmed - use contact form</td><td class="muted">Not published</td><td>+91 9915308533 / +91 9915380033</td><td class="linkcol">https://in.linkedin.com/company/multidimensionwebsolutions</td><td>Web Design / Development / Digital Marketing / SAP</td><td>11-50</td><td>5</td><td>3</td><td class="muted">Not confirmed</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://www.indiamart.com/multi-dimension-web-solutions/aboutus.html</td></tr>
+<tr><td class="namecol">E9 Solutions</td><td>No. 3/4, Shivalik Vihar, Patiala Road, Zirakpur, Chandigarh 140603</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Shivalik+Vihar+Patiala+Road+Zirakpur</td><td class="linkcol muted">Not confirmed - search &quot;E9 Solutions Zirakpur&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed</td><td>IT Services / Software Development</td><td>11-50</td><td>5</td><td>3</td><td class="muted">Not confirmed</td><td class="muted">Not confirmed</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://www.sulekha.com/e9-solutions-zirakpur-chandigarh-contact-address</td></tr>
+<tr><td class="namecol">Obelisk Infotech</td><td>Shop No. 16, New Defence Colony, Zirakpur Road, Zirakpur, Punjab 140603</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=New+Defence+Colony+Zirakpur+Road+Zirakpur</td><td class="linkcol muted">Not confirmed - search &quot;Obelisk Infotech Zirakpur&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed</td><td>IT Services / Software Development</td><td>11-50</td><td>5</td><td>3</td><td class="muted">Not confirmed</td><td class="muted">Not confirmed</td><td class="muted">Not confirmed</td><td>2026-06-11</td><td>https://www.sulekha.com/obelisk-infotech-zirakpur-road-zirakpur-contact-address</td></tr>
+<tr></tr>
+<tr><td class="namecol">Soft Radix Technologies Pvt Ltd</td><td>SM Heights, C-205, 3rd Floor, Phase 8B, Industrial Area, Mohali, Punjab 160055</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=SM+Heights+C-205+3rd+Floor+Phase+8B+Industrial+Area+Mohali</td><td class="linkcol">https://softradix.com/</td><td class="linkcol">https://softradix.com/careers</td><td class="muted">Not published - use careers page</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed - search linkedin.com/company/soft-radix-technologies</td><td>Mobile/Web Development / AI Services / Digital Marketing</td><td>50-200</td><td>7</td><td>8</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-14</td><td>https://in.indeed.com/cmp/Soft-Radix-Technologies</td></tr>
+<tr><td class="namecol">RevClerx Pvt Ltd</td><td>Bestech Business Tower, Sector 65, SAS Nagar, Mohali, Punjab 160062 (also Sec-83A, Mohali office)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Bestech+Business+Tower+Sector+65+SAS+Nagar+Mohali</td><td class="linkcol">https://www.revclerx.com/</td><td class="linkcol muted">Not confirmed - use job portal listings</td><td>hr@revclerx.com</td><td>0172-5093939</td><td class="linkcol">https://in.linkedin.com/company/revclerx</td><td>BPO / IT Services / Digital Marketing (QA</td><td> .NET</td><td> BDE roles)</td><td>200-500</td><td>7</td><td>3</td><td class="muted">Not confirmed</td><td>Yes</td><td class="muted">Not confirmed</td><td class="linkcol">2026-06-14</td><td class="linkcol">https://www.justdial.com/Chandigarh/Revclerx-Pvt-Ltd/0172PX172-X172-221202011310-Z7S7_BZDET</td></tr>
+<tr><td class="namecol">Finalrope Soft Solutions Pvt Ltd</td><td>H.No. 66, Golden City, Mundi Kharar, Kharar, Punjab 140301</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Golden+City+Mundi+Kharar+Punjab</td><td class="linkcol muted">Not confirmed - search &quot;Finalrope Soft Solutions&quot;</td><td class="linkcol muted">Not confirmed</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol">https://www.facebook.com/finalrope/</td><td>AI/ML Recruitment-Tech (AI-driven candidate assessment platform)</td><td>11-50</td><td>6</td><td>8</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-14</td><td>https://www.zaubacorp.com/FINALROPE-SOFT-SOLUTIONS-PRIVATE-LIMITED-U72900PB2020PTC052003</td></tr>
+<tr><td class="namecol">Cywarden Global Services Pvt Ltd</td><td>Mohali, Punjab (Chandigarh AI/ML roles posted; exact address not confirmed)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Cywarden+Global+Services+Mohali+Chandigarh</td><td class="linkcol">https://cywarden.com/</td><td class="linkcol muted">Not confirmed - use job portal listings</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol">https://in.linkedin.com/company/cywarden</td><td>Managed Cybersecurity / AI-driven Threat Operations (Cyforte.ai)</td><td>50-200</td><td>6</td><td>8</td><td>Yes</td><td>Yes</td><td class="muted">Not confirmed</td><td>2026-06-14</td><td>https://in.indeed.com/q-cywarden-l-chandigarh,-chandigarh-jobs.html</td></tr>
+<tr><td class="namecol">Matrid Technologies</td><td>Plot No. 962, Sector 82, Mohali, Punjab</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Plot+962+Sector+82+Mohali</td><td class="linkcol">https://matridtech.net/</td><td class="linkcol">https://matridtech.net/software-training-with-placement1/ (verify - also runs paid training, see Deliverable 10)</td><td>vivek@matridtech.net</td><td>+91 84275 33101</td><td class="linkcol muted">Not confirmed - search linkedin.com/company/matrid-technologies</td><td>Custom Software Development / IT Outsourcing (PHP/.NET/Android)</td><td>50-200</td><td>7</td><td>4</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes - but verify training-fee model first, see Deliverable 10</td><td>2026-06-14</td><td>https://www.naukri.com/matrid-technologies-jobs-careers-in-mohali-gid-771686</td></tr>
+<tr><td class="namecol">Weballures Technologies Pvt Ltd</td><td>SCF 60, Top Floor, Phase 10, Mohali, Punjab 160064</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=SCF+60+Top+Floor+Phase+10+Mohali</td><td class="linkcol">https://www.weballures.com/</td><td class="linkcol muted">Not confirmed - use job portal listings</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not confirmed - search linkedin.com/company/weballures</td><td>Web Design &amp; Development / SEO</td><td>11-50</td><td>6</td><td>3</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes (8-month training + placement, INR 15000 stipend, then ~3 LPA)</td><td>2026-06-14</td><td>https://www.sulekha.com/weballures-technologies-pvt-ltd-sas-nagar-mohali-contact-address</td></tr>
+<tr></tr>
+<tr><td class="namecol">NOTE_GROWTH_SIGNAL</td><td>Infosys and Tech Mahindra are reported to be planning to hire 5,000-10,000 new staff combined in the Mohali/Chandigarh region over the next two years (per marketmystique.com/it-companies-in-mohali) - if accurate, this is the single strongest fresher-hiring signal found across all research. Both companies already listed above (Infosys BPM, Tech Mahindra) - prioritize their official career portals and campus-hiring channels.</td><td class="linkcol"></td><td class="linkcol"></td><td class="linkcol"></td><td></td><td></td><td class="linkcol"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="linkcol"></td></tr>
+<tr><td class="namecol">NOTE_ADDR_UPDATE</td><td>Updated/additional addresses found for companies already listed above: Infosys BPM also has listing at &#x27;Block A and B, Plot Number 2, IT Park, Chandigarh, Phone 0172-5021100&#x27; (source: brandveda.in/blog/it-companies-in-chandigarh - cross-check against the Kishangarh DLF Building address listed earlier, both may be correct for different blocks of the same IT Park). Tech Mahindra also listed at &#x27;Plot Number 10, Rajiv Gandhi IT Park, Chandigarh, Phone 0172-5055200&#x27; (same source). IDS Infotech additional Chandigarh addresses: I-8 Rajiv Gandhi Technology Park; SCO 45-47 Sector 26, Madhya Marg; SCO 146-149 Sector 34-A (source: webdew careers blog).</td><td class="linkcol"></td><td class="linkcol"></td><td class="linkcol"></td><td></td><td></td><td class="linkcol"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="linkcol"></td></tr>
+<tr><td class="namecol">NOTE</td><td>This is Phase 1 of Deliverable 2 (~28 companies, all real and sourced). Reaching 200 verified entries with HR/recruitment emails and direct phone numbers is not realistic via public search - most companies route all hiring through ATS portals (careers page links above) rather than publishing email/phone. Use the search-link toolkit in 03 and 04 to expand this list with current, live listings.</td><td class="linkcol"></td><td class="linkcol"></td><td class="linkcol"></td><td></td><td></td><td class="linkcol"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr></tr>
+<tr><td class="namecol">NCR_SECTION</td><td>=== DELHI-NCR companies (Noida / Gurugram / Delhi) - added 2026-06-14. These are large/established NCR tech employers with strong, recurring fresher (campus + off-campus) pipelines. Almost all route hiring through their careers portals/ATS rather than publishing a recruitment phone or email - apply via the Careers Page column. Phone numbers shown are general corporate switchboards (verify) only where a useful one was found.</td><td class="linkcol"></td><td class="linkcol"></td><td class="linkcol"></td><td></td><td></td><td class="linkcol"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="linkcol"></td></tr>
+<tr><td class="namecol">HCLTech</td><td>Noida (HQ): Plot No. 3A, Sector 126, Noida 201304; also Gurugram</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=HCLTech+Sector+126+Noida</td><td class="linkcol">https://www.hcltech.com/</td><td class="linkcol">https://www.hcltech.com/careers</td><td class="muted">Not published - use careers portal</td><td class="muted">Not published - apply via portal</td><td class="linkcol">https://www.linkedin.com/company/hcltech</td><td>IT Services / Cloud / App Modernisation</td><td>224000+</td><td>8</td><td>7</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes (TechBee + fresher intake)</td><td>2026-06-14</td><td>https://www.hcltech.com/careers</td></tr>
+<tr><td class="namecol">Coforge</td><td>Noida (HQ): 8, Software Technology Parks of India, Sector 62, Noida; also Greater Noida</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Coforge+Sector+62+Noida</td><td class="linkcol">https://www.coforge.com/</td><td class="linkcol">https://careers.coforge.com/</td><td class="muted">Not published - use careers portal</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/coforge</td><td>Digital Services / BFSI / Insurance</td><td>25000+</td><td>8</td><td>7</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes (Graduate Engineer Trainee 2026 drive)</td><td>2026-06-14</td><td>https://careers.coforge.com/</td></tr>
+<tr><td class="namecol">Paytm (One97 Communications)</td><td>Noida (HQ): B-121, Sector 5, Noida 201301</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Paytm+One97+Sector+5+Noida</td><td class="linkcol">https://paytm.com/</td><td class="linkcol">https://paytm.com/careers/</td><td class="muted">Not published - use careers portal</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/paytm</td><td>Fintech / Digital Payments</td><td>10000+</td><td>7</td><td>8</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes (strong product/AI eng roles)</td><td>2026-06-14</td><td>https://paytm.com/careers/</td></tr>
+<tr><td class="namecol">Adobe India</td><td>Noida: A-01, Sector 132, Noida 201304 (major R&amp;D centre)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Adobe+Sector+132+Noida</td><td class="linkcol">https://www.adobe.com/</td><td class="linkcol">https://careers.adobe.com/</td><td class="muted">Not published - use careers portal</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/adobe</td><td>Creative &amp; Digital Media Software</td><td>30000+</td><td>7</td><td>9</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes (competitive new-grad + intern hiring)</td><td>2026-06-14</td><td>https://careers.adobe.com/</td></tr>
+<tr><td class="namecol">Samsung R&amp;D Institute (SRI-Noida)</td><td>Noida: Logix Cyber Park, Tower C, Sector 62, Noida</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Samsung+R%26D+Logix+Cyber+Park+Sector+62+Noida</td><td class="linkcol">https://www.samsung.com/in/</td><td class="linkcol">https://www.samsung.com/in/about-us/careers/</td><td class="muted">Not published - use careers portal</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/samsung-electronics</td><td>Mobile / Embedded / AI Systems</td><td>5000+ (Noida R&amp;D)</td><td>7</td><td>9</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes</td><td>2026-06-14</td><td>https://www.samsung.com/in/about-us/careers/</td></tr>
+<tr><td class="namecol">GlobalLogic (Hitachi)</td><td>Noida (HQ): A-1, Sector 58, Noida 201301; also Gurugram</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=GlobalLogic+Sector+58+Noida</td><td class="linkcol">https://www.globallogic.com/</td><td class="linkcol">https://www.globallogic.com/career/</td><td class="muted">Not published - use careers portal</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/globallogic</td><td>Digital Product Engineering</td><td>30000+</td><td>8</td><td>7</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes (large engineering fresher intake)</td><td>2026-06-14</td><td>https://www.globallogic.com/career/</td></tr>
+<tr><td class="namecol">R Systems International</td><td>Noida (HQ): C-40, Sector 59, Noida 201307</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=R+Systems+Sector+59+Noida</td><td class="linkcol">https://www.rsystems.com/</td><td class="linkcol">https://www.rsystems.com/careers/</td><td class="muted">Not published - use careers portal</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/r-systems</td><td>Product Engineering / Data / Cloud</td><td>5000+</td><td>8</td><td>7</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes</td><td>2026-06-14</td><td>https://www.rsystems.com/careers/</td></tr>
+<tr><td class="namecol">EXL Service</td><td>Noida (HQ): Plot No. 6 &amp; 7, Sector 144, Noida; also Gurugram</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=EXL+Service+Sector+144+Noida</td><td class="linkcol">https://www.exlservice.com/</td><td class="linkcol">https://www.exlservice.com/careers</td><td class="muted">Not published - use careers portal</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/exl</td><td>Data Analytics / AI / BPM</td><td>55000+</td><td>8</td><td>8</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes (strong analytics/AI fresher hiring)</td><td>2026-06-14</td><td>https://www.exlservice.com/careers</td></tr>
+<tr><td class="namecol">Impressico Business Solutions</td><td>Noida: H-65, Sector 63, Noida 201301</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Impressico+Sector+63+Noida</td><td class="linkcol">https://www.impressico.com/</td><td class="linkcol">https://www.impressico.com/careers/</td><td class="muted">Not published - use careers portal</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/impressico-business-solutions</td><td>Data Engineering / GenAI / Python Full-Stack</td><td>500-1000</td><td>8</td><td>8</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes (active 2024-26 grad drive - Trainee Engineer)</td><td>2026-06-14</td><td>https://www.impressico.com/careers/</td></tr>
+<tr><td class="namecol">Genpact</td><td>Gurugram (HQ): DLF Cyber City, Phase V, Gurugram; also Noida</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Genpact+DLF+Cyber+City+Gurugram</td><td class="linkcol">https://www.genpact.com/</td><td class="linkcol">https://www.genpact.com/careers</td><td class="muted">Not published - use careers portal</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/genpact</td><td>Data Analytics / Automation / BPM</td><td>125000+</td><td>8</td><td>7</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes</td><td>2026-06-14</td><td>https://www.genpact.com/careers</td></tr>
+<tr><td class="namecol">Amdocs</td><td>Gurugram: DLF Cyber City / Sector 25, Gurugram</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Amdocs+Gurugram</td><td class="linkcol">https://www.amdocs.com/</td><td class="linkcol">https://careers.amdocs.com/</td><td class="muted">Not published - use careers portal</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/amdocs</td><td>Telecom Billing / CX Software</td><td>30000+</td><td>8</td><td>6</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes (regular new-grad software hiring)</td><td>2026-06-14</td><td>https://careers.amdocs.com/</td></tr>
+<tr><td class="namecol">Nagarro (Gurugram)</td><td>Gurugram: Plot 19, Sector 44, Gurugram 122002</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Nagarro+Sector+44+Gurugram</td><td class="linkcol">https://www.nagarro.com/</td><td class="linkcol">https://www.nagarro.com/en/careers/job-search</td><td class="muted">Not published - use careers portal</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/nagarro</td><td>Digital Engineering / Agile Software</td><td>18000+</td><td>7</td><td>7</td><td>Yes</td><td>Yes</td><td>Yes</td><td>2026-06-14</td><td>https://www.nagarro.com/en/careers/job-search</td></tr>
+<tr><td class="namecol">Publicis Sapient</td><td>Gurugram: DLF Cyber City; also Noida &amp; Bengaluru</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Publicis+Sapient+DLF+Cyber+City+Gurugram</td><td class="linkcol">https://www.publicissapient.com/</td><td class="linkcol">https://careers.publicissapient.com/</td><td class="muted">Not published - use careers portal</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/publicissapient</td><td>Digital Transformation Consulting</td><td>24000+</td><td>7</td><td>7</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes</td><td>2026-06-14</td><td>https://careers.publicissapient.com/</td></tr>
+<tr><td class="namecol">Thoughtworks</td><td>Gurugram: DLF Cyber City, Gurugram</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Thoughtworks+Gurugram</td><td class="linkcol">https://www.thoughtworks.com/</td><td class="linkcol">https://www.thoughtworks.com/careers</td><td class="muted">Not published - use careers portal</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/thoughtworks</td><td>Software Engineering / Consulting</td><td>10500+</td><td>7</td><td>7</td><td>Yes</td><td>Yes</td><td>Yes (2026 SE grad drive)</td><td>2026-06-14</td><td>https://www.thoughtworks.com/careers</td></tr>
+<tr><td class="namecol">Zomato</td><td>Gurugram (HQ): Tower A, Behind L&amp;T Tower, DLF Phase 1, Gurugram</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Zomato+DLF+Phase+1+Gurugram</td><td class="linkcol">https://www.zomato.com/</td><td class="linkcol">https://www.zomato.com/careers</td><td class="muted">Not published - use careers portal</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/zomato</td><td>Food-Tech / Consumer Product</td><td>5000+</td><td>7</td><td>8</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes</td><td>2026-06-14</td><td>https://www.zomato.com/careers</td></tr>
+<tr><td class="namecol">MakeMyTrip</td><td>Gurugram (HQ): Tower A &amp; B, SP Infocity, Sector 30, Gurugram</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=MakeMyTrip+Sector+30+Gurugram</td><td class="linkcol">https://www.makemytrip.com/</td><td class="linkcol">https://careers.makemytrip.com/</td><td class="muted">Not published - use careers portal</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/makemytrip</td><td>Travel-Tech / Consumer Product</td><td>3000+</td><td>7</td><td>7</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes</td><td>2026-06-14</td><td>https://careers.makemytrip.com/</td></tr>
+<tr><td class="namecol">Spinny</td><td>Gurugram (HQ): Sector 44, Gurugram</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Spinny+Sector+44+Gurugram</td><td class="linkcol">https://www.spinny.com/</td><td class="linkcol">https://www.spinny.com/careers/</td><td class="muted">Not published - use careers portal</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/spinny</td><td>Auto-Tech / E-commerce Startup</td><td>3000+</td><td>7</td><td>7</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes</td><td>2026-06-14</td><td>https://www.spinny.com/careers/</td></tr>
+<tr><td class="namecol">Oracle India</td><td>Noida &amp; Gurugram (multiple development centres)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Oracle+India+Noida+Gurugram</td><td class="linkcol">https://www.oracle.com/in/</td><td class="linkcol">https://www.oracle.com/in/careers/</td><td class="muted">Not published - use careers portal</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/oracle</td><td>Cloud Infra / Databases / Enterprise SW</td><td>20000+ (India)</td><td>7</td><td>8</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes</td><td>2026-06-14</td><td>https://www.oracle.com/in/careers/</td></tr>
+<tr><td class="namecol">IBM India</td><td>Gurugram &amp; Noida (multiple sites)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=IBM+India+Gurugram+Noida</td><td class="linkcol">https://www.ibm.com/in-en</td><td class="linkcol">https://www.ibm.com/careers/</td><td class="muted">Not published - use careers portal</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/ibm</td><td>Consulting / Cloud / AI (watsonx)</td><td>50000+ (India)</td><td>7</td><td>8</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes (Associate System Engineer off-campus drive)</td><td>2026-06-14</td><td>https://www.ibm.com/careers/</td></tr>
+<tr><td class="namecol">Accenture (NCR)</td><td>Gurugram &amp; Noida (multiple delivery centres)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Accenture+Gurugram+Noida</td><td class="linkcol">https://www.accenture.com/in-en</td><td class="linkcol">https://www.accenture.com/in-en/careers</td><td class="muted">Not published - use careers portal</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/accenture</td><td>Consulting / Cloud / Automation</td><td>733000+ (global)</td><td>8</td><td>6</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes (very high ASE fresher volume)</td><td>2026-06-14</td><td>https://www.accenture.com/in-en/careers</td></tr>
+<tr></tr>
+<tr><td class="namecol">NCR_STARTUP_SECTION</td><td>=== Mid-size DELHI-NCR product companies / startups (added 2026-06-14) - product-based (not services), generally more reachable for freshers than the IT giants above. Several publish a corporate phone (shown below); most still hire via their careers portal. Use the live-search buttons in Deliverable 3 to find current fresher/SDE-1/graduate openings at each.</td><td class="linkcol"></td><td class="linkcol"></td><td class="linkcol"></td><td></td><td></td><td class="linkcol"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="linkcol"></td></tr>
+<tr><td class="namecol">IndiaMART InterMESH Ltd</td><td>6th Floor, Tower 2, Assotech Business Cresterra, Plot 22, Sector 135, Noida 201305</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Assotech+Business+Cresterra+Sector+135+Noida</td><td class="linkcol">https://www.indiamart.com/</td><td class="linkcol">https://careers.indiamart.com/</td><td class="muted">Not published - use careers portal</td><td>+91-120-6777800</td><td class="linkcol">https://www.linkedin.com/company/indiamart</td><td>B2B E-commerce Marketplace / SaaS</td><td>5000-7000</td><td>8</td><td>6</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes</td><td>2026-06-14</td><td>https://corporate.indiamart.com/branch-offices/</td></tr>
+<tr><td class="namecol">Info Edge (Naukri.com / 99acres)</td><td>B-8, Sector 132, near Jaypee Wishtown, Noida 201304</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Info+Edge+B-8+Sector+132+Noida</td><td class="linkcol">https://www.infoedge.in/</td><td class="linkcol">https://www.infoedge.in/ (careers via naukri.com)</td><td class="muted">Not published - use careers portal</td><td>+91-120-4841100</td><td class="linkcol">https://www.linkedin.com/company/info-edge-india-ltd</td><td>Internet Classifieds / Recruitment &amp; Real-Estate Tech</td><td>7000+</td><td>8</td><td>6</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes</td><td>2026-06-14</td><td>https://www.infoedge.in/Contact/RegisteredCorporateOffice</td></tr>
+<tr><td class="namecol">PhysicsWallah (PW)</td><td>A-13/5 &amp; Noida One, Sector 62, Noida 201309</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=PhysicsWallah+Noida+One+Sector+62+Noida</td><td class="linkcol">https://www.pw.live/</td><td class="linkcol">https://www.pw.live/careers</td><td class="muted">Not published - use careers portal</td><td class="muted">Not published - use pw.live/contact-us</td><td class="linkcol">https://www.linkedin.com/company/physicswallah</td><td>EdTech (online/offline/hybrid)</td><td>5000+</td><td>7</td><td>6</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes</td><td>2026-06-14</td><td>https://www.pw.live/contact-us</td></tr>
+<tr><td class="namecol">Innovaccer</td><td>2nd &amp; 9th Floor, Tower 3, Candor Techspace, Sector 62, Noida 201309</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Candor+Techspace+Sector+62+Noida+Innovaccer</td><td class="linkcol">https://innovaccer.com/</td><td class="linkcol">https://innovaccer.com/careers</td><td class="muted">Not published - use careers portal</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/innovaccer</td><td>Healthcare AI / Data Analytics Cloud</td><td>1500+</td><td>7</td><td>9</td><td>Yes</td><td>Yes</td><td>Yes</td><td>2026-06-14</td><td>https://innovaccer.com/careers</td></tr>
+<tr><td class="namecol">Cars24</td><td>Tower C, 7th Floor, SAS Towers, Medanta the Medicity, Sector 38, Gurugram 122001 (reg. office Sector 44)</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=SAS+Towers+Sector+38+Gurugram+Cars24</td><td class="linkcol">https://www.cars24.com/</td><td class="linkcol">https://www.cars24.com/careers/</td><td class="muted">Not published - use careers portal</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/cars24</td><td>Auto-Tech / E-commerce (used cars)</td><td>9000+</td><td>7</td><td>7</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes</td><td>2026-06-14</td><td>https://www.cars24.com/careers/</td></tr>
+<tr><td class="namecol">Urban Company</td><td>7th &amp; 8th Floor, Plot 183, Udyog Vihar Phase 1, Sector 20, Gurugram 122016</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Urban+Company+Udyog+Vihar+Phase+1+Sector+20+Gurugram</td><td class="linkcol">https://www.urbancompany.com/</td><td class="linkcol">https://careers.urbancompany.com/</td><td class="muted">Not published - use careers portal</td><td>+91 124 4058254</td><td class="linkcol">https://in.linkedin.com/company/urbanclap.com-head-office-</td><td>Home Services Marketplace</td><td>3000+</td><td>7</td><td>7</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes</td><td>2026-06-14</td><td>https://craft.co/urbanclap/locations</td></tr>
+<tr><td class="namecol">MobiKwik (One MobiKwik Systems)</td><td>Unit 102, 1st Floor, Block-B, Pegasus One, Golf Course Road, Sector 53, Gurugram 122003</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Pegasus+One+Golf+Course+Road+Sector+53+Gurugram</td><td class="linkcol">https://www.mobikwik.com/</td><td class="linkcol">https://www.mobikwik.com/careers</td><td>ta@mobikwik.com</td><td class="muted">Not published</td><td class="linkcol">https://in.linkedin.com/company/one-mobikwik-systems-private-limited</td><td>Fintech / Digital Payments</td><td>1000+</td><td>7</td><td>7</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes</td><td>2026-06-14</td><td>https://www.mobikwik.com/careers</td></tr>
+<tr><td class="namecol">Lenskart</td><td>Ground Floor, Vipul Tech Square, Golf Course Road, Sector 42, Gurugram 122002</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Vipul+Tech+Square+Sector+42+Gurugram+Lenskart</td><td class="linkcol">https://www.lenskart.com/</td><td class="linkcol">https://hiring.lenskart.com/</td><td class="muted">Not published - use careers portal</td><td class="muted">Not published</td><td class="linkcol">https://in.linkedin.com/company/lenskart-com</td><td>Eyewear Retail-Tech / E-commerce</td><td>5000+</td><td>7</td><td>7</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes</td><td>2026-06-14</td><td>https://hiring.lenskart.com/locations</td></tr>
+<tr><td class="namecol">Delhivery</td><td>Plot 5, Sector 44 / DLF Cyber City, Gurugram 122002</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Delhivery+Sector+44+Gurugram</td><td class="linkcol">https://www.delhivery.com/</td><td class="linkcol">https://www.delhivery.com/careers</td><td class="muted">Not published - use careers portal</td><td>+91-11-49058932</td><td class="linkcol">https://www.linkedin.com/company/delhivery</td><td>Logistics-Tech / Supply Chain (AI TMS)</td><td>10000+</td><td>7</td><td>7</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes</td><td>2026-06-14</td><td>https://www.justdial.com/Gurgaon/Delhivery-Pvt-Ltd-Head-Office-Near-Ramanda-Hotel-Gurgaon-Sector-44/011PXX11-XX11-120518153127-F8Y5_BZDET</td></tr>
+<tr><td class="namecol">Cvent India</td><td>Tower C &amp; D, DLF Cyber City SEZ, Sector 24 &amp; 25A, Gurugram 122002</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Cvent+DLF+Cyber+City+Sector+25+Gurugram</td><td class="linkcol">https://www.cvent.com/</td><td class="linkcol">https://careers.cvent.com/</td><td class="muted">Not published - use careers portal</td><td class="muted">Not published</td><td class="linkcol">https://www.linkedin.com/company/cvent</td><td>Event / Hospitality SaaS</td><td>5500+</td><td>8</td><td>6</td><td class="muted">Not confirmed</td><td>Yes</td><td>Yes (recurring fresher off-campus drives)</td><td>2026-06-14</td><td>https://careers.cvent.com/</td></tr>
+<tr><td class="namecol">Pristyn Care</td><td>Tower B, DLF Cyber City, Sector 24, Gurugram; also 3rd Floor, Capital Cyberscape, Sector 59, Gurugram 122102</td><td class="linkcol">https://www.google.com/maps/search/?api=1&amp;query=Pristyn+Care+Capital+Cyberscape+Sector+59+Gurugram</td><td class="linkcol">https://www.pristyncare.com/</td><td class="linkcol">https://www.pristyncare.com/company/careers/</td><td class="muted">Not published - use careers portal</td><td class="muted">Not published</td><td class="linkcol">https://in.linkedin.com/company/pristyncare</td><td>Healthtech / AI (surgery care)</td><td>1700+</td><td>7</td><td>6</td><td>Yes</td><td>Yes</td><td>Yes</td><td>2026-06-14</td><td>https://www.pristyncare.com/company/careers/</td></tr>
+</tbody></table></div><hr><h2 id="d3">Deliverable 3: Active Openings &amp; Live Search-Link Toolkit</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Company Name</th><th>Role</th><th>Experience Required</th><th>Salary Range</th><th>Application Link</th><th>Hiring Manager Name</th><th>Recruiter Name</th><th>Recruiter LinkedIn URL</th><th>Application Deadline</th><th>Status</th><th>Date Verified</th><th>Notes/Source</th></tr></thead>
+<tbody>
+<tr><td class="namecol">ToXSL Technologies</td><td>Software Developer Intern (Off-Campus Hiring Batch 2026-27)</td><td>Fresher / 0 yrs (Bachelor&#x27;s degree</td><td> any relevant field)</td><td class="linkcol muted">Not published - confirm at interview</td><td>https://talent.toxsl.com/jobs</td><td class="muted">Not published</td><td class="linkcol muted">Not published</td><td class="muted">Not published</td><td>Rolling - check portal</td><td>Active as of 2026-06-11</td><td>2026-06-11</td><td>Internship -&gt; FTE track. Source: https://talent.toxsl.com/jobs and https://bebee.com/in/jobs/off-campus-hiring-for-fresher-batch-2026-27-toxsl-technologies-mohali-punjab--theirstack-626479711</td></tr>
+<tr><td class="namecol">Tech Mahindra</td><td>International Voice Process (Walk-in) - NOT an AI/ML/SDE role but useful as an income bridge</td><td>Fresher</td><td>~Rs 5 LPA per listing (verify - voice process roles are usually lower</td><td class="linkcol"> confirm before relying on this figure)</td><td class="muted">Not published - search &quot;Tech Mahindra walk-in Chandigarh Mohali&quot;</td><td class="muted">Not published</td><td class="linkcol muted">Not published</td><td class="muted">Not published</td><td>Listed window 10-31 May 2026 - LIKELY EXPIRED, re-check for current drives</td><td>Status uncertain - re-verify</td><td>2026-06-11</td><td>Source: https://freshersrecruitment.co.in/tech-mahindra-walk-in-2026/ - flagged because window appears to have already passed; included only to show this employer runs recurring walk-ins, re-search for current dates</td></tr>
+<tr><td class="namecol">Soft Radix Technologies</td><td>AI/ML Engineer (Fresher)</td><td>Fresher / 0 yrs (interest in GenAI, LLMs, AI agents, chatbots, automation)</td><td class="muted">Not published - confirm at interview</td><td class="linkcol">https://in.indeed.com/q-soft-radix-technologies-l-mohali,-punjab-jobs.html</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not published</td><td>Rolling - check portal</td><td>Active as of 2026-06-14</td><td>2026-06-14</td><td>Source: https://softradix.com/careers and Indeed listing</td></tr>
+<tr><td class="namecol">Cywarden Global Services</td><td>AI/ML Engineer (Cyforte.ai AI Security Agents - ML model development/ops)</td><td class="muted">Not published - verify (multiple roles posted)</td><td class="muted">Not published - confirm at interview</td><td class="linkcol">https://in.indeed.com/q-cywarden-l-chandigarh,-chandigarh-jobs.html</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not published</td><td>Rolling - check portal</td><td>Active as of 2026-06-14 (16 Cywarden roles in Chandigarh seen as of 2026-02-19)</td><td>2026-06-14</td><td>Source: https://cywarden.com/ and Indeed listing</td></tr>
+<tr><td class="namecol">Finalrope Soft Solutions</td><td>AI/ML Engineer (AI agents for HR/recruitment assessment platform)</td><td class="muted">Not published - verify</td><td class="muted">Not published - confirm at interview</td><td class="linkcol muted">Not published - search &quot;Finalrope Soft Solutions careers&quot;</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not published</td><td>Rolling - check portal</td><td>Active as of 2026-06-14 (small company - verify listing still open)</td><td>2026-06-14</td><td>Source: https://www.zaubacorp.com/FINALROPE-SOFT-SOLUTIONS-PRIVATE-LIMITED-U72900PB2020PTC052003 and job portal AI/ML posting</td></tr>
+<tr><td class="namecol">RevClerx Pvt Ltd</td><td>QA Engineer / .NET Developer / Business Development Executive (Fresher BDE track, US shift)</td><td>Fresher (BDE 0-2 yrs; QA/.NET roles ask 1-5 yrs - verify per role)</td><td class="muted">Not published - confirm at interview</td><td class="linkcol">https://in.indeed.com/cmp/Revclerx-Pvt-Ltd</td><td class="muted">Not published</td><td class="muted">Not published</td><td class="linkcol muted">Not published</td><td>Rolling - check portal</td><td>Active as of 2026-06-14</td><td>2026-06-14</td><td>Source: https://tricitycareer.com/job/revclerx-pvt-ltd-mohali-2-dot-net-developer/ and https://www.myamcat.com/jobs/description/client-service-executive-job-for-fresher-in-revclerx-pvt-ltd-in-mohali/24513 - BDE roles are US-shift (6:30pm-3:30am)</td></tr>
+<tr></tr>
+<tr><td class="namecol">NOTE_1</td><td>Real-time job postings change multiple times per day and cannot be reliably &#x27;verified&#x27; in a static document. Below is a toolkit of pre-built, live search links - one row per role per portal - that your team should check DAILY. These links are constructed using each portal&#x27;s standard search-URL format and will always show CURRENT openings.</td><td></td><td></td><td class="linkcol"></td><td></td><td></td><td class="linkcol"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="namecol">Role</td><td>Naukri Search Link</td><td>LinkedIn Jobs Search Link</td><td>Indeed Search Link</td><td class="linkcol">Internshala Search Link (for internships)</td><td></td><td></td><td class="linkcol"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="namecol">AI Engineer</td><td>https://www.naukri.com/ai-engineer-jobs-in-chandigarh-mohali</td><td>https://www.linkedin.com/jobs/search/?keywords=AI%20Engineer&amp;location=Chandigarh%2C%20India</td><td>https://in.indeed.com/q-AI-Engineer-l-Chandigarh</td><td class="linkcol">https://internshala.com/internships/ai-engineer-internship-in-chandigarh</td><td></td><td></td><td class="linkcol"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="namecol">AI/ML Engineer</td><td>https://www.naukri.com/ai-ml-engineer-jobs-in-chandigarh-mohali</td><td>https://www.linkedin.com/jobs/search/?keywords=AI%2FML%20Engineer&amp;location=Chandigarh%2C%20India</td><td>https://in.indeed.com/q-AI-ML-Engineer-l-Chandigarh</td><td class="linkcol">https://internshala.com/internships/machine-learning-internship-in-chandigarh</td><td></td><td></td><td class="linkcol"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="namecol">Machine Learning Engineer</td><td>https://www.naukri.com/machine-learning-engineer-jobs-in-chandigarh-mohali</td><td>https://www.linkedin.com/jobs/search/?keywords=Machine%20Learning%20Engineer&amp;location=Chandigarh%2C%20India</td><td>https://in.indeed.com/q-Machine-Learning-Engineer-l-Chandigarh</td><td class="linkcol">https://internshala.com/internships/machine-learning-internship-in-chandigarh</td><td></td><td></td><td class="linkcol"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="namecol">Python Developer</td><td>https://www.naukri.com/python-developer-jobs-in-chandigarh-mohali</td><td>https://www.linkedin.com/jobs/search/?keywords=Python%20Developer&amp;location=Chandigarh%2C%20India</td><td>https://in.indeed.com/q-Python-Developer-l-Chandigarh</td><td class="linkcol">https://internshala.com/internships/python-internship-in-chandigarh</td><td></td><td></td><td class="linkcol"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="namecol">Software Developer (Fresher)</td><td>https://www.naukri.com/software-developer-fresher-jobs-in-chandigarh</td><td>https://www.linkedin.com/jobs/search/?keywords=Software%20Developer%20Fresher&amp;location=Chandigarh%2C%20India</td><td>https://in.indeed.com/q-fresher-software-l-chandigarh</td><td class="linkcol">https://internshala.com/internships/software-development-internship-in-chandigarh</td><td></td><td></td><td class="linkcol"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="namecol">Associate Software Engineer</td><td>https://www.naukri.com/associate-software-engineer-jobs-in-chandigarh-mohali</td><td>https://www.linkedin.com/jobs/search/?keywords=Associate%20Software%20Engineer&amp;location=Chandigarh%2C%20India</td><td>https://in.indeed.com/q-Associate-Software-Engineer-l-Chandigarh</td><td class="linkcol">https://internshala.com/internships/software-development-internship-in-chandigarh</td><td></td><td></td><td class="linkcol"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="namecol">Full Stack Developer</td><td>https://www.naukri.com/full-stack-developer-jobs-in-chandigarh-mohali</td><td>https://www.linkedin.com/jobs/search/?keywords=Full%20Stack%20Developer&amp;location=Chandigarh%2C%20India</td><td>https://in.indeed.com/q-Full-Stack-Developer-l-Chandigarh</td><td class="linkcol">https://internshala.com/internships/full-stack-development-internship-in-chandigarh</td><td></td><td></td><td class="linkcol"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="namecol">Backend Developer</td><td>https://www.naukri.com/backend-developer-jobs-in-chandigarh-mohali</td><td>https://www.linkedin.com/jobs/search/?keywords=Backend%20Developer&amp;location=Chandigarh%2C%20India</td><td>https://in.indeed.com/q-Backend-Developer-l-Chandigarh</td><td class="linkcol">https://internshala.com/internships/backend-development-internship-in-chandigarh</td><td></td><td></td><td class="linkcol"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="namecol">Data Analyst</td><td>https://www.naukri.com/data-analyst-jobs-in-chandigarh-mohali</td><td>https://www.linkedin.com/jobs/search/?keywords=Data%20Analyst&amp;location=Chandigarh%2C%20India</td><td>https://in.indeed.com/q-Data-Analyst-l-Chandigarh</td><td class="linkcol">https://internshala.com/internships/data-analytics-internship-in-chandigarh</td><td></td><td></td><td class="linkcol"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="namecol">Business Analyst</td><td>https://www.naukri.com/business-analyst-jobs-in-chandigarh-mohali</td><td>https://www.linkedin.com/jobs/search/?keywords=Business%20Analyst&amp;location=Chandigarh%2C%20India</td><td>https://in.indeed.com/q-Business-Analyst-l-Chandigarh</td><td class="linkcol">https://internshala.com/internships/business-analyst-internship-in-chandigarh</td><td></td><td></td><td class="linkcol"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="namecol">QA Engineer</td><td>https://www.naukri.com/qa-engineer-jobs-in-chandigarh-mohali</td><td>https://www.linkedin.com/jobs/search/?keywords=QA%20Engineer&amp;location=Chandigarh%2C%20India</td><td>https://in.indeed.com/q-QA-Engineer-l-Chandigarh</td><td class="linkcol">https://internshala.com/internships/software-testing-internship-in-chandigarh</td><td></td><td></td><td class="linkcol"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="namecol">Automation Tester</td><td>https://www.naukri.com/automation-tester-jobs-in-chandigarh-mohali</td><td>https://www.linkedin.com/jobs/search/?keywords=Automation%20Tester&amp;location=Chandigarh%2C%20India</td><td>https://in.indeed.com/q-Automation-Tester-l-Chandigarh</td><td class="linkcol">https://internshala.com/internships/software-testing-internship-in-chandigarh</td><td></td><td></td><td class="linkcol"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="namecol">Technical Support Engineer</td><td>https://www.naukri.com/technical-support-engineer-jobs-in-chandigarh-mohali</td><td>https://www.linkedin.com/jobs/search/?keywords=Technical%20Support%20Engineer&amp;location=Chandigarh%2C%20India</td><td>https://in.indeed.com/q-Technical-Support-Engineer-l-Chandigarh</td><td class="linkcol">https://internshala.com/internships/technical-support-internship-in-chandigarh</td><td></td><td></td><td class="linkcol"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="namecol">Graduate Trainee Engineer</td><td>https://www.naukri.com/graduate-trainee-jobs-in-chandigarh-mohali</td><td>https://www.linkedin.com/jobs/search/?keywords=Graduate%20Trainee%20Engineer&amp;location=Chandigarh%2C%20India</td><td>https://in.indeed.com/q-Graduate-Trainee-Engineer-l-Chandigarh</td><td class="linkcol">https://internshala.com/internships/jobs-in-chandigarh</td><td></td><td></td><td class="linkcol"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="namecol">Cloud Engineer</td><td>https://www.naukri.com/cloud-engineer-jobs-in-chandigarh-mohali</td><td>https://www.linkedin.com/jobs/search/?keywords=Cloud%20Engineer&amp;location=Chandigarh%2C%20India</td><td>https://in.indeed.com/q-Cloud-Engineer-l-Chandigarh</td><td class="linkcol">https://internshala.com/internships/cloud-computing-internship-in-chandigarh</td><td></td><td></td><td class="linkcol"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="namecol">DevOps Engineer</td><td>https://www.naukri.com/devops-engineer-jobs-in-chandigarh-mohali</td><td>https://www.linkedin.com/jobs/search/?keywords=DevOps%20Engineer&amp;location=Chandigarh%2C%20India</td><td>https://in.indeed.com/q-DevOps-Engineer-l-Chandigarh</td><td class="linkcol">https://internshala.com/internships/devops-internship-in-chandigarh</td><td></td><td></td><td class="linkcol"></td><td></td><td></td><td></td><td></td></tr>
+<tr></tr>
+<tr><td class="namecol">NOTE_2</td><td>Additional aggregator portals worth checking daily (general fresher feeds, not role-specific links): Glassdoor (glassdoor.co.in - search &#x27;freshers it jobs in Mohali&#x27;), WorkIndia (workindia.in/jobs-in-chandigarh), JobHai (jobhai.com - &#x27;jobs in Mohali Chandigarh for freshers&#x27;), SimplyHired (simplyhired.co.in). Sources: https://www.glassdoor.co.in/Job/mohali-freshers-it-jobs-SRCH_IL.0,6_IC4469455_KO7,18.htm , https://www.workindia.in/jobs-in-chandigarh/ , https://www.jobhai.com/jobs-in-mohali-chandigarh-for-freshers-flcty</td><td></td><td></td><td class="linkcol"></td><td></td><td></td><td class="linkcol"></td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody></table></div><hr><section id="d4"><h1>Recruiter / HR / TA Search Toolkit (Deliverable 4)</h1>
+<h2>Why this format instead of a static list of 300 names</h2>
+<p>Compiling a database of 300 named individuals' LinkedIn profiles + personal contact details for cold outreach is something we won't do as a bulk-scrape — it's the kind of artifact that turns into spam at scale, and LinkedIn's own search is more current and personalized than any static list could be (it shows mutual connections, recent activity, and "open to messages" status, which matter a lot for response rates).</p>
+<p>Instead: each of the 6 of you should run these searches from your <strong>own LinkedIn account</strong> (results differ per account/network). This is more effective and takes ~2 minutes per company.</p>
+<h2>How to use</h2>
+<ol>
+<li>Open LinkedIn, click the search bar, paste the keyword string below.</li>
+<li>Filter: <strong>People</strong> → Location: "Chandigarh, India" / "Mohali, Punjab, India" / "Panchkula, Haryana, India".</li>
+<li>Look for titles containing: "Talent Acquisition", "TA", "HR", "Recruiter", "Campus Hiring", "HRBP".</li>
+<li>Send a short, personalized connection note (template below) — do NOT mass-blast identical messages from multiple accounts to the same person; it reads as spam and can get you all blocked.</li>
+</ol>
+<h2>Per-company search strings</h2>
+<table>
+<thead>
+<tr>
+<th>Company</th>
+<th>LinkedIn People Search (paste into LinkedIn search bar)</th>
+<th>Google X-Ray (paste into Google)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Infosys</td>
+<td><code>Talent Acquisition Infosys Chandigarh</code></td>
+<td><code>site:linkedin.com/in "Infosys" "Talent Acquisition" Chandigarh OR Mohali</code></td>
+</tr>
+<tr>
+<td>TCS</td>
+<td><code>Talent Acquisition TCS Chandigarh</code></td>
+<td><code>site:linkedin.com/in "Tata Consultancy Services" "Talent Acquisition" Chandigarh</code></td>
+</tr>
+<tr>
+<td>Wipro</td>
+<td><code>Talent Acquisition Wipro Chandigarh</code></td>
+<td><code>site:linkedin.com/in "Wipro" "Recruiter" Chandigarh OR Mohali</code></td>
+</tr>
+<tr>
+<td>HCLTech</td>
+<td><code>Talent Acquisition HCLTech Chandigarh</code></td>
+<td><code>site:linkedin.com/in "HCLTech" "Talent Acquisition" Chandigarh OR Mohali</code></td>
+</tr>
+<tr>
+<td>Tech Mahindra</td>
+<td><code>Talent Acquisition Tech Mahindra Mohali</code></td>
+<td><code>site:linkedin.com/in "Tech Mahindra" "Talent Acquisition" Mohali OR Chandigarh</code></td>
+</tr>
+<tr>
+<td>Accenture</td>
+<td><code>Talent Acquisition Accenture Chandigarh</code></td>
+<td><code>site:linkedin.com/in "Accenture" "Recruiter" Chandigarh</code></td>
+</tr>
+<tr>
+<td>Cognizant</td>
+<td><code>Talent Acquisition Cognizant Chandigarh</code></td>
+<td><code>site:linkedin.com/in "Cognizant" "Talent Acquisition" Chandigarh OR Mohali</code></td>
+</tr>
+<tr>
+<td>Capgemini</td>
+<td><code>Talent Acquisition Capgemini Chandigarh</code></td>
+<td><code>site:linkedin.com/in "Capgemini" "Recruiter" Chandigarh</code></td>
+</tr>
+<tr>
+<td>IBM</td>
+<td><code>Talent Acquisition IBM Chandigarh</code></td>
+<td><code>site:linkedin.com/in "IBM" "Talent Acquisition" Chandigarh</code></td>
+</tr>
+<tr>
+<td>Deloitte</td>
+<td><code>Talent Acquisition Deloitte Chandigarh</code></td>
+<td><code>site:linkedin.com/in "Deloitte" "Recruiter" Chandigarh</code></td>
+</tr>
+<tr>
+<td>EY</td>
+<td><code>Talent Acquisition EY Chandigarh</code></td>
+<td><code>site:linkedin.com/in "EY" "Talent Acquisition" Chandigarh</code></td>
+</tr>
+<tr>
+<td>PwC</td>
+<td><code>Talent Acquisition PwC Chandigarh</code></td>
+<td><code>site:linkedin.com/in "PwC" "Recruiter" Chandigarh</code></td>
+</tr>
+<tr>
+<td>Net Solutions</td>
+<td><code>Talent Acquisition Net Solutions Mohali</code></td>
+<td><code>site:linkedin.com/in "Net Solutions" "HR" Mohali OR Chandigarh</code></td>
+</tr>
+<tr>
+<td>smartData Enterprises</td>
+<td><code>HR smartData Enterprises Mohali</code></td>
+<td><code>site:linkedin.com/in "smartData Enterprises" HR OR "Talent Acquisition"</code></td>
+</tr>
+<tr>
+<td>IDS Infotech</td>
+<td><code>HR IDS Infotech Mohali</code></td>
+<td><code>site:linkedin.com/in "IDS Infotech" HR OR Recruiter</code></td>
+</tr>
+<tr>
+<td>CrossML</td>
+<td><code>HR CrossML Chandigarh</code></td>
+<td><code>site:linkedin.com/in "CrossML" HR OR "Talent Acquisition"</code></td>
+</tr>
+<tr>
+<td>Suffescom Solutions</td>
+<td><code>HR Suffescom Solutions Mohali</code></td>
+<td><code>site:linkedin.com/in "Suffescom" HR OR Recruiter</code></td>
+</tr>
+<tr>
+<td>Growth Natives</td>
+<td><code>HR Growth Natives Mohali</code></td>
+<td><code>site:linkedin.com/in "Growth Natives" HR OR "Talent Acquisition"</code></td>
+</tr>
+<tr>
+<td>Helios Tech Labs</td>
+<td><code>HR Helios Tech Labs</code></td>
+<td><code>site:linkedin.com/in "Helios Tech Labs" HR OR Recruiter</code> — <strong>could not confirm this company's Tricity presence via search; verify it exists before spending time here</strong></td>
+</tr>
+<tr>
+<td>eNest Technologies</td>
+<td><code>HR eNest Technologies Mohali</code></td>
+<td><code>site:linkedin.com/in "eNest" HR OR Recruiter</code> — <strong>could not confirm Tricity address; verify first</strong></td>
+</tr>
+<tr>
+<td>Quark / Quark City India</td>
+<td><code>HR Quark Software Mohali</code></td>
+<td><code>site:linkedin.com/in "Quark" "Talent Acquisition" Mohali OR Chandigarh</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Note on Helios Tech Labs and eNest: searches today did not surface a confirmed Tricity office for either. Before investing outreach time, do a quick <code>"&lt;company name&gt;" Mohali Chandigarh address</code> search to confirm they're actually local — otherwise your outreach is misdirected.</p>
+</blockquote>
+<h2>Connection request template (keep under 300 chars)</h2>
+<blockquote>
+<p>Hi [Name], I'm a B.Tech CSE (AI/ML) 2026 grad based in [Mohali/Chandigarh], exploring fresher/intern roles in [SDE / Data / ML]. Would love to connect and learn if [Company] has openings for freshers in the Tricity office. Thanks!</p>
+</blockquote>
+<h2>Follow-up message after connecting (send only if accepted, 24-48h later)</h2>
+<blockquote>
+<p>Thanks for connecting! I have hands-on project experience in Python, ML/DL, SQL and have built [1-line project highlight]. If there's a fresher/intern opening on your team, I'd really appreciate a referral or pointer to the right portal. Resume attached/linked: [your link]. Thanks for your time!</p>
+</blockquote>
+<h2>Etiquette / rate limits to avoid getting flagged</h2>
+<ul>
+<li>Max ~15-20 new connection requests per day per LinkedIn account (free accounts get rate-limited above this).</li>
+<li>Personalize the company/role name in every message — do not copy-paste identically to 50 people in one sitting.</li>
+<li>Space requests across the day, not all at once.</li>
+</ul></section><hr><section id="d5"><h1>Walk-in Visit Plan (Deliverable 5)</h1>
+<h2>Important caveats before you go</h2>
+<ol>
+<li><strong>"Walk-in Allowed" was not confirmed for any agency/company below</strong> — none of the sources found explicitly advertise open walk-ins for fresher CVs. <strong>Call ahead</strong> (numbers in <a href="01_recruitment_agencies.csv">01_recruitment_agencies.csv</a> / <a href="02_companies.csv">02_companies.csv</a>) to confirm someone in HR/recruitment will actually meet you — otherwise you risk a wasted trip to a reception desk that just takes a CV and does nothing with it.</li>
+<li><strong>Travel times/distances below are rough estimates from general Tricity geography</strong>, not a live Maps query (I don't have live Maps access right now). Before leaving, paste the addresses into Google Maps yourself for the actual route — sequence is more reliable than my time estimates.</li>
+<li>Carry 8-10 printed resumes + digital copies on phone, dress formally, go in pairs/small groups (not all 6 at once to the same small office — it can overwhelm a 5-person HR team and hurts impression).</li>
+</ol>
+<hr />
+<h2>Day 1 — Mohali IT Park / Quark City Cluster (Sector 74, 75, Phase 8 / 8B)</h2>
+<p>This is the densest cluster — most addresses are within Quark City / Phase 8B Industrial Area, walkable or a 5-min auto ride apart.</p>
+<table>
+<thead>
+<tr>
+<th>Seq</th>
+<th>Stop</th>
+<th>Address</th>
+<th>Type</th>
+<th>Est. travel from previous</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>TDS Group</td>
+<td>TDS Tower, E-193, IT Park, Sector 74, Phase 8-B</td>
+<td>Agency</td>
+<td>Start point</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Arch Recruiters</td>
+<td>E-328, Landmark MySOHO, Sector 75</td>
+<td>Agency</td>
+<td>~5-10 min walk</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Adecco India</td>
+<td>ST Square, C-167, Sector 74</td>
+<td>Agency</td>
+<td>~5-10 min walk</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Quark Software / Quark Atrium cluster (Quark Software, Sourcefuse, Net Quall, Emerson, EVRY, Shine Dezign — all in/near Landmark Plaza &amp; Quark Atrium, A-40A/A-45)</td>
+<td>Sector 74/75 Industrial Focal Point</td>
+<td>Companies</td>
+<td>~10 min auto — this is effectively one office complex, visit reception of each</td>
+</tr>
+<tr>
+<td>5</td>
+<td>ToXSL Technologies</td>
+<td>C-127, Phase 8, Sector 73</td>
+<td>Company (confirmed actively hiring freshers — prioritize this)</td>
+<td>~10-15 min auto</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Suffescom Solutions</td>
+<td>D-256, Phase 8A</td>
+<td>Company</td>
+<td>~10 min auto</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Lunch break in Phase 8 market area, then re-assess based on responses.</strong></p>
+<hr />
+<h2>Day 2 — Mohali Sector 65-70 / IT City Sector 83 Cluster</h2>
+<table>
+<thead>
+<tr>
+<th>Seq</th>
+<th>Stop</th>
+<th>Address</th>
+<th>Type</th>
+<th>Est. travel from previous</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Miles Ahead 91 Consultants</td>
+<td>C-210, Sebiz Square, Sector 67</td>
+<td>Agency</td>
+<td>Start point</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Skilllabs</td>
+<td>A-309, Bestech Business Tower, Sector 66</td>
+<td>Agency</td>
+<td>~5 min walk (Bestech Tower is adjacent to Sebiz Square)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Sebiz Infotech</td>
+<td>Sebiz Square, Sector 67</td>
+<td>Company</td>
+<td>Same building complex</td>
+</tr>
+<tr>
+<td>4</td>
+<td>AB Placement Services</td>
+<td>C-4, SCF 103, Sector 65 Phase 11</td>
+<td>Agency</td>
+<td>~5-10 min auto</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Chandigarh Recruiters</td>
+<td>SCO 657, Sector 70</td>
+<td>Agency</td>
+<td>~10-15 min auto</td>
+</tr>
+<tr>
+<td>6</td>
+<td>smartData Enterprises</td>
+<td>Plot I-23, IT City, Sector 83 Alpha</td>
+<td>Company (largest fresher-friendly employer found)</td>
+<td>~20-25 min auto — sector 83 is further out near the airport road, plan extra time</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Day 3 — Chandigarh IT Park / Industrial Area Phase 1 / Sector 32-47 Cluster</h2>
+<table>
+<thead>
+<tr>
+<th>Seq</th>
+<th>Stop</th>
+<th>Address</th>
+<th>Type</th>
+<th>Est. travel from previous</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Rajiv Gandhi Chandigarh Technology Park (Infosys BPM, Tech Mahindra, PTC)</td>
+<td>Kishangarh, Chandigarh</td>
+<td>Companies</td>
+<td>Start point — large campus, check in at each company's reception/security gate separately</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Bebo Technologies</td>
+<td>Sector 34, Chandigarh</td>
+<td>Company</td>
+<td>~15-20 min auto from IT Park</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Upgrade Careers</td>
+<td>261, First Floor, Sector 32</td>
+<td>Agency</td>
+<td>~5 min (Sector 32 adjacent to Sector 34)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>RTEX HR Services</td>
+<td>SCO 333-334, Sector 35-B</td>
+<td>Agency</td>
+<td>~5-10 min</td>
+</tr>
+<tr>
+<td>5</td>
+<td>ABP Empower</td>
+<td>Sector 47-D</td>
+<td>Agency</td>
+<td>~15 min auto</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Vish International + CrossML</td>
+<td>Industrial Area Phase 1 (Vish: Plot 70 Godrej Eternia Tower A; CrossML: opp. Hyatt Regency)</td>
+<td>Agency + Company</td>
+<td>~15-20 min auto — both in Industrial Area Phase 1, close together</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Optional Day 4 (if needed) — Zirakpur / Panchkula</h2>
+<table>
+<thead>
+<tr>
+<th>Seq</th>
+<th>Stop</th>
+<th>Address</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Webhopers Infotech</td>
+<td>Sector 11, Panchkula</td>
+<td>Agency (verify it's not a paid-training model first)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Career Choice Solution</td>
+<td>Zirakpur (exact address unconfirmed — call first)</td>
+<td>Agency</td>
+</tr>
+</tbody>
+</table>
+<p>This cluster is sparser and further from the others — only worth a dedicated trip if Days 1-3 don't yield enough leads, or combine with the <a href="06_events_job_fairs.csv">06 events list</a> if something is happening there that week.</p></section><hr><h2 id="d6">Deliverable 6: Job Fairs, Recruitment Drives &amp; Tech Meetups</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Event Name</th><th>Organizer</th><th>Venue</th><th>Date</th><th>Registration Link</th><th>Cost</th><th>Eligibility</th><th>Status/Notes</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td class="namecol">How to Crack MAANG in 4 Months + Top DSA Patterns</td><td>LeetCode &amp; System Design Meetup - MAANG Ready</td><td>Online</td><td>2026-06-14 7:00 PM IST</td><td class="linkcol">https://www.meetup.com/find/in--chandigarh/technology/</td><td>Free (verify on page)</td><td>Open to all - relevant for DSA prep (Deliverable 8)</td><td>Confirmed live on Meetup as of 2026-06-11</td><td>https://www.meetup.com/find/in--chandigarh/technology/</td></tr>
+<tr><td class="namecol">WhatsApp Application Software Architecture</td><td>Software Architecture and System Design / Core Design</td><td>Online</td><td>2026-06-13 4:00 PM IST</td><td class="linkcol">https://www.meetup.com/find/in--chandigarh/technology/</td><td>Free (verify on page)</td><td>Open to all - SDE/system design relevance</td><td>Confirmed live on Meetup as of 2026-06-11</td><td>https://www.meetup.com/find/in--chandigarh/technology/</td></tr>
+<tr><td class="namecol">AWS 101: Create Deploy Go Live</td><td>AWS Student Builder Group at JSPM&#x27;s BSIOTR</td><td>Online</td><td>2026-06-12 7:00 PM IST</td><td class="linkcol">https://www.meetup.com/find/in--chandigarh/technology/</td><td>Free (verify on page)</td><td>Open to all - relevant for Cloud/DevOps roles</td><td>Confirmed live on Meetup as of 2026-06-11</td><td>https://www.meetup.com/find/in--chandigarh/technology/</td></tr>
+<tr><td class="namecol">AI Products for Business (Algo Trading CRM Search Engine)</td><td>Software Architecture and System Design / Core Design</td><td>Online</td><td>2026-06-12 4:30 PM IST</td><td class="linkcol">https://www.meetup.com/find/in--chandigarh/technology/</td><td>Free (verify on page)</td><td>Open to all - AI/ML relevance</td><td>Confirmed live on Meetup as of 2026-06-11</td><td>https://www.meetup.com/find/in--chandigarh/technology/</td></tr>
+<tr><td class="namecol">Build your first AI Agent</td><td>Agentic AI Community Coimbatore</td><td>Online</td><td>2026-06-20 7:00 PM IST</td><td class="linkcol">https://www.meetup.com/find/in--chandigarh/technology/</td><td>Free (verify on page)</td><td>Open to all - AI/ML relevance</td><td>Confirmed live on Meetup as of 2026-06-11</td><td>https://www.meetup.com/find/in--chandigarh/technology/</td></tr>
+<tr><td class="namecol">Hands-on Workshop: Agentic Development</td><td>Lead With Tech Meetup Group</td><td>Hybrid (online + physical TBC)</td><td>2026-06-21 10:00 AM IST</td><td class="linkcol">https://www.meetup.com/find/in--chandigarh/technology/</td><td>Free (verify on page)</td><td>Open to all - AI/ML relevance</td><td>Confirmed live on Meetup as of 2026-06-11</td><td>https://www.meetup.com/find/in--chandigarh/technology/</td></tr>
+<tr><td class="namecol">Chandigarh.AI Meetup Group (recurring community - check for next event)</td><td>Chandigarh.AI</td><td>Chandigarh/Mohali (varies)</td><td>Recurring - check page for next date</td><td class="linkcol">https://www.meetup.com/chandigarh-ai/</td><td>Free (typical for meetups - verify)</td><td>Open to all AI/ML/data enthusiasts in Tricity</td><td>Group exists and is active per search; specific next date not listed at time of search - check page directly</td><td>https://www.meetup.com/chandigarh-ai/</td></tr>
+<tr><td class="namecol">Rozgar Mela (PM&#x27;s national govt recruitment drive - 19th edition was 2026-05-23)</td><td>Government of India / Ministry of Labour &amp; Employment</td><td>Multiple locations nationwide incl. Punjab/Chandigarh region (specific venue varies per edition)</td><td>Recurring every 1-2 months - next edition date not yet announced as of 2026-06-11</td><td class="linkcol">https://www.ncs.gov.in/job-seeker/_layouts/15/NCSP/Calendar.aspx </td><td>Free</td><td>Govt job aspirants - relevant mainly for non-core roles, but worth monitoring</td><td>19th edition held 2026-05-23 (51000+ appointment letters distributed nationally) - watch NCS portal for 20th edition announcement</td><td>https://www.thehansindia.com/news/national/pm-modi-distributes-51000-new-job-letters-at-19th-rozgar-mela-1078470</td></tr>
+<tr><td class="namecol">NCS Job Fair Listings (live portal - check weekly)</td><td>National Career Service (NCS) / Ministry of Labour &amp; Employment</td><td>Various - filter by Punjab/Chandigarh/Haryana</td><td>Rolling - check portal for next 90 days</td><td class="linkcol">https://betacloud.ncs.gov.in/job-fair-list</td><td>Free</td><td>Varies by listing - filter for graduate/IT roles</td><td>Live portal exists; specific Chandigarh/Mohali listing for June-Sept 2026 not retrievable via search snapshot - check directly and filter by state</td><td>https://betacloud.ncs.gov.in/job-fair-list</td></tr>
+<tr></tr>
+<tr><td class="namecol">NOTE</td><td>This is a thin starting list - most local Tricity walk-in drives, campus placement camps, and startup hiring events are announced with only 1-2 weeks&#x27; notice on LinkedIn, Instagram, and the Telegram/WhatsApp channels in Deliverable 7, not on general event aggregators. Recommend: (1) follow Chandigarh.AI on Meetup, (2) check allevents.in/chandigarh/meetups weekly, (3) check NCS job fair portal weekly, (4) monitor the Telegram channels in 07 daily for walk-in drive announcements.</td><td></td><td></td><td class="linkcol"></td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody></table></div><hr><h2 id="d7">Deliverable 7: Job Communities</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Group Name</th><th>Platform</th><th>Join Link</th><th>Approx. Members</th><th>Activity Level</th><th>Notes/Source</th><th>Last Verified</th></tr></thead>
+<tbody>
+<tr><td class="namecol">r/developersIndia</td><td>Reddit</td><td class="linkcol">https://www.reddit.com/r/developersIndia/</td><td>~1.5 million</td><td>Very High - daily posts on jobs/career/projects</td><td>Largest India-wide tech community; not Tricity-specific but freshers regularly post about Chandigarh/Mohali openings and get useful responses. Source: gummysearch.com/r/developersIndia</td><td class="linkcol">2026-06-11</td></tr>
+<tr><td class="namecol">Freshershunt - Off Campus Drive Updates</td><td>Telegram</td><td class="linkcol">https://telegram.me/s/freshershunt</td><td class="muted">Not confirmed - typically large (10k+) for this category</td><td>High - daily off-campus drive postings including Tricity</td><td>Posts off-campus drives across India incl. Chandigarh. CAUTION: verify each posted link goes to the company&#x27;s actual careers domain before applying/sharing personal info.</td><td class="linkcol">2026-06-11</td></tr>
+<tr><td class="namecol">FresherOffCampus Official Channel</td><td>Telegram</td><td class="linkcol">https://telegram.me/fresheroffcampus</td><td class="muted">Not confirmed</td><td>High - daily fresher IT job updates</td><td>Same caution as above - cross-check postings against the company&#x27;s own careers page.</td><td class="linkcol">2026-06-11</td></tr>
+<tr><td class="namecol">Chandigarh.AI</td><td>Meetup (community group</td><td class="linkcol muted"> not chat)</td><td>https://www.meetup.com/chandigarh-ai/</td><td class="muted">Not confirmed via search</td><td>Moderate - recurring AI/Big Data/Blockchain meetups in Chandigarh/Mohali</td><td class="linkcol">Best avenue for in-person AI/ML networking in Tricity - attend events to meet local hiring managers/founders.</td><td>2026-06-11</td></tr>
+<tr><td class="namecol">LinkedIn Job Search - Chandigarh Tech Roles</td><td>LinkedIn (saved search</td><td class="linkcol muted"> not a group)</td><td>https://in.linkedin.com/jobs/software-engineer-jobs-chandigarh</td><td>N/A (475+ active listings at time of search)</td><td>Very High - updates constantly</td><td class="linkcol muted">Not a &#x27;group&#x27; but the single highest-signal live source - set up a saved search + daily alert here for each of the 16 target roles.</td><td>2026-06-11</td></tr>
+<tr></tr>
+<tr><td class="namecol">NOTE_SCAMS</td><td>Generic &#x27;Chandigarh/Mohali IT Jobs&#x27; WhatsApp groups with specific invite links could not be verified as legitimate, active, or scam-free via web search - WhatsApp group invite links are not indexable and churn constantly (most expire within weeks). DO NOT pay any &#x27;registration fee&#x27;, &#x27;resume processing fee&#x27;, or &#x27;training deposit&#x27; to join a job group or get an interview - this is the most common fresher scam pattern in this market. Legitimate employers and agencies are paid by the hiring company, never by candidates.</td><td class="linkcol"></td><td></td><td></td><td></td><td class="linkcol"></td><td></td></tr>
+<tr><td class="namecol">NOTE_HOWTO</td><td>To find live, current Tricity-specific WhatsApp/Telegram groups: search Telegram&#x27;s in-app search for &#x27;Chandigarh jobs&#x27;, &#x27;Mohali IT jobs&#x27;, &#x27;Tricity freshers&#x27; - join 2-3, observe for a few days for scam patterns (fee requests, vague &#x27;DM for details&#x27;) before sharing any personal documents.</td><td class="linkcol"></td><td></td><td></td><td></td><td class="linkcol"></td><td></td></tr>
+</tbody></table></div><hr><section id="d8"><h1>30-Day Execution Plan for 6 B.Tech CSE (AI/ML) Freshers — Tricity Job Search</h1>
+<p>Start date: assume Day 1 = next Monday after kickoff. Plan runs Mon-Sat each week (Sunday = rest/buffer/catch-up).</p>
+<h2>Team setup (Day 0, before Day 1)</h2>
+<ul>
+<li>Split the 6 into pairs for accountability: Pair A, Pair B, Pair C.</li>
+<li>Create a shared tracker (Google Sheet) with columns: Date | Person | Action Type (Application/Outreach/Walk-in/Networking) | Company | Role | Link | Status | Follow-up Date.</li>
+<li>Each person sets up: a polished resume (1 page), an updated LinkedIn profile, a GitHub with 2-3 pinned ML/SDE projects, and (optional but strong) a portfolio site (GitHub Pages/Vercel).</li>
+</ul>
+<hr />
+<h2>Week 1 (Days 1-6): Foundation + first wave of applications</h2>
+<p><strong>Goal:</strong> Get application materials production-ready and start volume applications immediately (don't wait for "perfect" resume).</p>
+<table>
+<thead>
+<tr>
+<th>Day</th>
+<th>Daily application target (per person)</th>
+<th>Daily recruiter outreach (per person)</th>
+<th>Other tasks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>5 applications (use search links from <a href="03_active_openings.csv">03_active_openings.csv</a>)</td>
+<td>0 (focus on profile)</td>
+<td>Resume v1 done; LinkedIn headline + About section rewritten using AI/ML keywords (Python, ML, DL, LLMs, SQL, Power BI)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8</td>
+<td>5 connection requests (use <a href="04_recruiter_search_toolkit.md">04_recruiter_search_toolkit.md</a>)</td>
+<td>GitHub: pin 2 best projects, write proper READMEs</td>
+</tr>
+<tr>
+<td>3</td>
+<td>8</td>
+<td>5</td>
+<td>Resume v2 (incorporate feedback from 1 senior/mentor review)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>8</td>
+<td>5</td>
+<td>Apply to ToXSL Technologies off-campus drive (confirmed active — see 03)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>8</td>
+<td>5</td>
+<td>DSA: 2 problems/day starts today (see prep section below)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>10</td>
+<td>5</td>
+<td><strong>Weekly walk-in</strong>: Day 1 route from <a href="05_walkin_visit_plan.md">05_walkin_visit_plan.md</a> (Mohali IT Park / Quark City cluster)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Week 1 KPIs:</strong> 47 applications/person (282 team total), 25 recruiter connections/person, 1 walk-in completed, resumes finalized, GitHub live.</p>
+<hr />
+<h2>Week 2 (Days 7-12): Scale outreach + agency registration</h2>
+<table>
+<thead>
+<tr>
+<th>Day</th>
+<th>Applications</th>
+<th>Outreach</th>
+<th>Other</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7</td>
+<td>8</td>
+<td>5</td>
+<td>Register with 5 agencies from <a href="01_recruitment_agencies.csv">01_recruitment_agencies.csv</a> — call first to confirm fresher openings, email resume</td>
+</tr>
+<tr>
+<td>8</td>
+<td>8</td>
+<td>5</td>
+<td>DSA: 2 problems</td>
+</tr>
+<tr>
+<td>9</td>
+<td>8</td>
+<td>5</td>
+<td>Aptitude prep starts (30 min/day — quant + logical reasoning, use IndiaBix/PrepInsta)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>8</td>
+<td>5</td>
+<td>DSA: 2 problems; mock LinkedIn post about a project (visibility)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>8</td>
+<td>5</td>
+<td>DSA: 2 problems</td>
+</tr>
+<tr>
+<td>12</td>
+<td>10</td>
+<td>5</td>
+<td><strong>Weekly walk-in</strong>: Day 2 route (Sebiz Square/Sector 65-70 + smartData)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Week 2 KPIs:</strong> 50/person applications, 25 connections, 5 agencies registered, 8 DSA problems, 3 aptitude sessions, 1 walk-in.</p>
+<p><strong>Weekly networking target:</strong> Each person attends ≥1 online meetup from <a href="06_events_job_fairs.csv">06_events_job_fairs.csv</a> (e.g., AWS 101, AI Agent workshop) and posts a LinkedIn reflection — this is both learning and visibility.</p>
+<p><strong>Weekly referral target:</strong> Each person asks 2 people in their existing network (college seniors, LinkedIn 1st-degree contacts at target companies) for a referral — track in the shared sheet.</p>
+<hr />
+<h2>Week 3 (Days 13-18): AI/ML interview prep intensifies + second walk-in cluster</h2>
+<table>
+<thead>
+<tr>
+<th>Day</th>
+<th>Applications</th>
+<th>Outreach</th>
+<th>Other</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>13</td>
+<td>8</td>
+<td>5</td>
+<td>AI/ML interview prep starts: revise core ML algorithms (linear/logistic regression, decision trees, SVM, basics of CNN/RNN/transformers), 1 topic/day</td>
+</tr>
+<tr>
+<td>14</td>
+<td>8</td>
+<td>5</td>
+<td>DSA: 2 problems</td>
+</tr>
+<tr>
+<td>15</td>
+<td>8</td>
+<td>5</td>
+<td>ML topic 2; mock interview (pair up — one asks ML questions, other answers)</td>
+</tr>
+<tr>
+<td>16</td>
+<td>8</td>
+<td>5</td>
+<td>DSA: 2; ML topic 3</td>
+</tr>
+<tr>
+<td>17</td>
+<td>8</td>
+<td>5</td>
+<td>ML topic 4; aptitude session</td>
+</tr>
+<tr>
+<td>18</td>
+<td>10</td>
+<td>5</td>
+<td><strong>Weekly walk-in</strong>: Day 3 route (Chandigarh IT Park / Industrial Area Phase 1 cluster)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Week 3 KPIs:</strong> 50/person applications, 25 connections, 4 ML topics revised, 8 DSA problems, 1 mock interview, 1 walk-in.</p>
+<hr />
+<h2>Week 4 (Days 19-24): Interview conversion + portfolio polish</h2>
+<table>
+<thead>
+<tr>
+<th>Day</th>
+<th>Applications</th>
+<th>Outreach</th>
+<th>Other</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>19</td>
+<td>6 (shift focus to interview prep for any responses received)</td>
+<td>5</td>
+<td>Portfolio site live (if not already) — host 2-3 projects with live demo links</td>
+</tr>
+<tr>
+<td>20</td>
+<td>6</td>
+<td>5</td>
+<td>DSA: 2; mock technical interview (full 45-min simulation within team)</td>
+</tr>
+<tr>
+<td>21</td>
+<td>6</td>
+<td>5</td>
+<td>ML topic 5 (LLMs/prompt engineering — directly relevant given "LLMs" skill listed)</td>
+</tr>
+<tr>
+<td>22</td>
+<td>6</td>
+<td>5</td>
+<td>DSA: 2; review all rejections — note patterns, adjust resume keywords</td>
+</tr>
+<tr>
+<td>23</td>
+<td>6</td>
+<td>5</td>
+<td>Follow up on all pending applications from Week 1-2 (polite check-in message)</td>
+</tr>
+<tr>
+<td>24</td>
+<td>8</td>
+<td>5</td>
+<td><strong>Weekly walk-in/optional Day 4</strong>: Zirakpur/Panchkula cluster (only if Days 1-3 underperformed) OR repeat Day 1 cluster with new contacts</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Week 4 KPIs:</strong> ~38/person new applications, 25 connections, portfolio live, 1 full mock interview, all old applications followed up.</p>
+<hr />
+<h2>Days 25-30: Buffer, review, and reset</h2>
+<ul>
+<li>Day 25-26: Team retrospective — review the tracker. Which channels (agencies vs. direct applications vs. LinkedIn outreach vs. walk-ins) produced the most interview calls? Double down on what's working.</li>
+<li>Day 27-28: Refresh resumes/LinkedIn based on interview feedback received so far.</li>
+<li>Day 29: Plan Month 2 — likely needs a 2nd pass through agencies that didn't respond, plus newly opened roles.</li>
+<li>Day 30: Celebrate progress regardless of outcome — job searches in this market commonly take 6-10 weeks for freshers; consistency over 30 days builds the pipeline that converts in months 2-3.</li>
+</ul>
+<hr />
+<h2>Cumulative 30-Day KPIs (per person)</h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total applications</td>
+<td>~185</td>
+</tr>
+<tr>
+<td>Total recruiter/HR connections sent</td>
+<td>~125</td>
+</tr>
+<tr>
+<td>Agencies registered with</td>
+<td>≥5</td>
+</tr>
+<tr>
+<td>Walk-ins completed</td>
+<td>3 (Days 1-3 clusters) + optional Day 4</td>
+</tr>
+<tr>
+<td>DSA problems solved</td>
+<td>~32</td>
+</tr>
+<tr>
+<td>Aptitude sessions</td>
+<td>~8</td>
+</tr>
+<tr>
+<td>ML topics revised</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Mock interviews</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Meetups attended</td>
+<td>≥4</td>
+</tr>
+<tr>
+<td>Referral requests sent</td>
+<td>≥8</td>
+</tr>
+<tr>
+<td>GitHub projects polished</td>
+<td>2-3</td>
+</tr>
+<tr>
+<td>Portfolio site</td>
+<td>1 (live by Day 19)</td>
+</tr>
+</tbody>
+</table>
+<h2>Cumulative 30-Day Team KPIs (×6 people)</h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total applications</td>
+<td>~1,110</td>
+</tr>
+<tr>
+<td>Total outreach messages</td>
+<td>~750</td>
+</tr>
+<tr>
+<td>Walk-in visits completed</td>
+<td>18+ (3 routes × 6 people, or fewer if done in pairs = 9 person-visits per route)</td>
+</tr>
+<tr>
+<td>Interview calls (realistic target, not guaranteed)</td>
+<td>15-30 across the team, based on typical 2-5% response rates on cold applications + higher on referrals/walk-ins</td>
+</tr>
+</tbody>
+</table>
+<h2>DSA Prep Resources (free)</h2>
+<ul>
+<li>LeetCode (Easy/Medium, focus: arrays, strings, hashmaps, two-pointers, basic DP) — 2/day = 60 problems/month</li>
+<li>Striver's SDE Sheet (structured roadmap)</li>
+<li>The MAANG-prep meetup found in <a href="06_events_job_fairs.csv">06_events_job_fairs.csv</a> (2026-06-14) is a good kickoff session</li>
+</ul>
+<h2>Aptitude Prep Resources (free)</h2>
+<ul>
+<li>IndiaBix, PrepInsta — quant, logical reasoning, verbal — 30 min/day, 4x/week</li>
+</ul></section><hr><section id="d9"><h1>Rankings (Deliverable 9)</h1>
+<p><strong>Scope note:</strong> Rankings below are drawn from the verified entries in <a href="01_recruitment_agencies.csv">01_recruitment_agencies.csv</a> and <a href="02_companies.csv">02_companies.csv</a> — the real, sourced datasets built across 2026-06-11 and 2026-06-14. <strong>These rankings cover the Chandigarh/Tricity entries only.</strong> As of 2026-06-14 the CSVs also include a Delhi-NCR section (8 NCR agencies + 20 NCR companies, mostly large national employers like TCS/Infosys/Adobe/HCLTech/Genpact); those are not ranked here because NCR is a different, far larger market that deserves its own ranking pass — for NCR, use the interactive <a href="../Hiring_Dashboard.html">Hiring_Dashboard.html</a> (filter by the NCR tab) which already sorts by fresher-fit and AI/ML-fit. The original ask was for Top 25/50/50/50 from pools of 100/200/300; those pools don't exist as verified data yet (see <a href="../README.md">README.md</a> for why). These rankings are honest given current data size — re-run once the lists are expanded.</p>
+<p>Ranking criteria (scored qualitatively 1-5 each, summed): <strong>Fresher friendliness, AI/ML relevance, hiring activity signal, growth/stability, accessibility (walk-in/local presence)</strong>.</p>
+<hr />
+<h2>Top Agencies (ranked from the 27 researched)</h2>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Agency</th>
+<th>Why ranked here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Vish International</td>
+<td>Highest active job volume found (253+ jobs on aggregator), 12 yrs experience, IT + bulk hiring focus</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Adecco India (Mohali)</td>
+<td>Global staffing brand, strong IT/bulk hiring practice, employer-funded (no fee risk)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>CIEL HR Services</td>
+<td>Pan-India scale (38+ branches), tech-driven recruiting, IT specialism</td>
+</tr>
+<tr>
+<td>4</td>
+<td>NLB Services</td>
+<td>Large pan-India IT staffing brand with AI-powered screening, Chandigarh presence</td>
+</tr>
+<tr>
+<td>5</td>
+<td>TDS Group</td>
+<td>Located inside Mohali IT Park — proximity to target companies, 23 yrs experience (Chandigarh branch)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Team Plus Staffing Solution</td>
+<td>Explicitly serves all major Tricity IT parks (Quark City, Rajiv Gandhi Tech Park, Elante, Mohali IT Park)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Upgrade Careers</td>
+<td>High rating (4.6) with substantial review volume (29), 11 yrs in Chandigarh</td>
+</tr>
+<tr>
+<td>8</td>
+<td>ABP Empower</td>
+<td>High job volume (99+) on aggregator, established Chandigarh presence</td>
+</tr>
+<tr>
+<td>9</td>
+<td>AllianceGrow Staffing</td>
+<td>Highest rating found (4.8) though lower review count</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Destiny HR Group</td>
+<td>Explicit "IT Recruitment Agency in Mohali" specialism, named contacts found</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Talentpull &amp; Infrastructure</td>
+<td>Direct HR contact email + phone found, Kharar/Mohali base, active job postings on aggregators</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Chandigarh Recruiters</td>
+<td>Local Mohali presence, decent review volume (29)</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Arch Recruiters</td>
+<td>Located in Mohali IT Park (Sector 75), good for walk-in proximity</td>
+</tr>
+<tr>
+<td>14</td>
+<td>RTEX HR Services</td>
+<td>Solid rating, 10 yrs Chandigarh presence</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Skilllabs</td>
+<td>Good ratings in both Mohali and Chandigarh listings</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Wes Career</td>
+<td>Mohali-based, explicit bulk-hiring/high-volume drives across 20+ industries</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Miles Ahead 91 Consultants</td>
+<td>Sector 67 location near several IT companies, but may skew mid/senior</td>
+</tr>
+<tr>
+<td>18</td>
+<td>TDS Placements (Chandigarh)</td>
+<td>23 yrs experience claimed, central Manimajra location</td>
+</tr>
+<tr>
+<td>19</td>
+<td>AB Placement Services</td>
+<td>Local Mohali presence, low review count limits confidence</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Endeavour Career Point</td>
+<td>Established Chandigarh/Mohali/Panchkula brand recall, but contact details still unverified</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Not ranked (need more verification before relying on them):</strong> HRD Talent Corner, Career Concepts, Dashmesh Healthcare Solutions (healthcare-focused), Career Choice Solution, Webhopers Infotech (verify training-fee model first), EduSoft Technology (verify fee model), Placewell Careers, Vision Unlimited (both lack confirmed addresses/contacts).</p>
+<hr />
+<h2>Top Companies (ranked from the 64 researched)</h2>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Company</th>
+<th>Why ranked here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>smartData Enterprises</td>
+<td>Largest fresher-friendly employer found (1000-5000 staff), AI/IoT/healthcare focus, 85% employee recommendation per Glassdoor, dedicated careers portal</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ToXSL Technologies</td>
+<td><strong>Confirmed actively hiring freshers right now</strong> (Off-Campus Batch 2026-27), located in Mohali Phase 8</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Tech Mahindra</td>
+<td>Massive scale, recurring walk-in drives, strong fresher pipeline historically</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Infosys BPM (Chandigarh)</td>
+<td>Global brand, large-scale fresher hiring programs, IT Park location</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Net Solutions</td>
+<td>Strong digital product engineering brand, multiple Tricity offices, good LinkedIn presence (65k+ followers)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>IDS Infotech</td>
+<td>Explicitly offers internships + entry-level roles, AI/ML positioning, 2000+ employees globally</td>
+</tr>
+<tr>
+<td>7</td>
+<td>CrossML</td>
+<td>Highest AI/ML specialization score among researched companies — directly relevant to this team's specialization</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Sourcefuse Technologies</td>
+<td>Strong Cloud/DevOps (AWS) focus — relevant to Cloud Engineer/DevOps roles in Deliverable 3</td>
+</tr>
+<tr>
+<td>9</td>
+<td>MoogleLabs</td>
+<td>AI/Blockchain/DevOps mix, smaller size may mean faster hiring decisions</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Bebo Technologies</td>
+<td>QA/testing strength — relevant to QA Engineer/Automation Tester roles</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Suffescom Solutions</td>
+<td>Active Mohali presence, blockchain/app dev, mid-size</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Quark Software</td>
+<td>Established Mohali anchor tenant (Quark City founder), stable</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Apptunix</td>
+<td>AI-powered product engineering, global client base</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Growth Natives</td>
+<td>AI-driven growth/marketing - good for hybrid AI+analytics profiles</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Webtunix AI</td>
+<td>Small but explicitly AI/Data Science focused</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Mindfire Solutions</td>
+<td>Established offshore dev shop, broad role variety</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Code Brew Labs</td>
+<td>Active mobile/app dev hiring pipeline</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Debut Infotech</td>
+<td>Blockchain + enterprise software, broad tech stack</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Sebiz Infotech</td>
+<td>Established Mohali presence, varied roles</td>
+</tr>
+<tr>
+<td>20</td>
+<td>NetSet Software Solutions</td>
+<td>Cloud computing focus</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Net Quall Technologies</td>
+<td>Smaller, Quark City located</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Softleoai</td>
+<td>AI/ML focused but small (verify scale before prioritizing)</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Fusion Informatics</td>
+<td>AI focus but Chandigarh address unconfirmed</td>
+</tr>
+<tr>
+<td>24</td>
+<td>PTC</td>
+<td>Strong global brand but enterprise-software fresher pipeline less certain locally</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Vismaad Labs</td>
+<td>Web/mobile, smaller agency-style</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Webguruz Technologies</td>
+<td>Web/mobile, smaller agency-style</td>
+</tr>
+<tr>
+<td>27</td>
+<td>RV Technologies</td>
+<td>Web/mobile/e-commerce, smaller agency-style</td>
+</tr>
+<tr>
+<td>28</td>
+<td>Emerson IT Solutions / EVRY / Shine Dezign</td>
+<td>Larger captive units but fresher-hiring pattern unconfirmed - worth a walk-in to check</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Soft Radix Technologies</td>
+<td>Confirmed actively hiring AI/ML Engineer (Fresher) for GenAI/LLM/agent work, Mohali Phase 8B</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Cywarden Global Services</td>
+<td>AI/ML Engineer roles for its Cyforte.ai security platform — 16 Chandigarh roles seen on aggregators</td>
+</tr>
+<tr>
+<td>31</td>
+<td>RevClerx Pvt Ltd</td>
+<td>Large active hiring volume (BDE/QA/.NET), Bestech Business Tower Mohali, direct HR email found</td>
+</tr>
+<tr>
+<td>32</td>
+<td>Finalrope Soft Solutions</td>
+<td>AI/ML Engineer hiring for HR-tech assessment platform, small Kharar-based team</td>
+</tr>
+<tr>
+<td>33</td>
+<td>Matrid Technologies</td>
+<td>20+ yrs in Mohali, broad fresher pipeline (PHP/.NET/Android), direct phone+email found</td>
+</tr>
+<tr>
+<td>34</td>
+<td>Weballures Technologies</td>
+<td>Structured 8-month paid training-to-placement track for web developer freshers</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Top Recruiters / Top Freshers-Friendly Employers (Deliverables 4 &amp; "Top 50 Freshers-Friendly Employers")</h2>
+<p>Not produced as static name lists — see <a href="04_recruiter_search_toolkit.md">04_recruiter_search_toolkit.md</a> for why, and use the per-company LinkedIn search strings there. For "Freshers-Friendly Employers," the <strong>Top Companies</strong> ranking above doubles as this list (the Fresher Friendly Score column in <a href="02_companies.csv">02_companies.csv</a> was used as a primary sort signal).</p>
+<hr />
+<h2>How to re-run these rankings as data grows</h2>
+<p>As the team registers with agencies / applies to companies and gets real signal (response rates, interview calls, walk-in receptions), update the CSVs with an "Actual Response" column and re-sort — real outcome data will be far more predictive than these initial estimates.</p></section><hr><section id="d10"><h1>Paid Training &amp; "Placement Guarantee" Programs — Honest Assessment</h1>
+<p>You asked about options that charge a fee, since speed matters. Here's the real landscape, found via search today, plus a framework so the team doesn't lose money to a bad one.</p>
+<h2>The core rule first</h2>
+<p><strong>Real recruitment agencies and real employers never charge candidates a fee</strong> — they're paid by the hiring company. Anything calling itself a "recruitment agency" or "placement consultancy" that asks <em>you</em> for money before/for a job offer is not operating like a normal agency, full stop.</p>
+<p>What's <em>legitimately</em> fee-based in this market is <strong>training-with-placement-assistance</strong> — you pay for a skills course (testing, MERN/MEAN stack, cloud, etc.), and the institute helps you apply afterward. This can be worth it <strong>if</strong>:
+- The fee is for actual instruction/curriculum (verifiable syllabus, instructors, duration), not a vague "registration fee."
+- "Placement assistance" is explicitly NOT a guaranteed job — read the fine print. "100% placement guarantee" claims should be treated with skepticism; ask for <strong>proof</strong>: names of recent batches, LinkedIn profiles of people who got placed, which companies hired them and when.
+- You can verify the institute has a real office (visit it) and has been operating for years (check Google reviews, Glassdoor, MCA/company registration via zaubacorp.com).</p>
+<h2>Programs found in today's research (none vetted further than this — verify before paying anything)</h2>
+<table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>What's offered</th>
+<th>Where</th>
+<th>Caveats</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ToXSL Technologies</strong></td>
+<td>Internship with "100% placement assistance" + real-world projects</td>
+<td>Mohali (Phase 8, Sector 73 — already in <a href="02_companies.csv">02_companies.csv</a>)</td>
+<td>This is the same company with a <strong>confirmed live off-campus hiring drive</strong> (Deliverable 3) — worth checking whether their internship route requires payment or is a normal paid/stipend internship. Ask directly before assuming a fee. Source: https://talent.toxsl.com/blog/149/web-development-training-in-chandigarh-mohali-for-career-growth</td>
+</tr>
+<tr>
+<td><strong>Shine Dezign Infotech</strong></td>
+<td>6-week / 6-month paid training + internship programs</td>
+<td>Phase 8B, Mohali (already in <a href="02_companies.csv">02_companies.csv</a>)</td>
+<td>One review found was positive ("immensely beneficial"). Still verify current fee and placement track record directly. Source: https://careers.shinedezign.com/mean-mern-stack-training-in-chandigarh-mohali/</td>
+</tr>
+<tr>
+<td><strong>ThinkNEXT Technologies</strong></td>
+<td>Industrial training + "100% job guarantee" claims</td>
+<td>SCO 112-113, Sector 34A, Chandigarh (added to <a href="02_companies.csv">02_companies.csv</a>)</td>
+<td>"Job guarantee" marketing claims are a red flag pattern industry-wide — ask for verifiable recent placement evidence (names + LinkedIn + company) before paying. Source: https://www.thinknext.co.in/</td>
+</tr>
+<tr>
+<td><strong>Goteso</strong></td>
+<td>Software testing course with "job placement guarantee"</td>
+<td>Mohali/Chandigarh area</td>
+<td>Mixed reviews found: one fresher reported a positive outcome (selected after MCA training); another reported NOT getting a job after paying for Android training elsewhere due to skill gaps. Treat "guarantee" language skeptically. Source: https://www.goteso.com/training/best-software-testing-certification-course-classes-for-beginners-with-job-placement-guarantee.html</td>
+</tr>
+<tr>
+<td><strong>Infosif Solutions</strong></td>
+<td>6-month industrial training with "100% placement assistance"</td>
+<td>Chandigarh/Mohali tricity</td>
+<td>Same caution — verify lab facilities and placement record by visiting in person before paying. Source: https://infosif.com/</td>
+</tr>
+<tr>
+<td><strong>Makes360</strong></td>
+<td>Paid internship (live projects, mentorship, certification)</td>
+<td>Chandigarh &amp; Mohali</td>
+<td>This is a paid <em>internship</em> (you may be paid a stipend, or pay a fee — verify which), with "exceptional performers" sometimes converted to FTE. Confirm direction of payment before committing. Source: https://www.makes360.com/internship/</td>
+</tr>
+<tr>
+<td><strong>Internshala Placement Guarantee Courses</strong></td>
+<td>Various tech courses with placement guarantee / refund-if-not-placed models</td>
+<td>Online (national, not Tricity-specific)</td>
+<td>Internshala is a known, large platform — generally more accountable than small local institutes, and refund-based guarantees are a meaningfully different (better) structure than "pay and hope." Still read the refund terms carefully. Source: https://trainings.internshala.com/blog/internshala-placement-guarantee-courses-reviews/</td>
+</tr>
+</tbody>
+</table>
+<h2>Before paying anyone, anything — checklist</h2>
+<ol>
+<li><strong>Get the fee structure in writing</strong> (what exactly does it cover, refund policy if no placement).</li>
+<li><strong>Ask for 3-5 recent alumni</strong> you can actually message on LinkedIn — message them yourself, don't just trust testimonials on the institute's site.</li>
+<li><strong>Check company registration</strong> on zaubacorp.com or mca.gov.in — confirms it's a real registered entity, not a fly-by-night operation.</li>
+<li><strong>Visit the physical office</strong> before paying — addresses above are a starting point.</li>
+<li><strong>Never pay via UPI/cash to an individual's personal account</strong> — payment should go to the registered company's bank account/official payment gateway, with a proper invoice/receipt.</li>
+<li><strong>Compare the fee to the 30-day free plan</strong> in <a href="08_30day_execution_plan.md">08_30day_execution_plan.md</a> — six of you doing the free plan consistently for 4-6 weeks may outperform a paid course, especially since you already have B.Tech CSE (AI/ML) fundamentals. Paid training makes most sense for a <em>specific skill gap</em> (e.g., one of you needs Power BI or a cloud cert), not as a blanket "guaranteed job" purchase.</li>
+</ol></section>
+</body>
+</html>
