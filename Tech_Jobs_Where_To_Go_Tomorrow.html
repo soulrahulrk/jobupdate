@@ -84,6 +84,9 @@
   <h2>🌆 Metro (Tier-3) <span class="em">— Bengaluru / Hyderabad / Pune</span></h2>
   <div class="grid" id="g-metro"></div>
 
+  <h2>🏙️ Delhi — near your base <span class="em">— ≤10–15 km, software/SDE walk-ins (+ NLP/cyber AI)</span></h2>
+  <div class="grid" id="g-delhi"></div>
+
   <h2>🔎 Live job boards <span class="em">— refresh daily</span></h2>
   <div class="links">
     <a href="https://wellfound.com/role/l/ai-engineer/india" target="_blank" rel="noopener">Wellfound · AI Engineer</a>
@@ -146,9 +149,24 @@ const J=[
 
  {g:"metro",s:1,n:"HPE",loc:"Bengaluru",cat:"AI/ML Engineer (off-campus 2026)",ai:9,py:8,fs:7,u:"https://careers.hpe.com/",note:"B.Tech eligible off-campus drive"},
  {g:"metro",s:0,n:"Arya.ai",loc:"Mumbai / Bengaluru",cat:"Enterprise Deep Learning",ai:9,py:8,fs:5,u:"https://arya.ai/careers",note:"Applied DL for BFSI"},
- {g:"metro",s:0,n:"Quantiphi (BLR)",loc:"Bengaluru",cat:"AI / ML / Cloud",ai:9,py:8,fs:5,u:"https://quantiphi.com/careers/",note:"Also hires in Bengaluru"}
+ {g:"metro",s:0,n:"Quantiphi (BLR)",loc:"Bengaluru",cat:"AI / ML / Cloud",ai:9,py:8,fs:5,u:"https://quantiphi.com/careers/",note:"Also hires in Bengaluru"},
+
+ {g:"ncr",s:1,n:"Voxomos",loc:"Noida (Sec 62)",cat:"Voice/Image/LLM AI",ai:9,py:8,fs:5,u:"https://voxomos.com/",note:"IIT-founded GenAI — call 98733 88114"},
+ {g:"ncr",s:0,n:"Appnox",loc:"Noida (Sec 142)",cat:"AI/ML/Data Science",ai:8,py:8,fs:6,u:"https://appnox.ai/",note:"call 99532 14026"},
+ {g:"ncr",s:0,n:"Valiance Solutions",loc:"Noida (Sec 62)",cat:"Applied AI/ML",ai:9,py:8,fs:5,u:"https://valiancesolutions.com/contact-us/",note:"call 81781 57404"},
+ {g:"ncr",s:0,n:"Genpact",loc:"Gurugram (Cyber City)",cat:"Data/AI/Automation",ai:7,py:8,fs:6,u:"https://www.genpact.com/careers",note:"Large analytics intake"},
+
+ {g:"delhi",s:1,n:"Gram Vaani",loc:"Sarvapriya Vihar, Delhi",cat:"NLP / Voice AI",ai:8,py:8,fs:6,u:"https://gramvaani.org/",note:"NLP/Python — call 70710 00444"},
+ {g:"delhi",s:1,n:"Safe Security",loc:"Okhla / Safdarjung, Delhi",cat:"Cybersecurity Product",ai:6,py:8,fs:6,u:"https://safe.security/careers/",note:"Funded cyber SaaS"},
+ {g:"delhi",s:0,n:"Isourse Technologies",loc:"Nehru Place, Delhi",cat:"Logistics / SaaS",ai:5,py:8,fs:7,u:"https://isourse.com/careers/",note:"Automation/SaaS"},
+ {g:"delhi",s:0,n:"Unbundl",loc:"Kirti Nagar, Delhi",cat:"Full-Stack",ai:4,py:8,fs:8,u:"https://www.google.com/search?q=Unbundl+Kirti+Nagar+careers",note:"Near base — SDE walk-in"},
+ {g:"delhi",s:0,n:"RSS India",loc:"Moti Nagar, Delhi",cat:"App/Web Dev",ai:3,py:7,fs:8,u:"https://www.rssindia.com/",note:"call 93550 07301"},
+ {g:"delhi",s:0,n:"TechGropse",loc:"NSP Pitampura, Delhi",cat:"Mobile/Web Dev",ai:4,py:7,fs:8,u:"https://www.techgropse.com/career",note:"NSP hub, near base"},
+ {g:"delhi",s:0,n:"EBSLON Infotech",loc:"NSP Pitampura, Delhi",cat:"Software/Web",ai:4,py:7,fs:7,u:"https://www.google.com/search?q=EBSLON+Infotech+careers",note:"ebsloninfotech@gmail.com"},
+ {g:"delhi",s:0,n:"Khoj Evolutions",loc:"Naraina, Delhi",cat:"Software Dev",ai:4,py:7,fs:7,u:"https://www.google.com/search?q=Khoj+Evolutions+Naraina+careers",note:"Near base"},
+ {g:"delhi",s:0,n:"Suprams Info Solutions",loc:"Janakpuri, Delhi",cat:"Software/SEO",ai:3,py:7,fs:7,u:"https://www.google.com/search?q=Suprams+Info+Solutions+careers",note:"Janakpuri DC"}
 ];
-const groups={today:"g-today",cv:"g-cv",ncr:"g-ncr",tri:"g-tri",metro:"g-metro"};
+const groups={today:"g-today",cv:"g-cv",ncr:"g-ncr",tri:"g-tri",metro:"g-metro",delhi:"g-delhi"};
 const KEY="rk_applied_v1";
 let applied=JSON.parse(localStorage.getItem(KEY)||"{}");
 function save(){localStorage.setItem(KEY,JSON.stringify(applied));}
