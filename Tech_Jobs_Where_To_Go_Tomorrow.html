@@ -3,342 +3,171 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Tech Fresher Jobs — Where to Go Tomorrow · Mohali / Chandigarh</title>
+<title>AI/ML Job Tracker — Rahul Kadyan (2026 Fresher)</title>
 <style>
-  :root{
-    --bg:#0a0f1f; --card:#121a30; --card2:#1a2440; --ink:#eef2ff;
-    --muted:#9fb0d6; --accent:#36c5ff; --accent2:#5af2c0; --good:#37d39b; --warn:#ffcf6b; --line:#243150;
-  }
+  :root{--bg:#0a0f1f;--card:#121a30;--card2:#1a2440;--ink:#eef2ff;--muted:#9fb0d6;
+        --accent:#36c5ff;--accent2:#5af2c0;--good:#37d39b;--warn:#ffcf6b;--vio:#c6a8ff;--line:#243150}
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-       background:var(--bg);color:var(--ink);line-height:1.5;padding-bottom:60px}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;padding-bottom:60px}
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:980px;margin:0 auto;padding:0 16px}
-  header{background:linear-gradient(135deg,#0b3a82 0%,#1b6fd6 50%,#36c5ff 100%);padding:34px 0 30px}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 16px}
+  header{background:linear-gradient(135deg,#0b3a82,#1b6fd6 55%,#36c5ff);padding:30px 0 26px}
   header .wrap{color:#021026}
-  h1{font-size:26px;line-height:1.2;font-weight:800}
-  .sub{margin-top:8px;font-size:14.5px;font-weight:600;opacity:.9}
-  .stamp{display:inline-block;margin-top:14px;background:rgba(0,0,0,.2);color:#fff;
-         padding:5px 12px;border-radius:30px;font-size:12.5px;font-weight:700}
-  .note{background:#1c2233;border:1px solid #3a4565;border-radius:12px;
-        padding:13px 15px;font-size:13.5px;margin:18px 0;color:#cfe0ff}
-  h2{font-size:19px;margin:30px 0 6px;font-weight:800}
-  h2 .em{color:var(--accent2);font-weight:700}
-  .lead{color:var(--muted);font-size:14px;margin-bottom:14px}
-  /* HERO */
-  .hero{background:linear-gradient(135deg,#10203f,#16294d);border:1px solid #2a3f6b;border-radius:18px;
-        padding:20px;margin:18px 0;position:relative;overflow:hidden}
-  .hero .big{font-size:22px;font-weight:800;line-height:1.25}
-  .hero .big span{color:var(--accent2)}
-  .hero .addr{font-size:14.5px;margin-top:10px;color:#dce7ff;font-weight:600}
-  .hero .small{color:var(--muted);font-size:12.5px;margin-top:6px}
-  .hero .herobtns{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
-  /* cards */
-  .ccard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 16px;margin-bottom:12px}
-  .ccard h3{font-size:16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-  .ccard .meta{color:var(--muted);font-size:12.5px;margin:4px 0 12px}
-  .ccard .addr{color:var(--muted);font-size:12px;margin-top:11px}
-  .cbtns{display:flex;flex-wrap:wrap;gap:8px}
-  .cbtn{display:inline-flex;align-items:center;gap:6px;padding:10px 15px;border-radius:10px;
-        font-size:13.5px;font-weight:700;border:1px solid var(--line);transition:.15s}
-  .cbtn:hover{transform:translateY(-2px)}
-  .cbtn.call{background:var(--good);color:#04241a;border-color:transparent}
-  .cbtn.map{background:var(--accent);color:#021026;border-color:transparent}
-  .cbtn.web{background:var(--card2);color:var(--accent2)}
-  .cbtn.mail{background:var(--card2);color:var(--ink)}
-  .vbadge{color:var(--good);font-size:10.5px;font-weight:800;border:1px solid var(--good);padding:2px 8px;border-radius:20px}
-  .nobadge{color:var(--warn);font-size:10.5px;font-weight:700;border:1px solid var(--warn);padding:2px 8px;border-radius:20px}
-  .ai{color:#c6a8ff;font-size:10.5px;font-weight:800;border:1px solid #7e5cff;padding:2px 8px;border-radius:20px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:11px}
-  .btn{display:block;background:var(--card);border:1px solid var(--line);border-radius:13px;padding:14px 15px;transition:.15s}
-  .btn:hover{border-color:var(--accent);transform:translateY(-2px);background:var(--card2)}
-  .btn .t{font-weight:700;font-size:14.5px}
-  .btn .d{color:var(--muted);font-size:12.5px;margin-top:3px}
-  .btn .go{color:var(--accent2);font-size:12px;font-weight:700;margin-top:8px;display:inline-block}
+  h1{font-size:25px;font-weight:800}
+  .sub{margin-top:6px;font-size:14px;font-weight:600;opacity:.9}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+  .chip{background:rgba(0,0,0,.16);color:#fff;padding:4px 10px;border-radius:20px;font-size:11.5px;font-weight:700}
+  .bar{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:12px 0}
+  .bar .wrap{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .prog{flex:1;min-width:160px;height:10px;background:var(--card2);border-radius:20px;overflow:hidden}
+  .prog>i{display:block;height:100%;background:linear-gradient(90deg,var(--good),var(--accent));width:0}
+  .progtxt{font-size:13px;font-weight:700;color:var(--muted)}
+  .btnreset{background:var(--card);border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:6px 11px;font-size:12px;cursor:pointer}
+  h2{font-size:18px;margin:28px 0 4px;font-weight:800}
+  h2 .em{color:var(--accent2);font-size:13px;font-weight:700}
+  .lead{color:var(--muted);font-size:13px;margin-bottom:12px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+  .c{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:13px;padding:14px;transition:.15s}
+  .c.done{opacity:.55;border-left-color:var(--good)}
+  .c .top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+  .c h3{font-size:15.5px;font-weight:800}
+  .c .loc{color:var(--muted);font-size:12px;margin-top:2px}
+  .c .cat{display:inline-block;font-size:10.5px;font-weight:700;color:var(--vio);border:1px solid #5b4a8f;padding:1px 7px;border-radius:20px;margin-top:8px}
+  .c .note{color:var(--muted);font-size:12px;margin-top:8px}
+  .scores{display:flex;gap:6px;margin-top:9px;flex-wrap:wrap}
+  .s{font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--card2);color:var(--accent2)}
+  .row{display:flex;gap:8px;margin-top:11px;align-items:center}
+  .apply{background:var(--accent);color:#021026;font-weight:800;font-size:12.5px;padding:8px 13px;border-radius:9px}
+  .apply:hover{transform:translateY(-1px)}
+  .star{color:var(--warn);font-size:13px}
+  .tg{margin-left:auto;display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--muted);cursor:pointer;user-select:none}
+  .tg input{width:16px;height:16px;accent-color:var(--good)}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .links a{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:8px 12px;font-size:12.5px;font-weight:700;color:var(--accent2)}
   ul.tips{list-style:none;margin-top:8px}
-  ul.tips li{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);
-             border-radius:9px;padding:11px 14px;margin-bottom:9px;font-size:13.5px}
+  ul.tips li{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:9px;padding:10px 13px;margin-bottom:8px;font-size:13px}
   ul.tips li b{color:var(--accent2)}
-  footer{color:var(--muted);font-size:12px;text-align:center;margin-top:36px;line-height:1.7}
-  table{width:100%;border-collapse:collapse;margin-top:6px;font-size:13px;background:var(--card);
-        border-radius:13px;overflow:hidden;border:1px solid var(--line)}
-  th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
-  th{background:var(--card2);font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
-  tr:last-child td{border-bottom:none}
-  .yes{color:var(--good);font-weight:700;white-space:nowrap}
-  .chk{color:var(--warn);font-weight:700;white-space:nowrap}
-  .unk{color:var(--muted);font-weight:700;white-space:nowrap}
-  .stop{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);
-        border-radius:14px;padding:15px 16px;margin-bottom:12px}
-  .stop .saddr{font-weight:800;font-size:14.5px}
-  .stop .ssub{color:var(--muted);font-size:12px;margin:4px 0 8px}
-  .co{font-size:13px;padding:8px 0;border-top:1px dashed var(--line);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-  .co b{font-weight:700}
-  .co .lk{color:var(--accent2);font-weight:700;white-space:nowrap}
-  .co .ok{color:var(--good);font-size:11px;font-weight:800;border:1px solid var(--good);padding:1px 7px;border-radius:20px}
-  .co .vf{color:var(--warn);font-size:11px;font-weight:800;border:1px solid var(--warn);padding:1px 7px;border-radius:20px}
+  footer{color:var(--muted);font-size:12px;text-align:center;margin-top:34px;line-height:1.7}
 </style>
 </head>
 <body>
-
-<header>
-  <div class="wrap">
-    <h1>🚀 Tech Fresher Jobs — Where to Go Tomorrow</h1>
-    <div class="sub">Mohali · Chandigarh · Panchkula — for B.Tech CSE / AI-ML / IT / Data freshers</div>
-    <span class="stamp">Updated 15 June 2026 · addresses &amp; numbers checked on official sites &amp; maps</span>
+<header><div class="wrap">
+  <h1>🎯 AI/ML Job Tracker</h1>
+  <div class="sub">Rahul Kadyan · B.Tech CSE (AI&amp;ML) 2026 · Panipat (relocate-ready) · GenAI · Computer Vision · Python</div>
+  <div class="chips">
+    <span class="chip">Python</span><span class="chip">LangChain/LangGraph</span><span class="chip">RAG/LLM</span>
+    <span class="chip">YOLO/OpenCV</span><span class="chip">FastAPI</span><span class="chip">Docker</span><span class="chip">1020 LeetCode</span>
   </div>
-</header>
+</div></header>
+
+<div class="bar"><div class="wrap">
+  <span class="progtxt" id="ptxt">0 applied</span>
+  <div class="prog"><i id="pbar"></i></div>
+  <button class="btnreset" onclick="resetAll()">reset</button>
+</div></div>
 
 <div class="wrap">
+  <p class="lead" style="margin-top:14px">Tap <b>Apply</b> to open the careers page, then tick <b>Applied</b> — your progress saves on this device. Match scores are fit estimates for your profile. Verified 16 Jun 2026.</p>
 
-  <div class="note">
-    ⚠️ <b>How to actually use this:</b> STPI Mohali is a <b>secured government IT building</b> — you can't roam
-    private offices unannounced. The winning move: <b>apply online tonight</b> to each company below, then
-    <b>call HR</b> to ask for an interview slot. Your interview will almost always be at the <b>one address</b>
-    in the hero box. Numbers marked <span class="vbadge">✓ verified</span> were confirmed on the company's own
-    site today; <span class="nobadge">verify phone</span> = confirmed hirer, number from a directory — ring to confirm.
+  <h2>⭐ Apply TODAY <span class="em">— highest match + confirmed fresher</span></h2>
+  <div class="grid" id="g-today"></div>
+
+  <h2>👁️ Computer Vision <span class="em">— your ANPR/YOLO/OpenCV edge</span></h2>
+  <div class="grid" id="g-cv"></div>
+
+  <h2>🤖 NCR AI / GenAI / Data <span class="em">— Gurugram / Noida / Delhi</span></h2>
+  <div class="grid" id="g-ncr"></div>
+
+  <h2>🏠 Tricity (Tier-2) <span class="em">— Mohali / Chandigarh, near-ish</span></h2>
+  <div class="grid" id="g-tri"></div>
+
+  <h2>🌆 Metro (Tier-3) <span class="em">— Bengaluru / Hyderabad / Pune</span></h2>
+  <div class="grid" id="g-metro"></div>
+
+  <h2>🔎 Live job boards <span class="em">— refresh daily</span></h2>
+  <div class="links">
+    <a href="https://wellfound.com/role/l/ai-engineer/india" target="_blank" rel="noopener">Wellfound · AI Engineer</a>
+    <a href="https://wellfound.com/role/l/computer-vision/india" target="_blank" rel="noopener">Wellfound · Computer Vision</a>
+    <a href="https://cutshort.io/jobs/artificial-intelligence-ai-jobs" target="_blank" rel="noopener">Cutshort · AI</a>
+    <a href="https://www.hirist.tech/generative-ai-jobs-in-delhi-ncr" target="_blank" rel="noopener">Hirist · GenAI NCR</a>
+    <a href="https://internshala.com/fresher-jobs/artificial-intelligence-ai-jobs/" target="_blank" rel="noopener">Internshala · AI fresher</a>
+    <a href="https://in.indeed.com/q-ai-engineer-for-fresher-jobs.html" target="_blank" rel="noopener">Indeed · AI fresher</a>
   </div>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="big">🏢 One building. ~30 tech companies.<br><span>→ STPI Mohali</span></div>
-    <div class="addr">📍 STPI Incubation Centre, Plot No. C-184, Industrial Area Phase 8-A, Sector 75, SAS Nagar (Mohali), Punjab 160071</div>
-    <div class="small">Open Mon–Fri, 9:30 AM – 6:00 PM · nearest stop: SAS Nagar Mohali railway station (Phase 9) · ~10 min by auto</div>
-    <div class="small">This is where your STPI list lives — AgNext, XenonStack, Endoenergy, Incture, Closeloop, Nerve Cells AI, Avisoft, Datopic &amp; ~22 more all sit in this one tower. Target it.</div>
-    <div class="herobtns">
-      <a class="cbtn map" href="https://www.google.com/maps/search/?api=1&query=STPI+Incubation+Centre+C-184+Sector+75+Phase+8A+Mohali" target="_blank" rel="noopener">🗺️ Open in Maps</a>
-      <a class="cbtn map" href="https://www.mappls.com/nroab7" target="_blank" rel="noopener">📍 Mappls</a>
-      <a class="cbtn call" href="tel:+911722236215">📞 STPI reception · 0172-2236215</a>
-    </div>
-  </div>
-
-  <!-- VISIT TOMORROW -->
-  <h2>🗺️ Your roadmap from Phase 7 <span class="em">— visit order for tomorrow</span></h2>
-  <p class="lead">Starting at your location, <b>Industrial Area Phase 7, Mohali</b>. Built from this research + your database. Status 15 Jun 2026: ✅ confirmed hiring · ⚠️ walk-in/verify. <b>Stops ①–⑥ are all in Mohali and doable in one day</b> (walk / short auto, going outward from Phase 7). <b>⑦–⑧ (Chandigarh &amp; Panchkula) are Day 2.</b> Call ahead, carry 5 résumés + GitHub link, start ~10:00 AM.</p>
-  <div class="herobtns" style="margin:0 0 16px">
-    <a class="cbtn map" href="https://www.google.com/maps/dir/?api=1&origin=Industrial+Area+Phase+7,+Mohali&destination=IT+City+Sector+83+Mohali&waypoints=C-127+Phase+8+Sector+73+Mohali%7CSTPI+C-184+Sector+75+Mohali%7CPhase+8B+Sector+74+Mohali%7CBestech+Tower+Sector+66+Mohali%7CWorldTech+67+Sector+67+Mohali%7CSector+82+JLPL+Mohali" target="_blank" rel="noopener">🗺️ Open the whole Mohali route in Google Maps</a>
-  </div>
-
-  <div class="stop">
-    <div class="saddr">① START · Phase 7, Industrial Area, Sector 73 <span class="ok">you are here</span></div>
-    <div class="ssub">Knock these out first · <a class="lk" href="https://www.google.com/maps/search/?api=1&query=Industrial+Area+Phase+7+Mohali" target="_blank" rel="noopener">🗺️ Map</a></div>
-    <div class="co"><b>WebSpero Solutions</b> · digital marketing · <a class="lk" href="tel:+916283093264">📞 HR 62830-93264</a> · <a class="lk" href="https://www.webspero.com/career/" target="_blank" rel="noopener">Careers ↗</a></div>
-    <div class="co"><b>Goteso</b> <span class="ok">✅ content/IT</span> · <a class="lk" href="tel:+918968582165">📞 89685-82165</a> · <a class="lk" href="mailto:jobs@goteso.com">✉️ jobs@goteso.com</a></div>
-  </div>
-
-  <div class="stop">
-    <div class="saddr">② C-127, Phase 8, Sector 73 <span class="ok">~2 min walk</span></div>
-    <div class="ssub">Two big fresher hirers in one building · <a class="lk" href="https://www.google.com/maps/search/?api=1&query=C-127+Phase+8+Sector+73+Mohali" target="_blank" rel="noopener">🗺️ Map</a></div>
-    <div class="co"><b>ToXSL Technologies</b> <span class="ok">✅ Batch 2026-27 · ₹3–5 LPA</span> <a class="lk" href="https://talent.toxsl.com/jobs" target="_blank" rel="noopener">Jobs ↗</a></div>
-    <div class="co"><b>Apptunix</b> <span class="ok">✅ 9 fresher profiles</span> <a class="lk" href="https://www.apptunix.com/career/" target="_blank" rel="noopener">Careers ↗</a></div>
-  </div>
-
-  <div class="stop">
-    <div class="saddr">③ STPI, C-184, Sector 75 <span class="ok">your photo · ~30 cos</span></div>
-    <div class="ssub">Your whole STPI list in one tower · <a class="lk" href="https://www.google.com/maps/search/?api=1&query=STPI+C-184+Sector+75+Mohali" target="_blank" rel="noopener">🗺️ Map</a> · detailed cards below</div>
-    <div class="co"><b>Endoenergy</b> <span class="ok">✅ ROS2</span> · <b>XenonStack</b> <span class="ok">✅ AI/Data</span> · <b>AgNext</b> <span class="ok">✅ AI/ML</span> · <b>Incture</b> <span class="ok">✅</span></div>
-    <div class="co"><b>Relinns/BotPenguin</b> <span class="ok">✅</span> <a class="lk" href="https://careers.relinns.com/" target="_blank" rel="noopener">Careers ↗</a> · <b>Digittrix</b> <a class="lk" href="tel:+918727000867">📞 87270-00867</a> · also: Closeloop, Nerve Cells AI, Avisoft, Datopic</div>
-  </div>
-
-  <div class="stop">
-    <div class="saddr">④ Phase 8A / 8B / Sector 74</div>
-    <div class="ssub">Dense dev-shop cluster, walkable from C-184 · <a class="lk" href="https://www.google.com/maps/search/?api=1&query=Phase+8B+Sector+74+Industrial+Area+Mohali" target="_blank" rel="noopener">🗺️ Map</a></div>
-    <div class="co"><b>Soft Radix</b> <span class="ok">✅ AI/ML Engineer (fresher)</span> · Phase 8B, SM Heights · <a class="lk" href="https://softradix.com/careers" target="_blank" rel="noopener">Careers ↗</a></div>
-    <div class="co"><b>Code Garage</b> <span class="ok">✅ SE Trainee</span> <a class="lk" href="tel:+918288983623">📞 82889-83623</a> · <b>ChicMic</b> <span class="ok">✅ ReactJS</span> F-273 <a class="lk" href="tel:+911723113789">📞 0172-3113789</a></div>
-    <div class="co"><b>Base2Brand</b> (Sec 74) <a class="lk" href="https://wa.me/917889101844" target="_blank" rel="noopener">🟢 WA 78891-01844</a> · also: Suffescom, Shine Dezign, Bits in Glass, Seasia, Quark, Webdew, SourceFuse</div>
-  </div>
-
-  <div class="stop">
-    <div class="saddr">⑤ Sector 65–67 (Bestech / WorldTech)</div>
-    <div class="ssub">Short auto from Phase 8 · <a class="lk" href="https://www.google.com/maps/search/?api=1&query=WorldTech+67+Sector+67+Mohali" target="_blank" rel="noopener">🗺️ Map</a></div>
-    <div class="co"><b>SoftProdigy</b> <span class="ok">✅ Interns 2025-26</span> · WorldTech 67, Sec 67 · <a class="lk" href="tel:+919501336765">📞 95013-36765</a> · <a class="lk" href="mailto:hr@softprodigy.com">✉️ HR</a></div>
-    <div class="co"><b>DesignBoxed</b> (Sec 66) <a class="lk" href="tel:+911724038777">📞 0172-4038777</a> · <b>Signity</b> <span class="vf">⚠️ walk-in</span> <a class="lk" href="tel:+911724118913">📞 0172-4118913</a> · <b>RevClerx</b> (Sec 65) <a class="lk" href="tel:+911725093939">📞 0172-5093939</a></div>
-  </div>
-
-  <div class="stop">
-    <div class="saddr">⑥ Sector 82 / IT City / Airport Rd (JLPL)</div>
-    <div class="ssub">~10 min auto SW · <a class="lk" href="https://www.google.com/maps/search/?api=1&query=Sector+82+JLPL+Mohali" target="_blank" rel="noopener">🗺️ Map</a></div>
-    <div class="co"><b>Trigma</b> <span class="ok">AI dev</span> (Sec 82 JLPL) · <b>Matrid</b> (Sec 82) <a class="lk" href="tel:+918427533101">📞 84275-33101</a> · <b>Wits Innovation Lab</b> · <b>Whispering Homes</b> <a class="lk" href="tel:+917527900000">📞 75279-00000</a></div>
-    <div class="co"><b>smartData</b> (IT City, Sec 83) <a class="lk" href="https://www.smartdatainc.com/careers/" target="_blank" rel="noopener">Careers ↗</a> · <b>Sntrix</b> &amp; <b>Ditinus</b> <span class="vf">⚠️ verify</span> (Airport Rd)</div>
-  </div>
-
-  <div class="stop">
-    <div class="saddr">⑦ DAY 2 · Chandigarh — Rajiv Gandhi Tech Park + IT Area</div>
-    <div class="ssub">~30–40 min from Mohali · <a class="lk" href="https://www.google.com/maps/search/?api=1&query=Rajiv+Gandhi+Chandigarh+Technology+Park" target="_blank" rel="noopener">🗺️ Map</a></div>
-    <div class="co"><b>Net Solutions</b> <span class="ok">✅ intern→FT</span> RGCTP · <b>Infosys BPM</b> · <b>PTC India</b> · <b>Tech Mahindra</b> (IT Park)</div>
-    <div class="co"><b>CrossML</b> <span class="ok">AI/ML</span> (Ind. Area Ph 1) · <b>Nagarro</b> (Godrej Eternia) · <b>Creative Monk</b> (Sec 17) · <b>Webtunix AI</b> · <b>Jugnoo</b></div>
-  </div>
-
-  <div class="stop">
-    <div class="saddr">⑧ DAY 2 · Panchkula IT Park, Sector 22</div>
-    <div class="ssub">East of Chandigarh · <a class="lk" href="https://www.google.com/maps/search/?api=1&query=IT+Park+Sector+22+Panchkula" target="_blank" rel="noopener">🗺️ Map</a></div>
-    <div class="co"><b>Grazitti Interactive</b> <span class="ok">✅ 50+ roles</span> <a class="lk" href="tel:+919779862521">📞 97798-62521</a> · <b>Tech Arch</b> · <b>Netqom</b> <span class="ok">~3–4.5 LPA</span></div>
-  </div>
-
-  <!-- STATUS -->
-  <h2>📊 Still hiring for freshers? <span class="em">— re-checked 15 Jun 2026</span></h2>
-  <p class="lead">Honest status from live boards today. ✅ = active fresher/junior roles seen · ⚠️ = listing may be older, confirm by phone · ❓ = couldn't confirm, check the careers page.</p>
-  <table>
-    <tr><th>Company</th><th>Fresher hiring?</th><th>What I saw today</th></tr>
-    <tr><td>Endoenergy Systems</td><td class="yes">✅ Yes</td><td>ROS2 freshers &amp; interns — confirmed Jun 2026</td></tr>
-    <tr><td>XenonStack</td><td class="yes">✅ Yes</td><td>~36 Mohali jobs + students/graduates program</td></tr>
-    <tr><td>Grazitti Interactive</td><td class="yes">✅ Yes</td><td>50+ live roles (Naukri/Indeed); fresher-friendly</td></tr>
-    <tr><td>AgNext Technologies</td><td class="yes">✅ Active</td><td>~11 roles on Workable/Glassdoor — confirm fresher level</td></tr>
-    <tr><td>Incture Technologies</td><td class="yes">✅ Active</td><td>~9 roles (Naukri); Eklavya graduate program</td></tr>
-    <tr><td>ToXSL Technologies</td><td class="yes">✅ Yes</td><td>Off-campus Fresher Batch 2026-27, ₹3–5 LPA · C-127 Sector 73</td></tr>
-    <tr><td>Apptunix</td><td class="yes">✅ Yes</td><td>9 fresher profiles (Jr Tester / full-stack intern) · C-127 Sector 73</td></tr>
-    <tr><td>SoftProdigy</td><td class="yes">✅ Yes</td><td>Interns 2025 &amp; 2026 batch (CS/IT/MCA) · Sector 67</td></tr>
-    <tr><td>ChicMic Studios</td><td class="yes">✅ Yes</td><td>ReactJS / app-dev roles · F-273 Sector 74</td></tr>
-    <tr><td>Relinns (BotPenguin)</td><td class="yes">✅ Yes</td><td>Java/QA/DevOps + interns · C-184 Sector 75</td></tr>
-    <tr><td>Net Solutions</td><td class="yes">✅ Yes</td><td>SW Dev intern → full-time · Chandigarh IT Park</td></tr>
-    <tr><td>Signity Solutions</td><td class="chk">⚠️ Walk-in</td><td>Open applications; HR calls on opening · Sector 66</td></tr>
-    <tr><td>Closeloop Technologies</td><td class="chk">⚠️ Verify</td><td>Junior React/DevOps posted; fresher drive was 2024</td></tr>
-    <tr><td>Nerve Cells AI</td><td class="chk">⚠️ Verify</td><td>Internship listing dates to Aug 2025 — confirm if live</td></tr>
-    <tr><td>Datopic Technologies</td><td class="unk">❓ Unconfirmed</td><td>No live post found — check careers page</td></tr>
-    <tr><td>Coforge (GET)</td><td class="chk">⚠️ Verify</td><td>GET program ongoing — confirm current off-campus drive</td></tr>
-  </table>
-
-  <!-- INSIDE STPI -->
-  <h2>🏢 Inside STPI Mohali <span class="em">— apply tonight, interview here</span></h2>
-  <p class="lead">All at the same Plot C-184 address above. Floor numbers are from your STPI directory.</p>
-
-  <div class="ccard">
-    <h3>AgNext Technologies <span class="ai">AI / ML</span> <span class="nobadge">verify phone</span></h3>
-    <div class="meta">AgTech — food-quality computer vision &amp; SaaS · 6th Floor · ⭐ top pick for AI/ML &amp; data freshers</div>
-    <div class="cbtns">
-      <a class="cbtn web" href="https://apply.workable.com/agnext-technologies/" target="_blank" rel="noopener">💼 Apply (Workable)</a>
-      <a class="cbtn mail" href="mailto:contact@agnext.com">✉️ contact@agnext.com</a>
-      <a class="cbtn call" href="tel:+918047185818">📞 80-4718-5818</a>
-    </div>
-    <div class="addr">📍 6th Floor, STPI C-184, Sector 75, Mohali · (phone is the Bengaluru HQ line — ask for Mohali HR)</div>
-  </div>
-
-  <div class="ccard">
-    <h3>XenonStack <span class="ai">AI / Data / Cloud</span> <span class="nobadge">verify phone</span></h3>
-    <div class="meta">Agentic AI, Big Data, DevOps, Cloud, Cyber · 6th Floor (Hall 603) · hires freshers (Cloud Engineer ~₹3–5 LPA reported)</div>
-    <div class="cbtns">
-      <a class="cbtn web" href="https://www.xenonstack.com/careers/" target="_blank" rel="noopener">💼 Careers</a>
-      <a class="cbtn web" href="https://xenonstack.zohorecruit.in/jobs/Careers" target="_blank" rel="noopener">🧰 Job board</a>
-      <a class="cbtn call" href="tel:+919501840005">📞 95018 40005</a>
-    </div>
-    <div class="addr">📍 6th Floor, Hall 603, STPI C-184, Sector 75, Mohali 160071</div>
-  </div>
-
-  <div class="ccard">
-    <h3>Endoenergy Systems <span class="ai">Robotics / ROS2</span> <span class="vbadge">✓ verified</span></h3>
-    <div class="meta">Wearable assistive exoskeletons / embedded · 4th Floor (Hall 402-B) · ⭐ actively hiring freshers &amp; interns for ROS2 Developer</div>
-    <div class="cbtns">
-      <a class="cbtn call" href="tel:+919876774566">📞 Call · 98767 74566</a>
-      <a class="cbtn mail" href="mailto:hr@endoenergy.in">✉️ hr@endoenergy.in</a>
-      <a class="cbtn web" href="https://endoenergy.com/careers/" target="_blank" rel="noopener">💼 Careers</a>
-    </div>
-    <div class="addr">📍 4th Floor, Hall 402-B, STPI C-184, Sector 75, Mohali 160071</div>
-  </div>
-
-  <div class="ccard">
-    <h3>Incture Technologies <span class="nobadge">verify phone</span></h3>
-    <div class="meta">SAP BTP enterprise products · STPI C-184 · runs the <b>Eklavya Graduate Program</b> for fresh engineers</div>
-    <div class="cbtns">
-      <a class="cbtn web" href="https://incture.com/careers/" target="_blank" rel="noopener">💼 Careers</a>
-      <a class="cbtn web" href="https://incture.com/contact-us/" target="_blank" rel="noopener">📨 Contact</a>
-    </div>
-    <div class="addr">📍 STPI C-184, Sector 75, Phase 8-A, Mohali 160071</div>
-  </div>
-
-  <div class="ccard">
-    <h3>Closeloop Technologies <span class="nobadge">verify phone</span></h3>
-    <div class="meta">Software product development (US + Mohali) · 4th Floor (Hall 402-A) · junior React.js / DevOps roles</div>
-    <div class="cbtns">
-      <a class="cbtn web" href="https://closeloop.com/careers/" target="_blank" rel="noopener">💼 Careers</a>
-      <a class="cbtn web" href="https://closeloop.com/contact/" target="_blank" rel="noopener">📨 Contact</a>
-    </div>
-    <div class="addr">📍 4th Floor, Hall 402-A, STPI C-184, Sector 75, Mohali 160071</div>
-  </div>
-
-  <div class="ccard">
-    <h3>Nerve Cells AI <span class="ai">AI / Embedded</span> <span class="nobadge">verify phone</span></h3>
-    <div class="meta">AI automation, embedded &amp; defense tech · Hall 301 · internship (0–2 yr) → PPO route</div>
-    <div class="cbtns">
-      <a class="cbtn web" href="https://nervecells.ai/" target="_blank" rel="noopener">🌐 Website</a>
-      <a class="cbtn web" href="https://in.linkedin.com/in/idamrinder-singh" target="_blank" rel="noopener">in Founder (DM)</a>
-    </div>
-    <div class="addr">📍 Hall 301, STPI C-184, Sector 75, Mohali · founder/CEO Amrinder Singh</div>
-  </div>
-
-  <div class="ccard">
-    <h3>Avisoft <span class="nobadge">verify phone</span></h3>
-    <div class="meta">Software development · STPI C-184 · C# / full-stack roles, fresher-friendly</div>
-    <div class="cbtns">
-      <a class="cbtn web" href="https://in.linkedin.com/company/avi-soft" target="_blank" rel="noopener">in LinkedIn (jobs + DM)</a>
-    </div>
-    <div class="addr">📍 Hall 303-A, STPI C-184, Sector 75, Mohali 160071</div>
-  </div>
-
-  <div class="ccard">
-    <h3>Datopic Technologies <span class="ai">AI / Blockchain / Cyber</span> <span class="nobadge">verify phone</span></h3>
-    <div class="meta">AI, blockchain &amp; cybersecurity software · Hall 301 · confirm fresher level on careers page</div>
-    <div class="cbtns">
-      <a class="cbtn web" href="https://www.datopic.com/careers" target="_blank" rel="noopener">💼 Careers</a>
-    </div>
-    <div class="addr">📍 Hall 301, STPI C-184, Sector 75, Mohali 160071</div>
-  </div>
-
-  <!-- ELSEWHERE -->
-  <h2>🌆 Elsewhere in Tricity <span class="em">— still worth the trip</span></h2>
-
-  <div class="ccard">
-    <h3>Grazitti Interactive <span class="vbadge">✓ verified</span></h3>
-    <div class="meta">Marketing-tech, Salesforce, data &amp; AI · Panchkula · big hirer (50+ live roles) incl. Full-Stack AI &amp; QA</div>
-    <div class="cbtns">
-      <a class="cbtn call" href="tel:+919779862521">📞 Call · 97798 62521</a>
-      <a class="cbtn web" href="https://www.grazitti.com/company/careers/job-listing/" target="_blank" rel="noopener">💼 Job listings</a>
-      <a class="cbtn map" href="https://www.google.com/maps/search/?api=1&query=Grazitti+Interactive+HSIIDC+Technology+Park+Sector+22+Panchkula" target="_blank" rel="noopener">🗺️ Maps</a>
-    </div>
-    <div class="addr">📍 Plot 19, HSIIDC Technology Park, Sector 22, Panchkula 134116 · landline 0172-4535897</div>
-  </div>
-
-  <div class="ccard">
-    <h3>Coforge Limited <span class="nobadge">verify drive</span></h3>
-    <div class="meta">Large IT MNC · Graduate Engineer Trainee (GET) program · BE/BTech/MCA · ~₹3.5–6.5 LPA</div>
-    <div class="cbtns">
-      <a class="cbtn web" href="https://www.coforge.com/careers" target="_blank" rel="noopener">💼 Careers / GET</a>
-    </div>
-    <div class="addr">📍 Pan-India intake (apply online) · check for the current off-campus GET drive</div>
-  </div>
-
-  <!-- APPLY TONIGHT -->
-  <h2>🌙 Apply tonight <span class="em">— live fresher listings (open now)</span></h2>
-  <p class="lead">Do these the same evening so you have something to mention when you call HR tomorrow.</p>
-  <div class="grid">
-    <a class="btn" href="https://in.indeed.com/q-software-developer-fresher-l-mohali,-punjab-jobs.html" target="_blank" rel="noopener">
-      <div class="t">Fresher SW Developer — Mohali</div><div class="d">Indeed</div><span class="go">Open →</span></a>
-    <a class="btn" href="https://in.indeed.com/q-fresher-software-l-chandigarh,-chandigarh-jobs.html" target="_blank" rel="noopener">
-      <div class="t">Fresher Software — Chandigarh</div><div class="d">Indeed</div><span class="go">Open →</span></a>
-    <a class="btn" href="https://in.indeed.com/q-machine-learning-ai-engineer-fresher-jobs.html" target="_blank" rel="noopener">
-      <div class="t">AI / ML Engineer — Fresher</div><div class="d">Indeed</div><span class="go">Open →</span></a>
-    <a class="btn" href="https://www.naukri.com/fresher-jobs-in-mohali" target="_blank" rel="noopener">
-      <div class="t">Fresher jobs — Mohali</div><div class="d">Naukri</div><span class="go">Open →</span></a>
-    <a class="btn" href="https://in.linkedin.com/jobs/fresher-jobs-mohali-district" target="_blank" rel="noopener">
-      <div class="t">Fresher jobs — Mohali district</div><div class="d">LinkedIn</div><span class="go">Open →</span></a>
-    <a class="btn" href="https://internshala.com/fresher-jobs/it-jobs-in-mohali/" target="_blank" rel="noopener">
-      <div class="t">IT fresher jobs — Mohali</div><div class="d">Internshala</div><span class="go">Open →</span></a>
-  </div>
-
-  <!-- PLAYBOOK -->
-  <h2>🎯 Walk-in / interview playbook <span class="em">— for a CSE fresher</span></h2>
+  <h2>🧭 Strategy</h2>
   <ul class="tips">
-    <li><b>Call before you go.</b> Ring HR (numbers above), say <i>"B.Tech CSE 2026, I applied online — can I come for a walk-in interview / drop my resume?"</i> Get a name + time. Don't show up cold at a secured office.</li>
-    <li><b>Carry 4–5 printed resumes</b> + a one-line <b>GitHub / project link</b> at the top. For these product companies, a working project beats marks.</li>
-    <li><b>Know one project + DSA basics cold.</b> Be ready to explain a project end-to-end and solve an easy/medium array/string problem. For AI roles (AgNext, XenonStack, Nerve Cells), revise Python + one ML project.</li>
-    <li><b>Best time to visit:</b> ~10:30 AM–12:00 or 3:00–5:00 PM, Mon–Thu. Dress smart-casual. The whole cluster is at one address, so you can line up 2–3 in a day.</li>
-    <li><b>Follow up same day</b> by email/LinkedIn to the HR you spoke to. Connect with the founder where listed (e.g. Nerve Cells AI).</li>
+    <li><b>Lead with projects, not CGPA.</b> ANPR (YOLO/OpenCV), RAG/LangGraph agents, FastAPI deploys + 1020 LeetCode. GitHub <b>soulrahulrk</b> at the top.</li>
+    <li><b>Two résumés:</b> AI/ML version (CV+LLM) for AI cos; Python/Backend version (FastAPI/Docker/SQL+LeetCode) for product/SaaS — doubles your funnel.</li>
+    <li><b>Computer Vision is your niche</b> — Spyne, Vehant, Awiros, AgNext, Mad Street Den, SigTuple: lead with ANPR + real-time inference.</li>
+    <li><b>Use Wellfound + Cutshort daily</b> to DM founders/HMs — referrals beat cold applies for startups.</li>
+    <li><b>NCR = apply online + scheduled interview</b> (not walk-in). Book 2–3 in one zone, then travel from Panipat.</li>
   </ul>
 
-  <footer>
-    Built 15 June 2026 · STPI address &amp; Endoenergy/Grazitti numbers verified on official sources today.<br>
-    Always confirm an opening &amp; book a slot by phone before travelling. You've got this. 🚀
-  </footer>
-
+  <footer>AI/ML Job Tracker · built 16 Jun 2026 · scores are fit estimates — confirm role/eligibility on each careers page. Go get it 🚀</footer>
 </div>
+
+<script>
+const J=[
+ // group: today / cv / ncr / tri / metro
+ {g:"today",s:1,n:"Impressico",loc:"Noida",cat:"GenAI / Python Full-Stack",ai:8,py:9,fs:8,u:"https://www.impressico.com/careers/",note:"Confirmed GenAI/Python trainee for 2024-26 grads"},
+ {g:"today",s:1,n:"XenonStack",loc:"Mohali (STPI)",cat:"Agentic AI / Data",ai:9,py:8,fs:6,u:"https://xenonstack.jobs/",note:"Associate SE (fresher) + Agentic AI Engineer"},
+ {g:"today",s:1,n:"AAPNA Infotech",loc:"Remote / Delhi",cat:"AI Engineer 0-1yr",ai:8,py:8,fs:6,u:"https://www.aapnainfotech.com/careers/",note:"LangChain/PyTorch, remote = no relocation"},
+ {g:"today",s:1,n:"CogniTensor",loc:"Delhi",cat:"GenAI Venture Studio",ai:9,py:8,fs:6,u:"https://www.cognitensor.com/",note:"Grad cohort; startup, projects > CGPA"},
+ {g:"today",s:1,n:"Soft Radix",loc:"Mohali (8B)",cat:"AI/ML Engineer (fresher)",ai:8,py:8,fs:6,u:"https://softradix.com/careers",note:"Walk-in friendly"},
+ {g:"today",s:1,n:"Sarvam AI",loc:"Bengaluru / Delhi",cat:"LLM Foundation Models",ai:10,py:9,fs:4,u:"https://www.sarvam.ai/careers",note:"Top LLM unicorn; intern to FT"},
+
+ {g:"cv",s:1,n:"Spyne",loc:"Gurugram (Sec 32)",cat:"Computer Vision · Auto",ai:9,py:8,fs:6,u:"https://www.spyne.ai/careers",note:"CV/deep learning — direct YOLO/OpenCV fit"},
+ {g:"cv",s:1,n:"Vehant Technologies",loc:"Noida (Sec 59)",cat:"ANPR · Vision AI · Security",ai:9,py:8,fs:5,u:"https://www.vehant.com/careers/",note:"ANPR = your exact project; apply + track"},
+ {g:"cv",s:0,n:"Awiros",loc:"Gurugram",cat:"Vision AI OS",ai:9,py:8,fs:5,u:"https://awiros.com/careers/",note:"CV platform; senior-heavy — referral/track"},
+ {g:"cv",s:1,n:"AgNext Technologies",loc:"Mohali (STPI)",cat:"AgTech CV + ML",ai:9,py:8,fs:5,u:"https://apply.workable.com/agnext-technologies/",note:"Food-quality computer vision"},
+ {g:"cv",s:0,n:"Mad Street Den",loc:"Bengaluru / Chennai",cat:"Retail Computer Vision",ai:9,py:8,fs:5,u:"https://www.madstreetden.com/careers/",note:"CV/ML product"},
+ {g:"cv",s:0,n:"SigTuple",loc:"Bengaluru",cat:"Healthcare Vision AI",ai:9,py:8,fs:4,u:"https://sigtuple.com/careers/",note:"Medical-imaging CV/DL"},
+
+ {g:"ncr",s:0,n:"Fractal Analytics",loc:"Gurugram / Noida",cat:"AI / ML / DS",ai:9,py:8,fs:5,u:"https://fractal.ai/careers/",note:"Fresher + intern tracks"},
+ {g:"ncr",s:0,n:"Tiger Analytics",loc:"Gurugram",cat:"AI / Data Science",ai:9,py:8,fs:4,u:"https://www.tigeranalytics.com/careers/",note:"DS/ML analyst grad roles"},
+ {g:"ncr",s:0,n:"Affine",loc:"Gurugram (44)",cat:"GenAI / ML",ai:9,py:8,fs:4,u:"https://affine.ai/careers/",note:"GenAI engineering"},
+ {g:"ncr",s:0,n:"Quantiphi",loc:"Gurugram",cat:"AI / ML / Cloud",ai:9,py:8,fs:5,u:"https://quantiphi.com/careers/",note:"Campus hiring"},
+ {g:"ncr",s:1,n:"Innovaccer",loc:"Noida (Sec 62)",cat:"Healthcare AI / Data",ai:9,py:8,fs:7,u:"https://innovaccer.com/careers",note:"Strong AI/ML + data-eng roles"},
+ {g:"ncr",s:0,n:"ORI (Oriserve)",loc:"Noida",cat:"Conversational GenAI/LLM",ai:9,py:8,fs:5,u:"https://oriserve.com/careers/",note:"LLM/NLP startup"},
+ {g:"ncr",s:0,n:"Gnani.ai",loc:"Noida",cat:"Voice AI / LLM",ai:9,py:8,fs:5,u:"https://gnani.ai/careers",note:"Voice AI / NLP"},
+ {g:"ncr",s:0,n:"Yellow.ai",loc:"Gurugram",cat:"Conversational AI / LLM",ai:9,py:8,fs:6,u:"https://yellow.ai/careers/",note:"LLM product roles"},
+ {g:"ncr",s:0,n:"LambdaTest",loc:"Noida (62)",cat:"AI QA SaaS · Python",ai:7,py:8,fs:7,u:"https://www.lambdatest.com/careers",note:"AI test agents; SDE/Python"},
+ {g:"ncr",s:0,n:"To The New",loc:"Noida (127)",cat:"Data / AI Engineering",ai:7,py:8,fs:7,u:"https://www.tothenew.com/careers",note:"Engineering grad hiring"},
+ {g:"ncr",s:0,n:"IBM India",loc:"Noida / Gurugram",cat:"watsonx AI · ASE",ai:8,py:7,fs:6,u:"https://www.ibm.com/careers/",note:"Associate System Engineer off-campus"},
+ {g:"ncr",s:0,n:"EXL Service",loc:"Noida",cat:"Analytics / AI",ai:8,py:8,fs:5,u:"https://www.exlservice.com/careers",note:"Analytics/AI fresher hiring"},
+ {g:"ncr",s:0,n:"Incedo",loc:"Gurugram / Noida",cat:"AI / Data Eng",ai:8,py:8,fs:6,u:"https://www.incedoinc.com/careers/",note:"Campus + lateral"},
+
+ {g:"tri",s:0,n:"CrossML",loc:"Chandigarh",cat:"AI/ML Dev",ai:9,py:8,fs:6,u:"https://www.crossml.com/contact-us/",note:"AI/ML consultancy near home"},
+ {g:"tri",s:0,n:"MoogleLabs",loc:"Mohali",cat:"AI/ML · GenAI",ai:8,py:8,fs:5,u:"https://www.mooglelabs.com/career",note:"AI/ML dev"},
+ {g:"tri",s:0,n:"Nerve Cells AI",loc:"Mohali (STPI)",cat:"AI / Embedded",ai:8,py:8,fs:5,u:"https://nervecells.ai/",note:"Internship to PPO"},
+ {g:"tri",s:0,n:"Endoenergy Systems",loc:"Mohali (STPI)",cat:"Robotics / ROS2",ai:7,py:8,fs:8,u:"https://endoenergy.com/careers/",note:"Hiring freshers/interns"},
+ {g:"tri",s:0,n:"Cywarden",loc:"Mohali / Chandigarh",cat:"AI Security",ai:8,py:7,fs:6,u:"https://cywarden.com/careers/",note:"AI for cyber agents"},
+ {g:"tri",s:0,n:"Webtunix AI",loc:"Chandigarh",cat:"AI / Data Science",ai:8,py:8,fs:6,u:"https://www.webtunix.com/",note:"AI/DS consulting"},
+
+ {g:"metro",s:1,n:"HPE",loc:"Bengaluru",cat:"AI/ML Engineer (off-campus 2026)",ai:9,py:8,fs:7,u:"https://careers.hpe.com/",note:"B.Tech eligible off-campus drive"},
+ {g:"metro",s:0,n:"Arya.ai",loc:"Mumbai / Bengaluru",cat:"Enterprise Deep Learning",ai:9,py:8,fs:5,u:"https://arya.ai/careers",note:"Applied DL for BFSI"},
+ {g:"metro",s:0,n:"Quantiphi (BLR)",loc:"Bengaluru",cat:"AI / ML / Cloud",ai:9,py:8,fs:5,u:"https://quantiphi.com/careers/",note:"Also hires in Bengaluru"}
+];
+const groups={today:"g-today",cv:"g-cv",ncr:"g-ncr",tri:"g-tri",metro:"g-metro"};
+const KEY="rk_applied_v1";
+let applied=JSON.parse(localStorage.getItem(KEY)||"{}");
+function save(){localStorage.setItem(KEY,JSON.stringify(applied));}
+function prog(){const n=Object.values(applied).filter(Boolean).length;document.getElementById("ptxt").textContent=n+" / "+J.length+" applied";document.getElementById("pbar").style.width=(100*n/J.length)+"%";}
+function card(j){
+ const id=j.n.replace(/[^a-z0-9]/gi,"");const on=applied[j.n]?"checked":"";const dc=applied[j.n]?"done":"";
+ return `<div class="c ${dc}" id="cd-${id}">
+   <div class="top"><div><h3>${j.s?'<span class="star">★</span> ':''}${j.n}</h3><div class="loc">📍 ${j.loc}</div></div></div>
+   <div class="cat">${j.cat}</div>
+   <div class="scores"><span class="s">AI ${j.ai}</span><span class="s">Py ${j.py}</span><span class="s">FS ${j.fs}</span></div>
+   <div class="note">${j.note}</div>
+   <div class="row"><a class="apply" href="${j.u}" target="_blank" rel="noopener">Apply ↗</a>
+     <label class="tg"><input type="checkbox" ${on} onchange="toggle('${j.n.replace(/'/g,"")}',this)"> Applied</label></div>
+ </div>`;
+}
+function toggle(name,el){applied[name]=el.checked;save();prog();const id="cd-"+name.replace(/[^a-z0-9]/gi,"");const c=document.getElementById(id);if(c)c.classList.toggle("done",el.checked);}
+function resetAll(){if(confirm("Clear all applied marks?")){applied={};save();render();}}
+function render(){for(const k in groups)document.getElementById(groups[k]).innerHTML="";J.forEach(j=>{document.getElementById(groups[j.g]).insertAdjacentHTML("beforeend",card(j));});prog();}
+render();
+</script>
 </body>
 </html>

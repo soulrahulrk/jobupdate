@@ -209,6 +209,7 @@
       <button class="tab active" data-region="all">All</button>
       <button class="tab" data-region="chd">Chandigarh / Tricity</button>
       <button class="tab" data-region="ncr">NCR</button>
+      <button class="tab" data-region="metro">Bengaluru / Metro</button>
     </div>
     <input type="search" id="search" placeholder="Search company, city, or tech (e.g. AI, fintech, Mohali, Noida)…">
     <select id="sort">
@@ -269,6 +270,11 @@ const searchCity = c => {
   const t=c.city.toLowerCase();
   if(t.includes('noida')) return 'Noida';
   if(t.includes('delhi')) return 'Delhi';
+  if(t.includes('bengaluru')||t.includes('bangalore')) return 'Bengaluru';
+  if(t.includes('hyderabad')) return 'Hyderabad';
+  if(t.includes('pune')) return 'Pune';
+  if(t.includes('mumbai')) return 'Mumbai';
+  if(t.includes('chennai')) return 'Chennai';
   return 'Gurgaon';
 };
 // LinkedIn jobs, newest first (sortBy=DD), past week (f_TPR=r604800)
@@ -394,6 +400,19 @@ const companies = [
   {r:"ncr",n:"ORI (Oriserve)",city:"Noida",ind:"Conversational AI / GenAI",size:"50–200",f:6,a:9,tags:["Hybrid"],careers:"https://oriserve.com/careers/",note:"LLM/NLP product startup"},
   {r:"ncr",n:"LambdaTest (TestMu AI)",city:"Noida (Sec 62)",ind:"AI-native QA / Test Platform",size:"500–1000",f:7,a:8,tags:["Remote","Hybrid","Internship"],careers:"https://www.lambdatest.com/careers",note:"AI test agents; SDE/Python roles"},
   {r:"ncr",n:"To The New",city:"Noida (Sec 127)",ind:"Digital · Data · AI Engineering",size:"2500+",f:7,a:7,tags:["Hybrid","Internship"],careers:"https://www.tothenew.com/careers",note:"Engineering grad hiring"},
+
+  // ----- NCR Computer Vision / Vision-AI (matches ANPR/YOLO/OpenCV) -----
+  {r:"ncr",n:"Vehant Technologies",city:"Noida (Sec 59)",ind:"Computer Vision · ANPR · Security AI",size:"500–1000",f:6,a:9,tags:["Hybrid"],careers:"https://www.vehant.com/careers/",note:"ANPR/video analytics = your exact project; track for fresher CV req"},
+  {r:"ncr",n:"Awiros",city:"Gurugram",ind:"Vision AI OS · Video Analytics",size:"50–200",f:5,a:9,tags:["Hybrid"],careers:"https://awiros.com/careers/",note:"CV platform; senior-heavy — track + referral"},
+  {r:"ncr",n:"AAPNA Infotech",city:"Remote / Delhi",ind:"AI Engineering · LLM",size:"200–500",f:7,a:8,tags:["Remote","Hybrid"],careers:"https://www.aapnainfotech.com/careers/",note:"AI Engineer 0-1 yr (LangChain/PyTorch) — remote"},
+  {r:"ncr",n:"M and R",city:"Delhi (Shahpur Jat)",ind:"AI Agents · LLM Enterprise Assistants",size:"11–50",f:6,a:8,tags:["Hybrid"],careers:"https://www.linkedin.com/company/m-and-r",note:"LLM/agent roles; small studio"},
+
+  // ===================== METRO (Bengaluru / Hyderabad / Pune — Tier 3) =====================
+  {r:"metro",n:"Sarvam AI",city:"Bengaluru / Delhi",ind:"LLM Foundation Models · Agentic AI",size:"50–200",f:6,a:10,tags:["Hybrid","Internship"],careers:"https://www.sarvam.ai/careers",note:"Top India LLM unicorn; intern→ roles, PyTorch/Transformers"},
+  {r:"metro",n:"Mad Street Den",city:"Bengaluru / Chennai",ind:"Retail Computer Vision AI",size:"200–500",f:6,a:9,tags:["Hybrid"],careers:"https://www.madstreetden.com/careers/",note:"CV/ML product — your CV fit"},
+  {r:"metro",n:"SigTuple",city:"Bengaluru",ind:"Healthcare Computer Vision AI",size:"50–200",f:6,a:9,tags:["Hybrid"],careers:"https://sigtuple.com/careers/",note:"Medical-imaging CV/DL"},
+  {r:"metro",n:"Arya.ai",city:"Mumbai / Bengaluru",ind:"Enterprise AI / Deep Learning",size:"50–200",f:6,a:9,tags:["Hybrid"],careers:"https://arya.ai/careers",note:"Applied DL for BFSI"},
+  {r:"metro",n:"HPE",city:"Bengaluru",ind:"Enterprise Tech · AI/ML",size:"50000+",f:7,a:9,tags:["Hybrid","Internship"],careers:"https://careers.hpe.com/",note:"AI/ML Engineer off-campus 2026 — B.Tech eligible"},
 ];
 
 const VERIFIED = "2026-06-16";
@@ -477,7 +496,7 @@ function render(){
         <button class="tg fav ${fav?'on':''}" title="Shortlist" data-act="fav" data-n="${c.n.replace(/"/g,'&quot;')}">★</button>
         <button class="tg app ${app?'on':''}" title="Mark applied" data-act="applied" data-n="${c.n.replace(/"/g,'&quot;')}">✓</button>
       </div>
-      <h3>${c.n} <span class="rtag ${c.r}">${c.r==="chd"?"Tricity":"NCR"}</span></h3>
+      <h3>${c.n} <span class="rtag ${c.r}">${c.r==="chd"?"Tricity":c.r==="ncr"?"NCR":"Metro"}</span></h3>
       <span class="fhbadge ${fh}">${FH_LABEL[fh]}</span>
       ${evid?`<div class="fhline">${evid}</div>`:""}
       <div class="meta">
