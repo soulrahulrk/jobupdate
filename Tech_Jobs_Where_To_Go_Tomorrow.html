@@ -11,35 +11,53 @@
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;padding-bottom:60px}
   a{color:inherit;text-decoration:none}
   .wrap{max-width:1000px;margin:0 auto;padding:0 16px}
-  header{background:linear-gradient(135deg,#0b3a82,#1b6fd6 55%,#36c5ff);padding:30px 0 26px}
-  header .wrap{color:#021026}
-  h1{font-size:25px;font-weight:800}
-  .sub{margin-top:6px;font-size:14px;font-weight:600;opacity:.9}
-  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
-  .chip{background:rgba(0,0,0,.16);color:#fff;padding:4px 10px;border-radius:20px;font-size:11.5px;font-weight:700}
-  .bar{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:12px 0}
-  .bar .wrap{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-  .prog{flex:1;min-width:160px;height:10px;background:var(--card2);border-radius:20px;overflow:hidden}
-  .prog>i{display:block;height:100%;background:linear-gradient(90deg,var(--good),var(--accent));width:0}
-  .progtxt{font-size:13px;font-weight:700;color:var(--muted)}
-  .btnreset{background:var(--card);border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:6px 11px;font-size:12px;cursor:pointer}
-  h2{font-size:18px;margin:28px 0 4px;font-weight:800}
-  h2 .em{color:var(--accent2);font-size:13px;font-weight:700}
+  /* LOGIN */
+  #veil{position:fixed;inset:0;z-index:50;background:radial-gradient(800px 500px at 50% -10%,#16294d,#0a0f1f 70%);display:flex;align-items:center;justify-content:center;padding:20px}
+  .lbox{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 22px;max-width:360px;width:100%;text-align:center}
+  .lbox h1{font-size:22px;font-weight:800;color:var(--ink)}
+  .lbox p{color:var(--muted);font-size:13px;margin:6px 0 16px}
+  .lbox input{width:100%;padding:12px 14px;border-radius:11px;border:1px solid var(--line);background:var(--card2);color:var(--ink);font-size:15px;margin-bottom:10px}
+  .lbox input:focus{outline:none;border-color:var(--accent)}
+  .lbtn{width:100%;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#021026;font-weight:800;font-size:15px;padding:12px;border:none;border-radius:11px;cursor:pointer}
+  .lerr{color:#ff8a8a;font-size:12.5px;min-height:16px;margin-top:8px}
+  .lreset{color:var(--muted);font-size:11.5px;margin-top:12px;cursor:pointer;text-decoration:underline}
+  .lnote{color:var(--muted);font-size:10.5px;margin-top:14px;opacity:.8}
+  /* HEADER */
+  header{background:linear-gradient(135deg,#0b3a82,#1b6fd6 55%,#36c5ff);padding:26px 0 22px}
+  header .wrap{color:#021026;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap}
+  h1.t{font-size:23px;font-weight:800}
+  .sub{margin-top:5px;font-size:13px;font-weight:600;opacity:.9;max-width:640px}
+  #hi{font-size:13px;font-weight:800;background:rgba(0,0,0,.18);color:#fff;padding:5px 11px;border-radius:20px}
+  .logout{font-size:11px;font-weight:700;color:#021026;border:1px solid rgba(0,0,0,.3);padding:4px 9px;border-radius:20px;cursor:pointer;margin-left:6px;background:rgba(255,255,255,.5)}
+  /* FILTER BAR */
+  .bar{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 0}
+  .bar .wrap{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .seg{display:flex;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:11px;padding:4px}
+  .seg button{border:none;background:none;color:var(--muted);font-weight:700;font-size:13px;padding:7px 13px;border-radius:8px;cursor:pointer}
+  .seg button.on{background:var(--accent);color:#021026}
+  .seg button .ct{font-size:11px;opacity:.8}
+  .prog{flex:1;min-width:130px;height:9px;background:var(--card2);border-radius:20px;overflow:hidden}
+  .prog>i{display:block;height:100%;background:linear-gradient(90deg,var(--good),var(--accent));width:0;transition:.3s}
+  .progtxt{font-size:12.5px;font-weight:700;color:var(--muted)}
+  /* SECTIONS */
+  h2{font-size:18px;margin:26px 0 4px;font-weight:800}
+  h2 .em{color:var(--accent2);font-size:12.5px;font-weight:700}
   .lead{color:var(--muted);font-size:13px;margin-bottom:12px}
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
-  .c{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:13px;padding:14px;transition:.15s}
+  .empty{color:var(--muted);font-size:13.5px;background:var(--card);border:1px dashed var(--line);border-radius:12px;padding:18px;text-align:center}
+  .c{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:13px;padding:14px;transition:.15s;position:relative}
+  .c.new{border-left-color:var(--warn)}
   .c.done{opacity:.55;border-left-color:var(--good)}
-  .c .top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
-  .c h3{font-size:15.5px;font-weight:800}
+  .c h3{font-size:15.5px;font-weight:800;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
   .c .loc{color:var(--muted);font-size:12px;margin-top:2px}
+  .nb{font-size:9.5px;font-weight:900;color:#3a2a00;background:var(--warn);padding:1px 6px;border-radius:20px;letter-spacing:.04em}
+  .star{color:var(--warn);font-size:13px}
   .c .cat{display:inline-block;font-size:10.5px;font-weight:700;color:var(--vio);border:1px solid #5b4a8f;padding:1px 7px;border-radius:20px;margin-top:8px}
   .c .note{color:var(--muted);font-size:12px;margin-top:8px}
   .scores{display:flex;gap:6px;margin-top:9px;flex-wrap:wrap}
   .s{font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--card2);color:var(--accent2)}
   .row{display:flex;gap:8px;margin-top:11px;align-items:center}
   .apply{background:var(--accent);color:#021026;font-weight:800;font-size:12.5px;padding:8px 13px;border-radius:9px}
-  .apply:hover{transform:translateY(-1px)}
-  .star{color:var(--warn);font-size:13px}
   .tg{margin-left:auto;display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--muted);cursor:pointer;user-select:none}
   .tg input{width:16px;height:16px;accent-color:var(--good)}
   .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
@@ -48,90 +66,118 @@
   ul.tips li{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:9px;padding:10px 13px;margin-bottom:8px;font-size:13px}
   ul.tips li b{color:var(--accent2)}
   footer{color:var(--muted);font-size:12px;text-align:center;margin-top:34px;line-height:1.7}
+  /* mode visibility */
+  body[data-mode="all"] .only-applied{display:none}
+  body[data-mode="new"] .grouped,body[data-mode="new"] .only-applied{display:none}
+  body[data-mode="applied"] .grouped,body[data-mode="applied"] .only-new{display:none}
 </style>
 </head>
-<body>
-<header><div class="wrap">
-  <h1>🎯 AI/ML Job Tracker</h1>
-  <div class="sub">Rahul Kadyan · B.Tech CSE (AI&amp;ML) 2026 · Panipat (relocate-ready) · GenAI · Computer Vision · Python</div>
-  <div class="chips">
-    <span class="chip">Python</span><span class="chip">LangChain/LangGraph</span><span class="chip">RAG/LLM</span>
-    <span class="chip">YOLO/OpenCV</span><span class="chip">FastAPI</span><span class="chip">Docker</span><span class="chip">1020 LeetCode</span>
+<body data-mode="all">
+
+<!-- LOGIN GATE -->
+<div id="veil">
+  <div class="lbox">
+    <h1>🔐 Job Tracker</h1>
+    <p id="lgreet">Set a name &amp; password to start</p>
+    <input id="lname" placeholder="Your name" autocomplete="off" />
+    <input id="lpass" type="password" placeholder="Password" autocomplete="off" onkeydown="if(event.key==='Enter')doLogin()" />
+    <button class="lbtn" onclick="doLogin()">Enter →</button>
+    <div class="lerr" id="lerr"></div>
+    <div class="lreset" id="lreset" onclick="resetLogin()" style="display:none">Not you? Reset login</div>
+    <div class="lnote">Saved only on this device. Simple personal lock — not bank-grade security.</div>
   </div>
+</div>
+
+<header><div class="wrap">
+  <div>
+    <h1 class="t">🎯 AI/ML Job Tracker</h1>
+    <div class="sub">Rahul Kadyan · B.Tech CSE (AI&amp;ML) 2026 · GenAI · Computer Vision · Python · LangChain/RAG · 1020 LeetCode</div>
+  </div>
+  <div style="white-space:nowrap"><span id="hi">Hi 👋</span><span class="logout" onclick="lock()">Lock</span></div>
 </div></header>
 
 <div class="bar"><div class="wrap">
-  <span class="progtxt" id="ptxt">0 applied</span>
+  <div class="seg">
+    <button id="m-all" class="on" onclick="setMode('all')">All <span class="ct" id="c-all"></span></button>
+    <button id="m-new" onclick="setMode('new')">🆕 New <span class="ct" id="c-new"></span></button>
+    <button id="m-applied" onclick="setMode('applied')">✓ Applied <span class="ct" id="c-app"></span></button>
+  </div>
   <div class="prog"><i id="pbar"></i></div>
-  <button class="btnreset" onclick="resetAll()">reset</button>
+  <span class="progtxt" id="ptxt">0 applied</span>
 </div></div>
 
 <div class="wrap">
-  <p class="lead" style="margin-top:14px">Tap <b>Apply</b> to open the careers page, then tick <b>Applied</b> — your progress saves on this device. Match scores are fit estimates for your profile. Verified 16 Jun 2026.</p>
+  <p class="lead" style="margin-top:14px">Tap <b>Apply</b> to open the careers page, then tick <b>Applied</b> — it saves on this device. New companies I add show up under <b>🆕 New</b> (and at the top). Verified 16 Jun 2026; scores are fit estimates.</p>
 
-  <h2>⭐ Apply TODAY <span class="em">— highest match + confirmed fresher</span></h2>
-  <div class="grid" id="g-today"></div>
+  <!-- NEW (top) -->
+  <section class="only-new">
+    <h2>🆕 New opportunities <span class="em">— added recently, act first</span></h2>
+    <div class="grid" id="g-new"></div>
+  </section>
 
-  <h2>👁️ Computer Vision <span class="em">— your ANPR/YOLO/OpenCV edge</span></h2>
-  <div class="grid" id="g-cv"></div>
+  <!-- APPLIED (only in applied mode) -->
+  <section class="only-applied">
+    <h2>✓ Your applications <span class="em">— track what you applied to</span></h2>
+    <div class="grid" id="g-results"></div>
+    <div class="empty" id="emptyapplied" style="display:none">No applications yet — tick <b>Applied</b> on any card and it shows here.</div>
+  </section>
 
-  <h2>🤖 NCR AI / GenAI / Data <span class="em">— Gurugram / Noida / Delhi</span></h2>
-  <div class="grid" id="g-ncr"></div>
+  <!-- ALL grouped -->
+  <div class="grouped">
+    <h2>⭐ Apply TODAY <span class="em">— highest match + confirmed fresher</span></h2>
+    <div class="grid" id="g-today"></div>
+    <h2>👁️ Computer Vision <span class="em">— your ANPR/YOLO/OpenCV edge</span></h2>
+    <div class="grid" id="g-cv"></div>
+    <h2>🤖 NCR AI / GenAI / Data <span class="em">— Gurugram / Noida / Delhi</span></h2>
+    <div class="grid" id="g-ncr"></div>
+    <h2>🏠 Tricity (Tier-2) <span class="em">— Mohali / Chandigarh</span></h2>
+    <div class="grid" id="g-tri"></div>
+    <h2>🌆 Metro (Tier-3) <span class="em">— Bengaluru / Hyderabad / Pune</span></h2>
+    <div class="grid" id="g-metro"></div>
+    <h2>🏙️ Delhi — near your base <span class="em">— ≤10–15 km, software/SDE walk-ins</span></h2>
+    <div class="grid" id="g-delhi"></div>
 
-  <h2>🏠 Tricity (Tier-2) <span class="em">— Mohali / Chandigarh, near-ish</span></h2>
-  <div class="grid" id="g-tri"></div>
+    <h2>🔎 Live job boards <span class="em">— refresh daily</span></h2>
+    <div class="links">
+      <a href="https://wellfound.com/role/l/ai-engineer/india" target="_blank" rel="noopener">Wellfound · AI Engineer</a>
+      <a href="https://wellfound.com/role/l/computer-vision/india" target="_blank" rel="noopener">Wellfound · Computer Vision</a>
+      <a href="https://cutshort.io/jobs/artificial-intelligence-ai-jobs" target="_blank" rel="noopener">Cutshort · AI</a>
+      <a href="https://www.hirist.tech/generative-ai-jobs-in-delhi-ncr" target="_blank" rel="noopener">Hirist · GenAI NCR</a>
+      <a href="https://internshala.com/fresher-jobs/artificial-intelligence-ai-jobs/" target="_blank" rel="noopener">Internshala · AI fresher</a>
+    </div>
 
-  <h2>🌆 Metro (Tier-3) <span class="em">— Bengaluru / Hyderabad / Pune</span></h2>
-  <div class="grid" id="g-metro"></div>
-
-  <h2>🏙️ Delhi — near your base <span class="em">— ≤10–15 km, software/SDE walk-ins (+ NLP/cyber AI)</span></h2>
-  <div class="grid" id="g-delhi"></div>
-
-  <h2>🔎 Live job boards <span class="em">— refresh daily</span></h2>
-  <div class="links">
-    <a href="https://wellfound.com/role/l/ai-engineer/india" target="_blank" rel="noopener">Wellfound · AI Engineer</a>
-    <a href="https://wellfound.com/role/l/computer-vision/india" target="_blank" rel="noopener">Wellfound · Computer Vision</a>
-    <a href="https://cutshort.io/jobs/artificial-intelligence-ai-jobs" target="_blank" rel="noopener">Cutshort · AI</a>
-    <a href="https://www.hirist.tech/generative-ai-jobs-in-delhi-ncr" target="_blank" rel="noopener">Hirist · GenAI NCR</a>
-    <a href="https://internshala.com/fresher-jobs/artificial-intelligence-ai-jobs/" target="_blank" rel="noopener">Internshala · AI fresher</a>
-    <a href="https://in.indeed.com/q-ai-engineer-for-fresher-jobs.html" target="_blank" rel="noopener">Indeed · AI fresher</a>
+    <h2>🧭 Strategy</h2>
+    <ul class="tips">
+      <li><b>Lead with projects, not CGPA.</b> ANPR (YOLO/OpenCV), RAG/LangGraph agents, FastAPI. GitHub <b>soulrahulrk</b> on top.</li>
+      <li><b>Two résumés:</b> AI/ML and Python-SDE — doubles your funnel.</li>
+      <li><b>Computer Vision is your niche</b> — Spyne, Vehant, Awiros, AgNext, Voxomos, Mad Street Den, SigTuple.</li>
+      <li><b>NCR = apply online + book interview</b> (not cold walk-in). Delhi near-base = same-day SDE walk-ins.</li>
+    </ul>
   </div>
 
-  <h2>🧭 Strategy</h2>
-  <ul class="tips">
-    <li><b>Lead with projects, not CGPA.</b> ANPR (YOLO/OpenCV), RAG/LangGraph agents, FastAPI deploys + 1020 LeetCode. GitHub <b>soulrahulrk</b> at the top.</li>
-    <li><b>Two résumés:</b> AI/ML version (CV+LLM) for AI cos; Python/Backend version (FastAPI/Docker/SQL+LeetCode) for product/SaaS — doubles your funnel.</li>
-    <li><b>Computer Vision is your niche</b> — Spyne, Vehant, Awiros, AgNext, Mad Street Den, SigTuple: lead with ANPR + real-time inference.</li>
-    <li><b>Use Wellfound + Cutshort daily</b> to DM founders/HMs — referrals beat cold applies for startups.</li>
-    <li><b>NCR = apply online + scheduled interview</b> (not walk-in). Book 2–3 in one zone, then travel from Panipat.</li>
-  </ul>
-
-  <footer>AI/ML Job Tracker · built 16 Jun 2026 · scores are fit estimates — confirm role/eligibility on each careers page. Go get it 🚀</footer>
+  <footer>AI/ML Job Tracker · verified 16 Jun 2026 · scores are fit estimates — confirm role/eligibility on each careers page. 🚀</footer>
 </div>
 
 <script>
 const J=[
- // group: today / cv / ncr / tri / metro
  {g:"today",s:1,n:"Impressico",loc:"Noida",cat:"GenAI / Python Full-Stack",ai:8,py:9,fs:8,u:"https://www.impressico.com/careers/",note:"Confirmed GenAI/Python trainee for 2024-26 grads"},
  {g:"today",s:1,n:"XenonStack",loc:"Mohali (STPI)",cat:"Agentic AI / Data",ai:9,py:8,fs:6,u:"https://xenonstack.jobs/",note:"Associate SE (fresher) + Agentic AI Engineer"},
  {g:"today",s:1,n:"AAPNA Infotech",loc:"Remote / Delhi",cat:"AI Engineer 0-1yr",ai:8,py:8,fs:6,u:"https://www.aapnainfotech.com/careers/",note:"LangChain/PyTorch, remote = no relocation"},
  {g:"today",s:1,n:"CogniTensor",loc:"Delhi",cat:"GenAI Venture Studio",ai:9,py:8,fs:6,u:"https://www.cognitensor.com/",note:"Grad cohort; startup, projects > CGPA"},
  {g:"today",s:1,n:"Soft Radix",loc:"Mohali (8B)",cat:"AI/ML Engineer (fresher)",ai:8,py:8,fs:6,u:"https://softradix.com/careers",note:"Walk-in friendly"},
  {g:"today",s:1,n:"Sarvam AI",loc:"Bengaluru / Delhi",cat:"LLM Foundation Models",ai:10,py:9,fs:4,u:"https://www.sarvam.ai/careers",note:"Top LLM unicorn; intern to FT"},
-
  {g:"cv",s:1,n:"Spyne",loc:"Gurugram (Sec 32)",cat:"Computer Vision · Auto",ai:9,py:8,fs:6,u:"https://www.spyne.ai/careers",note:"CV/deep learning — direct YOLO/OpenCV fit"},
  {g:"cv",s:1,n:"Vehant Technologies",loc:"Noida (Sec 59)",cat:"ANPR · Vision AI · Security",ai:9,py:8,fs:5,u:"https://www.vehant.com/careers/",note:"ANPR = your exact project; apply + track"},
  {g:"cv",s:0,n:"Awiros",loc:"Gurugram",cat:"Vision AI OS",ai:9,py:8,fs:5,u:"https://awiros.com/careers/",note:"CV platform; senior-heavy — referral/track"},
  {g:"cv",s:1,n:"AgNext Technologies",loc:"Mohali (STPI)",cat:"AgTech CV + ML",ai:9,py:8,fs:5,u:"https://apply.workable.com/agnext-technologies/",note:"Food-quality computer vision"},
  {g:"cv",s:0,n:"Mad Street Den",loc:"Bengaluru / Chennai",cat:"Retail Computer Vision",ai:9,py:8,fs:5,u:"https://www.madstreetden.com/careers/",note:"CV/ML product"},
  {g:"cv",s:0,n:"SigTuple",loc:"Bengaluru",cat:"Healthcare Vision AI",ai:9,py:8,fs:4,u:"https://sigtuple.com/careers/",note:"Medical-imaging CV/DL"},
-
  {g:"ncr",s:0,n:"Fractal Analytics",loc:"Gurugram / Noida",cat:"AI / ML / DS",ai:9,py:8,fs:5,u:"https://fractal.ai/careers/",note:"Fresher + intern tracks"},
  {g:"ncr",s:0,n:"Tiger Analytics",loc:"Gurugram",cat:"AI / Data Science",ai:9,py:8,fs:4,u:"https://www.tigeranalytics.com/careers/",note:"DS/ML analyst grad roles"},
  {g:"ncr",s:0,n:"Affine",loc:"Gurugram (44)",cat:"GenAI / ML",ai:9,py:8,fs:4,u:"https://affine.ai/careers/",note:"GenAI engineering"},
  {g:"ncr",s:0,n:"Quantiphi",loc:"Gurugram",cat:"AI / ML / Cloud",ai:9,py:8,fs:5,u:"https://quantiphi.com/careers/",note:"Campus hiring"},
  {g:"ncr",s:1,n:"Innovaccer",loc:"Noida (Sec 62)",cat:"Healthcare AI / Data",ai:9,py:8,fs:7,u:"https://innovaccer.com/careers",note:"Strong AI/ML + data-eng roles"},
- {g:"ncr",s:0,n:"ORI (Oriserve)",loc:"Noida",cat:"Conversational GenAI/LLM",ai:9,py:8,fs:5,u:"https://oriserve.com/careers/",note:"LLM/NLP startup"},
+ {g:"ncr",s:0,n:"ORI (Oriserve)",loc:"Noida",cat:"Conversational GenAI/LLM",ai:9,py:8,fs:5,u:"https://oriserve.com/careers/",note:"Backend SE (fresher)"},
  {g:"ncr",s:0,n:"Gnani.ai",loc:"Noida",cat:"Voice AI / LLM",ai:9,py:8,fs:5,u:"https://gnani.ai/careers",note:"Voice AI / NLP"},
  {g:"ncr",s:0,n:"Yellow.ai",loc:"Gurugram",cat:"Conversational AI / LLM",ai:9,py:8,fs:6,u:"https://yellow.ai/careers/",note:"LLM product roles"},
  {g:"ncr",s:0,n:"LambdaTest",loc:"Noida (62)",cat:"AI QA SaaS · Python",ai:7,py:8,fs:7,u:"https://www.lambdatest.com/careers",note:"AI test agents; SDE/Python"},
@@ -139,53 +185,97 @@ const J=[
  {g:"ncr",s:0,n:"IBM India",loc:"Noida / Gurugram",cat:"watsonx AI · ASE",ai:8,py:7,fs:6,u:"https://www.ibm.com/careers/",note:"Associate System Engineer off-campus"},
  {g:"ncr",s:0,n:"EXL Service",loc:"Noida",cat:"Analytics / AI",ai:8,py:8,fs:5,u:"https://www.exlservice.com/careers",note:"Analytics/AI fresher hiring"},
  {g:"ncr",s:0,n:"Incedo",loc:"Gurugram / Noida",cat:"AI / Data Eng",ai:8,py:8,fs:6,u:"https://www.incedoinc.com/careers/",note:"Campus + lateral"},
-
+ {g:"ncr",s:1,nw:1,n:"Voxomos",loc:"Noida (Sec 62)",cat:"Voice/Image/LLM AI",ai:9,py:8,fs:5,u:"https://voxomos.com/",note:"IIT-founded GenAI — call 98733 88114"},
+ {g:"ncr",s:0,nw:1,n:"Appnox",loc:"Noida (Sec 142)",cat:"AI/ML/Data Science",ai:8,py:8,fs:6,u:"https://appnox.ai/",note:"call 99532 14026"},
+ {g:"ncr",s:0,nw:1,n:"Valiance Solutions",loc:"Noida (Sec 62)",cat:"Applied AI/ML",ai:9,py:8,fs:5,u:"https://valiancesolutions.com/contact-us/",note:"call 81781 57404"},
+ {g:"ncr",s:0,nw:1,n:"Genpact",loc:"Gurugram (Cyber City)",cat:"Data/AI/Automation",ai:7,py:8,fs:6,u:"https://www.genpact.com/careers",note:"Large analytics intake"},
  {g:"tri",s:0,n:"CrossML",loc:"Chandigarh",cat:"AI/ML Dev",ai:9,py:8,fs:6,u:"https://www.crossml.com/contact-us/",note:"AI/ML consultancy near home"},
  {g:"tri",s:0,n:"MoogleLabs",loc:"Mohali",cat:"AI/ML · GenAI",ai:8,py:8,fs:5,u:"https://www.mooglelabs.com/career",note:"AI/ML dev"},
  {g:"tri",s:0,n:"Nerve Cells AI",loc:"Mohali (STPI)",cat:"AI / Embedded",ai:8,py:8,fs:5,u:"https://nervecells.ai/",note:"Internship to PPO"},
  {g:"tri",s:0,n:"Endoenergy Systems",loc:"Mohali (STPI)",cat:"Robotics / ROS2",ai:7,py:8,fs:8,u:"https://endoenergy.com/careers/",note:"Hiring freshers/interns"},
  {g:"tri",s:0,n:"Cywarden",loc:"Mohali / Chandigarh",cat:"AI Security",ai:8,py:7,fs:6,u:"https://cywarden.com/careers/",note:"AI for cyber agents"},
  {g:"tri",s:0,n:"Webtunix AI",loc:"Chandigarh",cat:"AI / Data Science",ai:8,py:8,fs:6,u:"https://www.webtunix.com/",note:"AI/DS consulting"},
-
  {g:"metro",s:1,n:"HPE",loc:"Bengaluru",cat:"AI/ML Engineer (off-campus 2026)",ai:9,py:8,fs:7,u:"https://careers.hpe.com/",note:"B.Tech eligible off-campus drive"},
  {g:"metro",s:0,n:"Arya.ai",loc:"Mumbai / Bengaluru",cat:"Enterprise Deep Learning",ai:9,py:8,fs:5,u:"https://arya.ai/careers",note:"Applied DL for BFSI"},
  {g:"metro",s:0,n:"Quantiphi (BLR)",loc:"Bengaluru",cat:"AI / ML / Cloud",ai:9,py:8,fs:5,u:"https://quantiphi.com/careers/",note:"Also hires in Bengaluru"},
-
- {g:"ncr",s:1,n:"Voxomos",loc:"Noida (Sec 62)",cat:"Voice/Image/LLM AI",ai:9,py:8,fs:5,u:"https://voxomos.com/",note:"IIT-founded GenAI — call 98733 88114"},
- {g:"ncr",s:0,n:"Appnox",loc:"Noida (Sec 142)",cat:"AI/ML/Data Science",ai:8,py:8,fs:6,u:"https://appnox.ai/",note:"call 99532 14026"},
- {g:"ncr",s:0,n:"Valiance Solutions",loc:"Noida (Sec 62)",cat:"Applied AI/ML",ai:9,py:8,fs:5,u:"https://valiancesolutions.com/contact-us/",note:"call 81781 57404"},
- {g:"ncr",s:0,n:"Genpact",loc:"Gurugram (Cyber City)",cat:"Data/AI/Automation",ai:7,py:8,fs:6,u:"https://www.genpact.com/careers",note:"Large analytics intake"},
-
- {g:"delhi",s:1,n:"Gram Vaani",loc:"Sarvapriya Vihar, Delhi",cat:"NLP / Voice AI",ai:8,py:8,fs:6,u:"https://gramvaani.org/",note:"NLP/Python — call 70710 00444"},
- {g:"delhi",s:1,n:"Safe Security",loc:"Okhla / Safdarjung, Delhi",cat:"Cybersecurity Product",ai:6,py:8,fs:6,u:"https://safe.security/careers/",note:"Funded cyber SaaS"},
- {g:"delhi",s:0,n:"Isourse Technologies",loc:"Nehru Place, Delhi",cat:"Logistics / SaaS",ai:5,py:8,fs:7,u:"https://isourse.com/careers/",note:"Automation/SaaS"},
- {g:"delhi",s:0,n:"Unbundl",loc:"Kirti Nagar, Delhi",cat:"Full-Stack",ai:4,py:8,fs:8,u:"https://www.google.com/search?q=Unbundl+Kirti+Nagar+careers",note:"Near base — SDE walk-in"},
- {g:"delhi",s:0,n:"RSS India",loc:"Moti Nagar, Delhi",cat:"App/Web Dev",ai:3,py:7,fs:8,u:"https://www.rssindia.com/",note:"call 93550 07301"},
- {g:"delhi",s:0,n:"TechGropse",loc:"NSP Pitampura, Delhi",cat:"Mobile/Web Dev",ai:4,py:7,fs:8,u:"https://www.techgropse.com/career",note:"NSP hub, near base"},
- {g:"delhi",s:0,n:"EBSLON Infotech",loc:"NSP Pitampura, Delhi",cat:"Software/Web",ai:4,py:7,fs:7,u:"https://www.google.com/search?q=EBSLON+Infotech+careers",note:"ebsloninfotech@gmail.com"},
- {g:"delhi",s:0,n:"Khoj Evolutions",loc:"Naraina, Delhi",cat:"Software Dev",ai:4,py:7,fs:7,u:"https://www.google.com/search?q=Khoj+Evolutions+Naraina+careers",note:"Near base"},
- {g:"delhi",s:0,n:"Suprams Info Solutions",loc:"Janakpuri, Delhi",cat:"Software/SEO",ai:3,py:7,fs:7,u:"https://www.google.com/search?q=Suprams+Info+Solutions+careers",note:"Janakpuri DC"}
+ {g:"delhi",s:1,nw:1,n:"Gram Vaani",loc:"Sarvapriya Vihar, Delhi",cat:"NLP / Voice AI",ai:8,py:8,fs:6,u:"https://gramvaani.org/",note:"NLP/Python — call 70710 00444"},
+ {g:"delhi",s:1,nw:1,n:"Safe Security",loc:"Okhla / Safdarjung, Delhi",cat:"Cybersecurity Product",ai:6,py:8,fs:6,u:"https://safe.security/careers/",note:"Funded cyber SaaS"},
+ {g:"delhi",s:0,nw:1,n:"Isourse Technologies",loc:"Nehru Place, Delhi",cat:"Logistics / SaaS",ai:5,py:8,fs:7,u:"https://isourse.com/careers/",note:"Automation/SaaS"},
+ {g:"delhi",s:0,nw:1,n:"Unbundl",loc:"Kirti Nagar, Delhi",cat:"Full-Stack",ai:4,py:8,fs:8,u:"https://www.google.com/search?q=Unbundl+Kirti+Nagar+careers",note:"Near base — SDE walk-in"},
+ {g:"delhi",s:0,nw:1,n:"RSS India",loc:"Moti Nagar, Delhi",cat:"App/Web Dev",ai:3,py:7,fs:8,u:"https://www.rssindia.com/",note:"call 93550 07301"},
+ {g:"delhi",s:0,nw:1,n:"TechGropse",loc:"NSP Pitampura, Delhi",cat:"Mobile/Web Dev",ai:4,py:7,fs:8,u:"https://www.techgropse.com/career",note:"NSP hub, near base"},
+ {g:"delhi",s:0,nw:1,n:"EBSLON Infotech",loc:"NSP Pitampura, Delhi",cat:"Software/Web",ai:4,py:7,fs:7,u:"https://www.google.com/search?q=EBSLON+Infotech+careers",note:"ebsloninfotech@gmail.com"},
+ {g:"delhi",s:0,nw:1,n:"Khoj Evolutions",loc:"Naraina, Delhi",cat:"Software Dev",ai:4,py:7,fs:7,u:"https://www.google.com/search?q=Khoj+Evolutions+Naraina+careers",note:"Near base"},
+ {g:"delhi",s:0,nw:1,n:"Suprams Info Solutions",loc:"Janakpuri, Delhi",cat:"Software/SEO",ai:3,py:7,fs:7,u:"https://www.google.com/search?q=Suprams+Info+Solutions+careers",note:"Janakpuri DC"}
 ];
 const groups={today:"g-today",cv:"g-cv",ncr:"g-ncr",tri:"g-tri",metro:"g-metro",delhi:"g-delhi"};
-const KEY="rk_applied_v1";
-let applied=JSON.parse(localStorage.getItem(KEY)||"{}");
-function save(){localStorage.setItem(KEY,JSON.stringify(applied));}
-function prog(){const n=Object.values(applied).filter(Boolean).length;document.getElementById("ptxt").textContent=n+" / "+J.length+" applied";document.getElementById("pbar").style.width=(100*n/J.length)+"%";}
+const AKEY="rk_applied_v1", LKEY="rk_login_v1";
+let applied=JSON.parse(localStorage.getItem(AKEY)||"{}");
+function saveA(){localStorage.setItem(AKEY,JSON.stringify(applied));}
+const idOf=n=>"cd-"+n.replace(/[^a-z0-9]/gi,"");
 function card(j){
- const id=j.n.replace(/[^a-z0-9]/gi,"");const on=applied[j.n]?"checked":"";const dc=applied[j.n]?"done":"";
- return `<div class="c ${dc}" id="cd-${id}">
-   <div class="top"><div><h3>${j.s?'<span class="star">★</span> ':''}${j.n}</h3><div class="loc">📍 ${j.loc}</div></div></div>
+ const on=applied[j.n]?"checked":"", dc=applied[j.n]?"done":(j.nw?"new":"");
+ const nm=j.n.replace(/'/g,"");
+ return `<div class="c ${dc}">
+   <h3>${j.s?'<span class="star">★</span>':''}${j.n}${j.nw?' <span class="nb">NEW</span>':''}</h3>
+   <div class="loc">📍 ${j.loc}</div>
    <div class="cat">${j.cat}</div>
    <div class="scores"><span class="s">AI ${j.ai}</span><span class="s">Py ${j.py}</span><span class="s">FS ${j.fs}</span></div>
    <div class="note">${j.note}</div>
    <div class="row"><a class="apply" href="${j.u}" target="_blank" rel="noopener">Apply ↗</a>
-     <label class="tg"><input type="checkbox" ${on} onchange="toggle('${j.n.replace(/'/g,"")}',this)"> Applied</label></div>
+     <label class="tg"><input type="checkbox" ${on} onchange="toggle('${nm}',this.checked)"> Applied</label></div>
  </div>`;
 }
-function toggle(name,el){applied[name]=el.checked;save();prog();const id="cd-"+name.replace(/[^a-z0-9]/gi,"");const c=document.getElementById(id);if(c)c.classList.toggle("done",el.checked);}
-function resetAll(){if(confirm("Clear all applied marks?")){applied={};save();render();}}
-function render(){for(const k in groups)document.getElementById(groups[k]).innerHTML="";J.forEach(j=>{document.getElementById(groups[j.g]).insertAdjacentHTML("beforeend",card(j));});prog();}
-render();
+function toggle(name,val){applied[name]=val;saveA();render();}
+function render(){
+ for(const k in groups){document.getElementById(groups[k]).innerHTML="";}
+ const gn=document.getElementById("g-new"), gr=document.getElementById("g-results");
+ gn.innerHTML=""; gr.innerHTML="";
+ let nApplied=0,nNew=0;
+ J.forEach(j=>{
+   document.getElementById(groups[j.g]).insertAdjacentHTML("beforeend",card(j));
+   if(j.nw){gn.insertAdjacentHTML("beforeend",card(j));nNew++;}
+   if(applied[j.n]){gr.insertAdjacentHTML("beforeend",card(j));nApplied++;}
+ });
+ document.getElementById("emptyapplied").style.display=nApplied?"none":"block";
+ document.getElementById("c-all").textContent=J.length;
+ document.getElementById("c-new").textContent=nNew;
+ document.getElementById("c-app").textContent=nApplied;
+ document.getElementById("ptxt").textContent=nApplied+" / "+J.length+" applied";
+ document.getElementById("pbar").style.width=(100*nApplied/J.length)+"%";
+}
+function setMode(m){
+ document.body.dataset.mode=m;
+ ["all","new","applied"].forEach(x=>document.getElementById("m-"+x).classList.toggle("on",x===m));
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+/* ---- login ---- */
+function getLogin(){try{return JSON.parse(localStorage.getItem(LKEY));}catch(e){return null;}}
+function enter(name){document.getElementById("veil").style.display="none";document.getElementById("hi").textContent="Hi "+name+" 👋";document.body.style.overflow="";render();}
+function initLogin(){
+ const l=getLogin();
+ if(l&&l.name){
+   document.getElementById("lgreet").textContent="Welcome back, "+l.name+" — enter password";
+   document.getElementById("lname").style.display="none";
+   document.getElementById("lreset").style.display="block";
+   setTimeout(()=>document.getElementById("lpass").focus(),100);
+ }
+ document.body.style.overflow="hidden";
+}
+function doLogin(){
+ const l=getLogin(), err=document.getElementById("lerr");
+ const name=document.getElementById("lname").value.trim(), pass=document.getElementById("lpass").value;
+ if(l&&l.name){ if(pass===l.pass) enter(l.name); else err.textContent="Wrong password"; }
+ else{
+   if(!name){err.textContent="Enter a name";return;}
+   if(!pass){err.textContent="Enter a password";return;}
+   localStorage.setItem(LKEY,JSON.stringify({name:name,pass:pass}));
+   enter(name);
+ }
+}
+function lock(){location.reload();}
+function resetLogin(){if(confirm("Forget saved login? You'll set a new name & password.")){localStorage.removeItem(LKEY);location.reload();}}
+initLogin();
 </script>
 </body>
 </html>
