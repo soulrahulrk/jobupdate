@@ -6,11 +6,16 @@
 <title>Fresher Hiring Dashboard — Chandigarh / Tricity &amp; NCR (June 2026)</title>
 <style>
   :root{
-    --bg:#0f1320; --panel:#171c2e; --panel2:#1f2640; --line:#2a3252;
-    --txt:#e8ecf6; --muted:#97a0bd; --accent:#5b8cff;
-    --chd:#5b8cff; --ncr:#f59e0b; --chip:#232b47;
-    --good:#22c55e; --mid:#eab308; --low:#ef4444; --glow:#1b2240;
+    --bg:#0b0e1a; --panel:#151a2e; --panel2:#1e2540; --line:#2b3358;
+    --txt:#eef1ff; --muted:#9aa4c8; --accent:#7c5cff;
+    --chd:#7c5cff; --ncr:#22d3ee; --chip:#1e2540;
+    --good:#34d399; --mid:#fbbf24; --low:#f87171; --glow:#1a1640;
   }
+  .topnav{background:var(--panel2);border-bottom:1px solid var(--line)}
+  .navwrap{max-width:1180px;margin:0 auto;display:flex;gap:4px;padding:8px 16px;overflow-x:auto}
+  .topnav a{color:var(--muted);font-weight:700;font-size:13px;padding:7px 12px;border-radius:9px;white-space:nowrap;text-decoration:none}
+  .topnav a:hover{color:var(--txt);background:var(--panel)}
+  .topnav a.active{color:#fff;background:linear-gradient(135deg,var(--chd),var(--ncr))}
   html[data-theme="light"]{
     --bg:#eef1f8; --panel:#ffffff; --panel2:#f3f5fb; --line:#d8deec;
     --txt:#1a2138; --muted:#5b647e; --accent:#2f6bff;
@@ -133,6 +138,12 @@
 </style>
 </head>
 <body>
+<nav class="topnav"><div class="navwrap">
+  <a href="index.html">🏠 Home</a>
+  <a href="Hiring_Dashboard.html" class="active">📊 Dashboard</a>
+  <a href="Tech_Jobs_Where_To_Go_Tomorrow.html">🎯 AI Tracker</a>
+  <a href="Tricity_Fresher_Hiring_Database.html">📄 Full DB</a>
+</div></nav>
 <header>
   <div class="titlebar">
     <div>
