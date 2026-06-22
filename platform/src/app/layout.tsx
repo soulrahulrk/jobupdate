@@ -21,15 +21,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <a href="#main" className="skip-link">Skip to content</a>
           <header className="sticky top-0 z-30 border-b border-border bg-bg/80 backdrop-blur">
-            <nav className="container flex h-14 items-center justify-between">
+            <nav className="container flex h-14 items-center justify-between" aria-label="Primary">
               <Link href="/" className="font-bold tracking-tight">
                 Tech<span className="gradient-text">Hire</span>
               </Link>
               <UserMenu />
             </nav>
           </header>
-          <main className="min-h-[calc(100vh-3.5rem)]">{children}</main>
+          <main id="main" className="min-h-[calc(100vh-3.5rem)]">{children}</main>
           <footer className="border-t border-border py-8 text-center text-xs text-muted">
             Built with Next.js · Prisma · Auth.js · Tailwind — verified job data, no candidate fees ever.
           </footer>

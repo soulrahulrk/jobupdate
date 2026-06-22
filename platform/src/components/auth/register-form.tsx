@@ -29,11 +29,11 @@ export function RegisterForm() {
 
   return (
     <form onSubmit={onSubmit} className="space-y-3">
-      <input name="name" required placeholder="Full name"
+      <input name="name" required placeholder="Full name" aria-label="Full name"
         className="w-full rounded-md border border-border bg-surface px-3 py-2.5 text-sm outline-none focus:border-primary" />
-      <input name="email" type="email" required placeholder="Email"
+      <input name="email" type="email" required placeholder="Email" aria-label="Email"
         className="w-full rounded-md border border-border bg-surface px-3 py-2.5 text-sm outline-none focus:border-primary" />
-      <input name="password" type="password" required minLength={8} placeholder="Password (min 8 chars)"
+      <input name="password" type="password" required minLength={8} placeholder="Password (min 8 chars)" aria-label="Password"
         className="w-full rounded-md border border-border bg-surface px-3 py-2.5 text-sm outline-none focus:border-primary" />
       {error ? <p className="text-sm text-danger">{error}</p> : null}
       <button type="submit" disabled={loading}

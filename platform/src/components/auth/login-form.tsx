@@ -37,9 +37,9 @@ export function LoginForm() {
         <span className="h-px flex-1 bg-border" /> or <span className="h-px flex-1 bg-border" />
       </div>
       <form onSubmit={onSubmit} className="space-y-3">
-        <input name="email" type="email" required placeholder="Email"
+        <input name="email" type="email" required placeholder="Email" aria-label="Email"
           className="w-full rounded-md border border-border bg-surface px-3 py-2.5 text-sm outline-none focus:border-primary" />
-        <input name="password" type="password" required placeholder="Password"
+        <input name="password" type="password" required placeholder="Password" aria-label="Password"
           className="w-full rounded-md border border-border bg-surface px-3 py-2.5 text-sm outline-none focus:border-primary" />
         {error ? <p className="text-sm text-danger">{error}</p> : null}
         <button type="submit" disabled={loading}

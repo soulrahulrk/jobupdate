@@ -9,15 +9,15 @@ export function JobRowActions({ id, active }: { id: string; active: boolean }) {
   const [pending, start] = useTransition();
   return (
     <div className="flex items-center justify-end gap-1.5">
-      <Link href={`/admin/jobs/${id}/edit`} className="rounded-md p-1.5 text-muted hover:bg-surface-2 hover:text-ink" title="Edit">
+      <Link href={`/admin/jobs/${id}/edit`} className="rounded-md p-1.5 text-muted hover:bg-surface-2 hover:text-ink" title="Edit" aria-label="Edit job">
         <Pencil className="h-4 w-4" />
       </Link>
       <button onClick={() => start(() => toggleJobActive(id))} disabled={pending}
-        className="rounded-md p-1.5 text-muted hover:bg-surface-2 hover:text-ink" title={active ? "Deactivate" : "Activate"}>
+        className="rounded-md p-1.5 text-muted hover:bg-surface-2 hover:text-ink" title={active ? "Deactivate" : "Activate"} aria-label={active ? "Deactivate job" : "Activate job"}>
         <Power className={active ? "h-4 w-4 text-success" : "h-4 w-4"} />
       </button>
       <button onClick={() => confirm("Delete this job?") && start(() => deleteJob(id))} disabled={pending}
-        className="rounded-md p-1.5 text-muted hover:bg-danger/10 hover:text-danger" title="Delete">
+        className="rounded-md p-1.5 text-muted hover:bg-danger/10 hover:text-danger" title="Delete" aria-label="Delete job">
         {pending ? <Loader2 className="h-4 w-4 animate-spin" /> : <Trash2 className="h-4 w-4" />}
       </button>
     </div>

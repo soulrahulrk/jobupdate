@@ -7,6 +7,8 @@ import { JobCard } from "@/components/jobs/job-card";
 import { Badge } from "@/components/ui/badge";
 import { REGION_LABEL } from "@/lib/utils";
 
+export const revalidate = 300;
+
 const HIRING: Record<string, { label: string; variant: "success" | "warning" | "default" }> = {
   CONFIRMED: { label: "Hiring freshers", variant: "success" },
   PROGRAM: { label: "Grad program", variant: "warning" },
@@ -17,16 +19,33 @@ const HIRING: Record<string, { label: string; variant: "success" | "warning" | "
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const c = await getCompanyBySlug(params.slug);
-  return c ? { title: c.name, description: c.description ?? `${c.name} — open roles and hiring status.` } : { title: "Company" };
+  if (!c) return { title: "Company" };
+  const description = c.description ?? `${c.name} — open roles and hiring status across Tricity, NCR & Metro.`;
+  const url = `/companies/${c.slug}`;
+  return {
+    title: c.name,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title: c.name, description, url, type: "profile" },
+  };
 }
 
 export default async function CompanyPage({ params }: { params: { slug: string } }) {
   const company = await getCompanyBySlug(params.slug);
   if (!company) notFound();
   const status = HIRING[company.hiringStatus];
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: company.name,
+    url: company.website ?? undefined,
+    description: company.description ?? undefined,
+    address: company.city ? { "@type": "PostalAddress", addressLocality: company.city, addressCountry: "IN" } : undefined,
+  };
 
   return (
     <div className="container max-w-3xl py-8">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Link href="/jobs" className="text-sm text-muted hover:text-ink">← Back to jobs</Link>
 
       <div className="card mt-3">

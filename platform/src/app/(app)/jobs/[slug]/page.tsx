@@ -14,9 +14,13 @@ import { formatSalary, REGION_LABEL, EXP_LABEL } from "@/lib/utils";
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const job = await getJobBySlug(params.slug);
   if (!job) return { title: "Job not found" };
+  const description = `${job.title} at ${job.company.name} — ${EXP_LABEL[job.experience]}, ${job.location ?? REGION_LABEL[job.region]}.`;
+  const url = `/jobs/${job.slug}`;
   return {
     title: `${job.title} · ${job.company.name}`,
-    description: `${job.title} at ${job.company.name} — ${EXP_LABEL[job.experience]}, ${job.location ?? REGION_LABEL[job.region]}.`,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title: `${job.title} · ${job.company.name}`, description, url, type: "article" },
   };
 }
 
