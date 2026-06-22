@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import { ThemeProvider } from "@/components/theme-provider";
+import { UserMenu } from "@/components/user-menu";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -25,11 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/" className="font-bold tracking-tight">
                 Tech<span className="gradient-text">Hire</span>
               </Link>
-              <div className="flex items-center gap-1 text-sm">
-                <Link href="/jobs" className="rounded-md px-3 py-2 text-muted hover:bg-surface-2 hover:text-ink">Jobs</Link>
-                <Link href="/dashboard" className="rounded-md px-3 py-2 text-muted hover:bg-surface-2 hover:text-ink">Dashboard</Link>
-                <Link href="/login" className="rounded-md bg-primary px-3.5 py-2 font-semibold text-primary-fg">Sign in</Link>
-              </div>
+              <UserMenu />
             </nav>
           </header>
           <main className="min-h-[calc(100vh-3.5rem)]">{children}</main>

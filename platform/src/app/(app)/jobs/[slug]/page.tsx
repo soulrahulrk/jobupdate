@@ -4,6 +4,9 @@ import { notFound } from "next/navigation";
 import { ExternalLink, MapPin, Building2, Briefcase } from "lucide-react";
 import { getJobBySlug, getSimilarJobs } from "@/features/jobs/queries";
 import { JobCard } from "@/components/jobs/job-card";
+import { SaveButton, AppliedButton } from "@/components/jobs/job-actions";
+import { auth } from "@/lib/auth";
+import { db } from "@/lib/db";
 import { Badge } from "@/components/ui/badge";
 import { formatSalary, REGION_LABEL, EXP_LABEL } from "@/lib/utils";
 
@@ -21,6 +24,18 @@ export default async function JobPage({ params }: { params: { slug: string } }) 
   if (!job) notFound();
   const similar = await getSimilarJobs(job.id, job.region, job.skills);
   const salary = formatSalary(job.salaryMin, job.salaryMax);
+
+  const session = await auth();
+  let initialSaved = false;
+  let initialApplied = false;
+  if (session?.user?.id) {
+    const [s, a] = await Promise.all([
+      db.savedJob.findUnique({ where: { userId_jobId: { userId: session.user.id, jobId: job.id } }, select: { id: true } }),
+      db.application.findUnique({ where: { userId_jobId: { userId: session.user.id, jobId: job.id } }, select: { id: true } }),
+    ]);
+    initialSaved = !!s;
+    initialApplied = !!a;
+  }
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -66,12 +81,16 @@ export default async function JobPage({ params }: { params: { slug: string } }) 
           </div>
         </div>
 
-        {job.applyUrl ? (
-          <a href={job.applyUrl} target="_blank" rel="noopener noreferrer"
-            className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 font-semibold text-primary-fg transition hover:opacity-90">
-            Apply now <ExternalLink className="h-4 w-4" />
-          </a>
-        ) : null}
+        <div className="mt-6 flex flex-wrap gap-2">
+          {job.applyUrl ? (
+            <a href={job.applyUrl} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 font-semibold text-primary-fg transition hover:opacity-90">
+              Apply now <ExternalLink className="h-4 w-4" />
+            </a>
+          ) : null}
+          <SaveButton jobId={job.id} initialSaved={initialSaved} />
+          <AppliedButton jobId={job.id} initialApplied={initialApplied} />
+        </div>
       </div>
 
       {similar.length ? (
