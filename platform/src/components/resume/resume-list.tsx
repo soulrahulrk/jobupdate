@@ -28,7 +28,7 @@ export function ResumeList({ resumes }: { resumes: Item[] }) {
             {r.isPrimary ? <Badge variant="primary">Primary</Badge> : null}
             <div className="ml-auto flex gap-1.5">
               <button
-                onClick={async () => { setBusy(r.id); try { setReviews((p) => ({ ...p, [r.id]: await runResumeReview(r.id) })); } finally { setBusy(null); } }}
+                onClick={async () => { setBusy(r.id); try { const review = await runResumeReview(r.id); setReviews((p) => ({ ...p, [r.id]: review })); } finally { setBusy(null); } }}
                 disabled={busy === r.id}
                 className="inline-flex items-center gap-1.5 rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-primary-fg disabled:opacity-60">
                 {busy === r.id ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Sparkles className="h-3.5 w-3.5" />} AI review

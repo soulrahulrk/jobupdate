@@ -4,6 +4,8 @@ import { listJobsAdmin } from "@/features/admin/queries";
 import { JobRowActions } from "@/components/admin/row-actions";
 import { Badge } from "@/components/ui/badge";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminJobs() {
   const jobs = await listJobsAdmin();
   return (

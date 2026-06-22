@@ -1,6 +1,8 @@
 import { listCompaniesAdmin } from "@/features/admin/queries";
 import { Badge } from "@/components/ui/badge";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminCompanies() {
   const companies = await listCompaniesAdmin();
   return (

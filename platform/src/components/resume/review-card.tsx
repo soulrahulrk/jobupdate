@@ -1,5 +1,8 @@
 import type { ResumeReview } from "@/lib/ai";
-import { Badge } from "@/components/ui/badge";
+
+const dot: Record<string, string> = {
+  success: "bg-success", warning: "bg-warning", primary: "bg-primary", accent: "bg-accent",
+};
 
 function List({ title, items, color }: { title: string; items: string[]; color: "success" | "warning" | "primary" | "accent" }) {
   if (!items?.length) return null;
@@ -9,7 +12,7 @@ function List({ title, items, color }: { title: string; items: string[]; color: 
       <ul className="mt-1 space-y-1">
         {items.map((s, i) => (
           <li key={i} className="flex gap-2 text-sm">
-            <Badge variant={color} className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full p-0" />
+            <span className={`mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full ${dot[color]}`} />
             <span>{s}</span>
           </li>
         ))}

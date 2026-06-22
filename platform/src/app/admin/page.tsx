@@ -1,5 +1,7 @@
 import { getAdminStats } from "@/features/admin/queries";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminHome() {
   const s = await getAdminStats();
   const cards = [

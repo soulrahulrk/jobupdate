@@ -12,13 +12,15 @@ export function Badge({
   children,
   variant = "default",
   className,
+  title,
 }: {
   children: React.ReactNode;
   variant?: keyof typeof variants;
   className?: string;
+  title?: string;
 }) {
   return (
-    <span className={cn("inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold", variants[variant], className)}>
+    <span title={title} className={cn("inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold", variants[variant], className)}>
       {children}
     </span>
   );

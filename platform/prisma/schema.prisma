@@ -8,13 +8,54 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
-enum Role { USER ADMIN }
-enum WorkMode { ONSITE HYBRID REMOTE }
-enum Region { TRICITY NCR METRO REMOTE OTHER }
-enum ExperienceLevel { FRESHER ZERO_ONE ONE_TWO TWO_PLUS }
-enum ApplicationStatus { SAVED APPLIED INTERVIEW OFFER REJECTED }
-enum HiringStatus { CONFIRMED PROGRAM VERIFY CLOSED UNKNOWN }
-enum NotificationType { NEW_JOB JOB_MATCH APPLICATION_UPDATE SYSTEM }
+enum Role {
+  USER
+  ADMIN
+}
+
+enum WorkMode {
+  ONSITE
+  HYBRID
+  REMOTE
+}
+
+enum Region {
+  TRICITY
+  NCR
+  METRO
+  REMOTE
+  OTHER
+}
+
+enum ExperienceLevel {
+  FRESHER
+  ZERO_ONE
+  ONE_TWO
+  TWO_PLUS
+}
+
+enum ApplicationStatus {
+  SAVED
+  APPLIED
+  INTERVIEW
+  OFFER
+  REJECTED
+}
+
+enum HiringStatus {
+  CONFIRMED
+  PROGRAM
+  VERIFY
+  CLOSED
+  UNKNOWN
+}
+
+enum NotificationType {
+  NEW_JOB
+  JOB_MATCH
+  APPLICATION_UPDATE
+  SYSTEM
+}
 
 model User {
   id            String    @id @default(cuid())

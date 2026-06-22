@@ -2,6 +2,8 @@ import { listUsers } from "@/features/admin/queries";
 import { UserRoleToggle } from "@/components/admin/row-actions";
 import { Badge } from "@/components/ui/badge";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminUsers() {
   const users = await listUsers();
   return (
