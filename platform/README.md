@@ -14,7 +14,7 @@ Production rebuild of the Fresher Hiring Hub — Next.js 14 (App Router) · Type
 | Validation | Zod | 
 | Rate limit | Upstash Redis |
 | Files | Vercel Blob (resumes) |
-| AI | Anthropic Claude (resume review, match score, skill-gap) |
+| AI | Google Gemini (resume review, match score, skill-gap) |
 | UI | Tailwind + Radix/shadcn-style primitives, dark mode |
 
 ## Local setup

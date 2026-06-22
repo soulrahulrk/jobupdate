@@ -1,13 +1,11 @@
 import "server-only";
-import Anthropic from "@anthropic-ai/sdk";
+import { GoogleGenAI } from "@google/genai";
 
-const client = new Anthropic(); // reads ANTHROPIC_API_KEY
-const MODEL = "claude-opus-4-8";
+const client = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY ?? "" });
+const MODEL = "gemini-2.5-flash"; // free tier, reads PDFs natively
 
-/** Robustly extract a JSON object from Claude's first text block. */
-function parseJson<T>(msg: Anthropic.Message): T {
-  const block = msg.content.find((b) => b.type === "text");
-  const text = block && "text" in block ? block.text : "";
+/** Robustly extract a JSON object from Gemini's text response. */
+function parseJson<T>(text: string): T {
   const start = text.indexOf("{");
   const end = text.lastIndexOf("}");
   if (start === -1 || end === -1) throw new Error("AI did not return JSON");
@@ -34,12 +32,11 @@ export type JobMatch = {
 
 /** AI Resume Review — accepts the resume as a PDF (base64) or plain text. */
 export async function reviewResume(input: { pdfBase64?: string; text?: string }): Promise<ResumeReview> {
-  const content: Anthropic.MessageParam["content"] = [];
+  const parts: Array<{ text: string } | { inlineData: { mimeType: string; data: string } }> = [];
   if (input.pdfBase64) {
-    content.push({ type: "document", source: { type: "base64", media_type: "application/pdf", data: input.pdfBase64 } });
+    parts.push({ inlineData: { mimeType: "application/pdf", data: input.pdfBase64 } });
   }
-  content.push({
-    type: "text",
+  parts.push({
     text:
       `Review this resume for a fresher targeting AI/ML, GenAI, Computer Vision and Python software roles in India. ` +
       (input.text ? `Resume text:\n${input.text}\n\n` : "") +
@@ -47,13 +44,16 @@ export async function reviewResume(input: { pdfBase64?: string; text?: string })
       `{"score": <0-100 integer>, "summary": "<one sentence>", "strengths": ["..."], "gaps": ["..."], "suggestions": ["..."], "atsKeywords": ["..."]}.`,
   });
 
-  const msg = await client.messages.create({
+  const response = await client.models.generateContent({
     model: MODEL,
-    max_tokens: 2000,
-    system: "You are a precise, encouraging technical recruiter. Output only valid minified JSON.",
-    messages: [{ role: "user", content }],
+    contents: [{ role: "user", parts }],
+    config: {
+      systemInstruction: "You are a precise, encouraging technical recruiter. Output only valid minified JSON.",
+      responseMimeType: "application/json",
+      maxOutputTokens: 2000,
+    },
   });
-  return parseJson<ResumeReview>(msg);
+  return parseJson<ResumeReview>(response.text ?? "");
 }
 
 /** AI Job Match Score + Skill-Gap + Interview Prep in one call. */
@@ -62,23 +62,23 @@ export async function matchJob(input: {
   userSkills: string[];
   job: { title: string; skills: string[]; description?: string | null; company: string };
 }): Promise<JobMatch> {
-  const msg = await client.messages.create({
+  const prompt =
+    `Candidate skills: ${input.userSkills.join(", ") || "(see resume)"}\n` +
+    `Candidate resume:\n${input.resumeText.slice(0, 6000)}\n\n` +
+    `Role: ${input.job.title} at ${input.job.company}\n` +
+    `Required skills: ${input.job.skills.join(", ")}\n` +
+    (input.job.description ? `Description: ${input.job.description}\n` : "") +
+    `\nRespond with ONLY a JSON object matching exactly: ` +
+    `{"score": <0-100 integer fit>, "verdict": "<one sentence>", "matchedSkills": ["..."], "missingSkills": ["..."], "interviewQuestions": ["<5 likely questions>"], "prepTips": ["<3 concrete prep tips>"]}.`;
+
+  const response = await client.models.generateContent({
     model: MODEL,
-    max_tokens: 1800,
-    system: "You are a technical hiring manager. Be honest and specific. Output only valid minified JSON.",
-    messages: [
-      {
-        role: "user",
-        content:
-          `Candidate skills: ${input.userSkills.join(", ") || "(see resume)"}\n` +
-          `Candidate resume:\n${input.resumeText.slice(0, 6000)}\n\n` +
-          `Role: ${input.job.title} at ${input.job.company}\n` +
-          `Required skills: ${input.job.skills.join(", ")}\n` +
-          (input.job.description ? `Description: ${input.job.description}\n` : "") +
-          `\nRespond with ONLY a JSON object matching exactly: ` +
-          `{"score": <0-100 integer fit>, "verdict": "<one sentence>", "matchedSkills": ["..."], "missingSkills": ["..."], "interviewQuestions": ["<5 likely questions>"], "prepTips": ["<3 concrete prep tips>"]}.`,
-      },
-    ],
+    contents: prompt,
+    config: {
+      systemInstruction: "You are a technical hiring manager. Be honest and specific. Output only valid minified JSON.",
+      responseMimeType: "application/json",
+      maxOutputTokens: 1800,
+    },
   });
-  return parseJson<JobMatch>(msg);
+  return parseJson<JobMatch>(response.text ?? "");
 }
