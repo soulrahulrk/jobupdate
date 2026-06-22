@@ -5,6 +5,7 @@ import { ExternalLink, MapPin, Building2, Briefcase } from "lucide-react";
 import { getJobBySlug, getSimilarJobs } from "@/features/jobs/queries";
 import { JobCard } from "@/components/jobs/job-card";
 import { SaveButton, AppliedButton } from "@/components/jobs/job-actions";
+import { MatchButton } from "@/components/jobs/match-button";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { Badge } from "@/components/ui/badge";
@@ -91,6 +92,8 @@ export default async function JobPage({ params }: { params: { slug: string } }) 
           <SaveButton jobId={job.id} initialSaved={initialSaved} />
           <AppliedButton jobId={job.id} initialApplied={initialApplied} />
         </div>
+
+        <MatchButton jobId={job.id} />
       </div>
 
       {similar.length ? (
