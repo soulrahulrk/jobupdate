@@ -68,3 +68,54 @@ export async function setUserRole(id: string, role: "USER" | "ADMIN") {
   await db.user.update({ where: { id }, data: { role } });
   revalidatePath("/admin/users");
 }
+
+const companySchema = z.object({
+  id: z.string().cuid().optional().or(z.literal("")),
+  name: z.string().min(2, "Company name is required"),
+  region: z.enum(["TRICITY", "NCR", "METRO", "REMOTE", "OTHER"]),
+  city: z.string().optional(),
+  website: z.string().url().optional().or(z.literal("")),
+  careersUrl: z.string().url().optional().or(z.literal("")),
+  industries: z.string().optional(),
+  techStack: z.string().optional(),
+  hiringStatus: z.enum(["CONFIRMED", "PROGRAM", "VERIFY", "CLOSED", "UNKNOWN"]),
+  aiRelevance: z.coerce.number().int().min(0).max(10).optional().or(z.literal("")),
+  phone: z.string().optional(),
+  hrEmail: z.string().email().optional().or(z.literal("")),
+  linkedinUrl: z.string().url().optional().or(z.literal("")),
+});
+
+export async function upsertCompany(_prev: unknown, fd: FormData): Promise<FormResult> {
+  await requireAdmin();
+  const parsed = companySchema.safeParse(Object.fromEntries(fd));
+  if (!parsed.success) return { error: parsed.error.errors[0]?.message ?? "Invalid input" };
+  const d = parsed.data;
+  const list = (s?: string) => (s ?? "").split(",").map((x) => x.trim()).filter(Boolean);
+  const data = {
+    name: d.name,
+    region: d.region,
+    city: d.city || null,
+    website: d.website || null,
+    careersUrl: d.careersUrl || null,
+    industries: list(d.industries),
+    techStack: list(d.techStack),
+    hiringStatus: d.hiringStatus,
+    aiRelevance: d.aiRelevance === "" ? null : (d.aiRelevance ?? null),
+    phone: d.phone || null,
+    hrEmail: d.hrEmail || null,
+    linkedinUrl: d.linkedinUrl || null,
+    verifiedAt: new Date(),
+  };
+  if (d.id) await db.company.update({ where: { id: d.id }, data });
+  else await db.company.create({ data: { ...data, slug: `${slugify(d.name)}-${Math.random().toString(36).slice(2, 7)}` } });
+  revalidatePath("/admin/companies");
+  revalidatePath("/companies");
+  revalidatePath("/jobs");
+  return { ok: true };
+}
+
+export async function deleteCompany(id: string) {
+  await requireAdmin();
+  await db.company.delete({ where: { id } });
+  revalidatePath("/admin/companies");
+}

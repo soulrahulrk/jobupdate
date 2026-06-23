@@ -31,6 +31,10 @@ export function getJobForEdit(id: string) {
   return db.job.findUnique({ where: { id } });
 }
 
+export function getCompanyForEdit(id: string) {
+  return db.company.findUnique({ where: { id } });
+}
+
 export function companyOptions() {
   return db.company.findMany({ select: { id: true, name: true }, orderBy: { name: "asc" } });
 }
