@@ -91,6 +91,12 @@
     display:flex;flex-direction:column;gap:9px;transition:.15s;border-left:4px solid var(--chd);position:relative}
   .card.ncr{border-left-color:var(--ncr)}
   .card.applied{opacity:.62}
+  .card.cancelled{opacity:.5;border-left-color:var(--low)}
+  .tg.cancel.on{background:var(--low);color:#fff;border-color:var(--low)}
+  .cmt{width:100%;margin-top:9px;background:var(--panel2);border:1px solid var(--line);border-radius:8px;
+    color:var(--txt);font-size:12px;padding:7px 9px;resize:vertical;font-family:inherit;min-height:34px}
+  .cmt:focus{outline:none;border-color:var(--accent)}
+  .cmt::placeholder{color:var(--muted)}
   .card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.30)}
   .card h3{margin:0;font-size:16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding-right:62px}
   .rtag{font-size:10px;font-weight:700;padding:2px 7px;border-radius:6px;text-transform:uppercase;letter-spacing:.04em}
@@ -230,16 +236,18 @@
       <option value="size">Sort: Company size ↓</option>
     </select>
     <select id="filter">
-      <option value="all">Show: All</option>
+      <option value="active">🟢 To apply (active — hides applied/cancelled)</option>
       <option value="fhconfirmed">🟢 Hiring freshers now (confirmed)</option>
       <option value="fhactive">🟢+🔵 Active fresher hiring</option>
-      <option value="fav">★ My shortlist</option>
-      <option value="notapplied">Not applied yet</option>
+      <option value="ai">AI/ML focused (≥7)</option>
       <option value="internship">Has internships</option>
       <option value="remote">Remote-friendly</option>
-      <option value="ai">AI/ML focused (≥7)</option>
+      <option value="fav">★ My shortlist</option>
       <option value="big">Large employers (1000+)</option>
+      <option value="applied">✓ Applied (your list)</option>
+      <option value="cancelled">✕ Cancelled / wrong</option>
     </select>
+    <button class="ghost" id="exportBtn" title="Copy your applied / cancelled / comments (for AI)">💬 Export notes</button>
   </div>
 </div>
 <div class="count" id="count"></div>
@@ -440,6 +448,17 @@ const companies = [
   {r:"metro",n:"SigTuple",city:"Bengaluru",ind:"Healthcare Computer Vision AI",size:"50–200",f:6,a:9,tags:["Hybrid"],careers:"https://sigtuple.com/careers/",note:"Medical-imaging CV/DL"},
   {r:"metro",n:"Arya.ai",city:"Mumbai / Bengaluru",ind:"Enterprise AI / Deep Learning",size:"50–200",f:6,a:9,tags:["Hybrid"],careers:"https://arya.ai/careers",note:"Applied DL for BFSI"},
   {r:"metro",n:"HPE",city:"Bengaluru",ind:"Enterprise Tech · AI/ML",size:"50000+",f:7,a:9,tags:["Hybrid","Internship"],careers:"https://careers.hpe.com/",note:"AI/ML Engineer off-campus 2026 — B.Tech eligible"},
+
+  // ----- Added 16 Jun 2026 (refresh, all regions) -----
+  {r:"chd",n:"Bebo Technologies",city:"Mohali (Phase 8)",ind:"QA / Software Testing · Dev",size:"50–200",f:7,a:4,tags:["Hybrid"],careers:"https://www.bebotechnologies.com/careers",note:"QA/automation + dev fresher roles"},
+  {r:"chd",n:"Chicmic Studios",city:"Mohali (Sec 74)",ind:"Game / App / Web Dev",size:"50–200",f:7,a:5,tags:["Hybrid"],careers:"https://www.chicmic.in/",ph:"+91 172 311 3789",note:"ReactJS / game / app dev"},
+  {r:"chd",n:"RootQuotient",city:"Mohali",ind:"Product Engineering · AI",size:"50–200",f:6,a:6,tags:["Remote","Hybrid"],careers:"https://www.rootquotient.com/careers"},
+  {r:"ncr",n:"Newgen Software",city:"Noida (Sec 144)",ind:"Low-code / BPM Product (AI)",size:"5000+",f:8,a:6,tags:["Hybrid","Internship"],careers:"https://newgensoft.com/company/careers/",note:"Product co; GET/fresher SDE hiring"},
+  {r:"ncr",n:"Daffodil Software",city:"Gurugram (Sec 32)",ind:"Product Engineering · AI/ML",size:"1000+",f:7,a:7,tags:["Hybrid","Internship"],careers:"https://www.daffodilsw.com/careers/",note:"AI/ML + full-stack grad roles"},
+  {r:"ncr",n:"Birlasoft",city:"Noida (Sec 135)",ind:"IT Services · Data/AI",size:"12000+",f:7,a:6,tags:["Hybrid","Internship"],careers:"https://www.birlasoft.com/careers",note:"Fresher / GET hiring"},
+  {r:"ncr",n:"Algoscale",city:"Noida (Sec 63)",ind:"Data Engineering · AI/ML",size:"50–200",f:7,a:8,tags:["Remote","Hybrid"],careers:"https://algoscale.com/careers/",note:"Data/AI + GenAI roles"},
+  {r:"metro",n:"Mu Sigma",city:"Bengaluru",ind:"Decision Sciences / Analytics",size:"3000+",f:8,a:7,tags:["Hybrid","Internship"],careers:"https://www.mu-sigma.com/careers",note:"Mass fresher analyst/DS hiring"},
+  {r:"metro",n:"Gramener",city:"Hyderabad / Bengaluru",ind:"Data Science / AI Visualization",size:"200–500",f:7,a:8,tags:["Remote","Hybrid"],careers:"https://gramener.com/careers/",note:"DS/AI roles"},
 ];
 
 const VERIFIED = "2026-06-16";
@@ -447,7 +466,8 @@ const VERIFIED = "2026-06-16";
 // ---- Fresher-hiring status, evidence-based (checked 16 Jun 2026) ----
 const FH_CONFIRMED = new Set(["ToXSL Technologies","Wits Innovation Lab","Relinns Technologies","Code Garage Tech","Grazitti Interactive","Coforge","TCS","IBM India","Thoughtworks","Impressico Business Solutions","Rockwell Automation",
   "XenonStack","AgNext Technologies","Endoenergy Systems","Soft Radix Technologies","SoftProdigy","Incture Technologies","Apptunix","Seasia Infotech","Sebiz Infotech","Nerve Cells AI","Live Deftsoft","ZestGeek Solutions","Closeloop Technologies",
-  "ORI (Oriserve)","Fractal Analytics","Tiger Analytics","Innovaccer","AAPNA Infotech","Spyne","Voxomos","Valiance Solutions","Appnox Technologies","Gram Vaani","LambdaTest (TestMu AI)","Sarvam AI","HPE"]);
+  "ORI (Oriserve)","Fractal Analytics","Tiger Analytics","Innovaccer","AAPNA Infotech","Spyne","Voxomos","Valiance Solutions","Appnox Technologies","Gram Vaani","LambdaTest (TestMu AI)","Sarvam AI","HPE",
+  "Daffodil Software","Algoscale","Mu Sigma","Gramener","Newgen Software","Bebo Technologies","Chicmic Studios","RootQuotient"]);
 const FH_PROGRAM = new Set(["Tech Mahindra","Infosys BPM","TaskUs (Mohali)","HCLTech","Genpact","Amdocs","Publicis Sapient","Cognizant","Capgemini","Accenture","Infosys","Wipro","GlobalLogic","NTT DATA","EXL Service"]);
 const FH_EVIDENCE = {
   "ToXSL Technologies":"Off-Campus Hiring Batch 2026-27 open",
@@ -522,6 +542,7 @@ const store = JSON.parse(localStorage.getItem("hiringDash")||"{}");
 const save  = ()=>localStorage.setItem("hiringDash",JSON.stringify(store));
 const flag  = (n,k)=> store[n] && store[n][k];
 const setFlag=(n,k,v)=>{ store[n]=store[n]||{}; store[n][k]=v; save(); };
+const esc = s => (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 
 const sc = v => v>=7?'var(--good)':v>=5?'var(--mid)':'var(--low)';
 
@@ -530,26 +551,32 @@ function render(){
   const sort=$("#sort").value, filt=$("#filter").value;
   let list=companies.filter(c=>{
     if(region!=="all" && c.r!==region) return false;
+    if(q){ const hay=(c.n+" "+c.city+" "+c.ind+" "+(c.note||"")).toLowerCase(); if(!hay.includes(q)) return false; }
+    const isApp=!!flag(c.n,"applied"), isCan=!!flag(c.n,"cancelled");
+    // dedicated views
+    if(filt==="applied")   return isApp;
+    if(filt==="cancelled") return isCan;
+    // every other (active) view hides applied + cancelled — they leave the main board
+    if(isApp || isCan) return false;
     if(filt==="fhconfirmed" && fhOf(c)!=="confirmed") return false;
     if(filt==="fhactive" && fhOf(c)==="check") return false;
     if(filt==="fav" && !flag(c.n,"fav")) return false;
-    if(filt==="notapplied" && flag(c.n,"applied")) return false;
     if(filt==="internship" && !c.tags.includes("Internship")) return false;
     if(filt==="remote" && !c.tags.includes("Remote")) return false;
     if(filt==="ai" && c.a<7) return false;
     if(filt==="big" && sizeRank(c.size)<1000) return false;
-    if(q){ const hay=(c.n+" "+c.city+" "+c.ind+" "+(c.note||"")).toLowerCase(); if(!hay.includes(q)) return false; }
     return true;
   });
   list.sort((a,b)=> sort==="name"?a.n.localeCompare(b.n): sort==="aiml"?b.a-a.a: sort==="size"?sizeRank(b.size)-sizeRank(a.size): b.f-a.f);
 
   grid.innerHTML=list.map(c=>{
-    const city=searchCity(c), fav=flag(c.n,"fav"), app=flag(c.n,"applied");
+    const city=searchCity(c), fav=flag(c.n,"fav"), app=flag(c.n,"applied"), can=flag(c.n,"cancelled");
     const fh=fhOf(c), evid=FH_EVIDENCE[c.n]||c.note||FH_DEFAULT[fh]||"";
-    return `<div class="card ${c.r}${app?' applied':''}">
+    return `<div class="card ${c.r}${app?' applied':''}${can?' cancelled':''}">
       <div class="toggles">
         <button class="tg fav ${fav?'on':''}" title="Shortlist" data-act="fav" data-n="${c.n.replace(/"/g,'&quot;')}">★</button>
-        <button class="tg app ${app?'on':''}" title="Mark applied" data-act="applied" data-n="${c.n.replace(/"/g,'&quot;')}">✓</button>
+        <button class="tg app ${app?'on':''}" title="Mark applied (moves to Applied list)" data-act="applied" data-n="${c.n.replace(/"/g,'&quot;')}">✓</button>
+        <button class="tg cancel ${can?'on':''}" title="Wrong / not relevant — remove from board" data-act="cancelled" data-n="${c.n.replace(/"/g,'&quot;')}">✕</button>
       </div>
       <h3>${c.n} <span class="rtag ${c.r}">${c.r==="chd"?"Tricity":c.r==="ncr"?"NCR":"Metro"}</span></h3>
       <span class="fhbadge ${fh}">${FH_LABEL[fh]}</span>
@@ -574,6 +601,7 @@ function render(){
       <div class="links">
         <a class="btn primary" href="${c.careers}" target="_blank" rel="noopener">Official careers →</a>
       </div>
+      <textarea class="cmt" data-n="${c.n.replace(/"/g,'&quot;')}" rows="1" placeholder="💬 Note about this company (saved on this device — use 'Export notes' to share with AI)…">${esc((store[c.n]||{}).comment)}</textarea>
       <div class="verified">✔ Verified ${VERIFIED}</div>
     </div>`;}).join("");
 
@@ -589,20 +617,25 @@ function bindToggles(){
     const n=b.dataset.n, k=b.dataset.act;
     setFlag(n,k,!flag(n,k)); render();
   });
+  document.querySelectorAll(".cmt").forEach(t=>t.onchange=()=>{ setFlag(t.dataset.n,"comment",t.value.trim()); render(); });
 }
 
 function stats(){
   const chd=companies.filter(c=>c.r==="chd").length, ncr=companies.filter(c=>c.r==="ncr").length;
+  const metro=companies.filter(c=>c.r==="metro").length;
   const fav=companies.filter(c=>flag(c.n,"fav")).length, app=companies.filter(c=>flag(c.n,"applied")).length;
+  const can=companies.filter(c=>flag(c.n,"cancelled")).length, cmt=companies.filter(c=>flag(c.n,"comment")).length;
   const conf=companies.filter(c=>fhOf(c)==="confirmed").length, prog=companies.filter(c=>fhOf(c)==="program").length;
   $("#stats").innerHTML=`
     <div class="stat"><div class="n">${companies.length}</div><div class="l">Companies</div></div>
     <div class="stat"><div class="n" style="color:var(--chd)">${chd}</div><div class="l">Chandigarh/Tricity</div></div>
     <div class="stat"><div class="n" style="color:var(--ncr)">${ncr}</div><div class="l">NCR</div></div>
+    <div class="stat"><div class="n" style="color:#c6a8ff">${metro}</div><div class="l">Metro</div></div>
     <div class="stat"><div class="n" style="color:#5fd98a">${conf}</div><div class="l">🟢 Hiring now</div></div>
-    <div class="stat"><div class="n" style="color:#8db0ff">${prog}</div><div class="l">🔵 Fresher prog.</div></div>
     <div class="stat"><div class="n" style="color:#f5b500">${fav}</div><div class="l">★ Shortlisted</div></div>
-    <div class="stat"><div class="n" style="color:var(--good)">${app}</div><div class="l">✓ Applied</div></div>`;
+    <div class="stat"><div class="n" style="color:var(--good)">${app}</div><div class="l">✓ Applied</div></div>
+    <div class="stat"><div class="n" style="color:var(--low)">${can}</div><div class="l">✕ Cancelled</div></div>
+    <div class="stat"><div class="n" style="color:#8db0ff">${cmt}</div><div class="l">💬 Notes</div></div>`;
 }
 
 // ---- quick role search ----
@@ -641,6 +674,24 @@ const themeBtn=$("#themeBtn");
 const applyTheme=t=>{ document.documentElement.setAttribute("data-theme",t); themeBtn.textContent=t==="light"?"🌙 Dark":"☀️ Light"; localStorage.setItem("dashTheme",t); };
 themeBtn.onclick=()=>applyTheme(document.documentElement.getAttribute("data-theme")==="light"?"dark":"light");
 applyTheme(localStorage.getItem("dashTheme")||"dark");
+
+// ---- export applied / cancelled / comments (so AI can learn from your feedback) ----
+function exportNotes(){
+  const out=[];
+  companies.forEach(c=>{ const s=store[c.n]; if(!s) return;
+    const bits=[];
+    if(s.applied) bits.push("APPLIED");
+    if(s.cancelled) bits.push("CANCELLED/WRONG");
+    if(s.fav) bits.push("shortlisted");
+    if(s.comment) bits.push("note: "+s.comment);
+    if(bits.length) out.push("• "+c.n+" ["+c.city+"] — "+bits.join(" · "));
+  });
+  const txt = out.length ? ("MY JOB NOTES ("+VERIFIED+")\n"+out.join("\n")) : "No applied / cancelled / comments yet — use the ✓ ✕ buttons and note box first.";
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(()=>alert("Copied to clipboard ✓\n\n"+txt)).catch(()=>prompt("Copy your notes:",txt));
+  } else prompt("Copy your notes:",txt);
+}
+$("#exportBtn").onclick=exportNotes;
 
 render();
 </script>
