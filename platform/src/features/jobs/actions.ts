@@ -61,3 +61,31 @@ export async function removeApplication(jobId: string): Promise<{ applied: boole
   revalidatePath("/dashboard/applied");
   return { applied: false };
 }
+
+// Cancel / hide a job (wrong or not relevant) — it leaves the main board.
+export async function toggleDismissed(jobId: string): Promise<{ dismissed: boolean }> {
+  const userId = await requireUserId();
+  await guard(userId, "dismiss");
+  const job = id.parse(jobId);
+  const existing = await db.dismissedJob.findUnique({ where: { userId_jobId: { userId, jobId: job } } });
+  if (existing) await db.dismissedJob.delete({ where: { id: existing.id } });
+  else await db.dismissedJob.create({ data: { userId, jobId: job } });
+  revalidatePath("/jobs");
+  revalidatePath("/dashboard/dismissed");
+  return { dismissed: !existing };
+}
+
+const commentSchema = z.object({ companyId: z.string().cuid(), body: z.string().trim().min(1).max(2000) });
+
+// User comment about a company — stored so AI can learn from real candidate feedback.
+export async function addCompanyComment(companyId: string, body: string): Promise<void> {
+  const userId = await requireUserId();
+  await guard(userId, "comment");
+  const data = commentSchema.parse({ companyId, body });
+  await db.companyComment.create({ data: { userId, companyId: data.companyId, body: data.body } });
+}
+
+export async function deleteCompanyComment(commentId: string): Promise<void> {
+  const userId = await requireUserId();
+  await db.companyComment.deleteMany({ where: { id: id.parse(commentId), userId } });
+}

@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { ExternalLink, MapPin, Building2, Briefcase } from "lucide-react";
 import { getJobBySlug, getSimilarJobs } from "@/features/jobs/queries";
 import { JobCard } from "@/components/jobs/job-card";
-import { SaveButton, AppliedButton } from "@/components/jobs/job-actions";
+import { SaveButton, AppliedButton, DismissButton } from "@/components/jobs/job-actions";
 import { MatchButton } from "@/components/jobs/match-button";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
@@ -33,13 +33,16 @@ export default async function JobPage({ params }: { params: { slug: string } }) 
   const session = await auth();
   let initialSaved = false;
   let initialApplied = false;
+  let initialDismissed = false;
   if (session?.user?.id) {
-    const [s, a] = await Promise.all([
+    const [s, a, d] = await Promise.all([
       db.savedJob.findUnique({ where: { userId_jobId: { userId: session.user.id, jobId: job.id } }, select: { id: true } }),
       db.application.findUnique({ where: { userId_jobId: { userId: session.user.id, jobId: job.id } }, select: { id: true } }),
+      db.dismissedJob.findUnique({ where: { userId_jobId: { userId: session.user.id, jobId: job.id } }, select: { id: true } }),
     ]);
     initialSaved = !!s;
     initialApplied = !!a;
+    initialDismissed = !!d;
   }
 
   const jsonLd = {
@@ -95,6 +98,7 @@ export default async function JobPage({ params }: { params: { slug: string } }) 
           ) : null}
           <SaveButton jobId={job.id} initialSaved={initialSaved} />
           <AppliedButton jobId={job.id} initialApplied={initialApplied} />
+          <DismissButton jobId={job.id} initialDismissed={initialDismissed} />
         </div>
 
         <MatchButton jobId={job.id} />

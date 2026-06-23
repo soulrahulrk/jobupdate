@@ -2,8 +2,8 @@
 
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import { Bookmark, BookmarkCheck, Check, Plus, Loader2 } from "lucide-react";
-import { toggleSavedJob, setApplied, removeApplication } from "@/features/jobs/actions";
+import { Bookmark, BookmarkCheck, Check, Plus, Loader2, XCircle } from "lucide-react";
+import { toggleSavedJob, setApplied, removeApplication, toggleDismissed } from "@/features/jobs/actions";
 import { cn } from "@/lib/utils";
 
 function useAction() {
@@ -59,6 +59,26 @@ export function AppliedButton({ jobId, initialApplied }: { jobId: string; initia
     >
       {pending ? <Loader2 className="h-4 w-4 animate-spin" /> : applied ? <Check className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
       {applied ? "Applied" : "Mark applied"}
+    </button>
+  );
+}
+
+export function DismissButton({ jobId, initialDismissed }: { jobId: string; initialDismissed: boolean }) {
+  const [dismissed, setDismissed] = useState(initialDismissed);
+  const { pending, run } = useAction();
+  return (
+    <button
+      onClick={() => run(async () => setDismissed((await toggleDismissed(jobId)).dismissed))}
+      disabled={pending}
+      aria-pressed={dismissed}
+      title="Cancel / hide — wrong or not relevant. Removes it from your board."
+      className={cn(
+        "inline-flex items-center gap-2 rounded-md border px-4 py-3 font-semibold transition",
+        dismissed ? "border-border bg-surface-2 text-muted" : "border-border text-muted hover:bg-surface-2"
+      )}
+    >
+      {pending ? <Loader2 className="h-4 w-4 animate-spin" /> : <XCircle className="h-4 w-4" />}
+      {dismissed ? "Cancelled — undo" : "Not relevant"}
     </button>
   );
 }

@@ -2,13 +2,22 @@ import "server-only";
 import { db } from "@/lib/db";
 
 export async function getUserStats(userId: string) {
-  const [saved, applied, bookmarks, resumes] = await Promise.all([
+  const [saved, applied, bookmarks, resumes, dismissed] = await Promise.all([
     db.savedJob.count({ where: { userId } }),
     db.application.count({ where: { userId } }),
     db.bookmark.count({ where: { userId } }),
     db.resume.count({ where: { userId } }),
+    db.dismissedJob.count({ where: { userId } }),
   ]);
-  return { saved, applied, bookmarks, resumes };
+  return { saved, applied, bookmarks, resumes, dismissed };
+}
+
+export function getDismissedJobs(userId: string) {
+  return db.dismissedJob.findMany({
+    where: { userId },
+    orderBy: { createdAt: "desc" },
+    include: { job: { include: { company: true } } },
+  });
 }
 
 export function getSavedJobs(userId: string) {

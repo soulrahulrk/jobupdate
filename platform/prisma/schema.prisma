@@ -78,6 +78,8 @@ model User {
   bookmarks     Bookmark[]
   resumes       Resume[]
   notifications Notification[]
+  dismissedJobs   DismissedJob[]
+  companyComments CompanyComment[]
 
   @@index([role])
 }
@@ -143,6 +145,7 @@ model Company {
 
   jobs         Job[]
   bookmarks    Bookmark[]
+  comments     CompanyComment[]
 
   @@index([region])
   @@index([hiringStatus])
@@ -175,6 +178,7 @@ model Job {
 
   applications Application[]
   savedBy      SavedJob[]
+  dismissedBy  DismissedJob[]
 
   @@index([companyId])
   @@index([region, isFresher, isActive])
@@ -249,4 +253,30 @@ model Notification {
 
   @@index([userId, read])
   @@index([createdAt])
+}
+
+model DismissedJob {
+  id        String   @id @default(cuid())
+  userId    String
+  jobId     String
+  reason    String?
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  job       Job      @relation(fields: [jobId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, jobId])
+  @@index([userId])
+}
+
+model CompanyComment {
+  id        String   @id @default(cuid())
+  userId    String
+  companyId String
+  body      String   @db.Text
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  company   Company  @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@index([companyId, createdAt])
+  @@index([userId])
 }

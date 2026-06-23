@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ExternalLink, MapPin } from "lucide-react";
+import { auth } from "@/lib/auth";
 import { getCompanyBySlug } from "@/features/jobs/queries";
 import { JobCard } from "@/components/jobs/job-card";
+import { CompanyComments } from "@/components/jobs/company-comments";
 import { Badge } from "@/components/ui/badge";
 import { REGION_LABEL } from "@/lib/utils";
 
@@ -33,6 +35,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 export default async function CompanyPage({ params }: { params: { slug: string } }) {
   const company = await getCompanyBySlug(params.slug);
   if (!company) notFound();
+  const session = await auth();
   const status = HIRING[company.hiringStatus];
   const jsonLd = {
     "@context": "https://schema.org",
@@ -86,6 +89,8 @@ export default async function CompanyPage({ params }: { params: { slug: string }
           {company.jobs.map((j) => <JobCard key={j.id} job={j} />)}
         </div>
       </section>
+
+      <CompanyComments companyId={company.id} comments={company.comments} currentUserId={session?.user?.id} />
     </div>
   );
 }

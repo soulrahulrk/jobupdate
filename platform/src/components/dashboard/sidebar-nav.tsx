@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Bookmark, Building2, LayoutGrid, Send } from "lucide-react";
+import { Bookmark, Building2, LayoutGrid, Send, XCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const items = [
@@ -10,6 +10,7 @@ const items = [
   { href: "/dashboard/saved", label: "Saved jobs", icon: Bookmark },
   { href: "/dashboard/applied", label: "Applications", icon: Send },
   { href: "/dashboard/bookmarks", label: "Companies", icon: Building2 },
+  { href: "/dashboard/dismissed", label: "Cancelled", icon: XCircle },
 ];
 
 export function SidebarNav() {

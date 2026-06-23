@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { jobFilterSchema } from "@/lib/validations";
+import { auth } from "@/lib/auth";
 import { getJobs } from "@/features/jobs/queries";
 import { JobCard } from "@/components/jobs/job-card";
 import { FilterBar } from "@/components/jobs/filter-bar";
@@ -18,7 +19,8 @@ export default async function JobsPage({ searchParams }: { searchParams: SP }) {
     Object.entries(searchParams).map(([k, v]) => [k, Array.isArray(v) ? v[0] : v])
   );
   const filter = jobFilterSchema.parse(flat);
-  const { items, total, page, pageCount } = await getJobs(filter);
+  const session = await auth();
+  const { items, total, page, pageCount } = await getJobs(filter, session?.user?.id);
 
   return (
     <div className="container py-8">

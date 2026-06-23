@@ -3,8 +3,10 @@ import { Prisma } from "@prisma/client";
 import { db } from "@/lib/db";
 import { type JobFilter, PAGE_SIZE } from "@/lib/validations";
 
-export async function getJobs(f: JobFilter) {
+export async function getJobs(f: JobFilter, userId?: string) {
   const where: Prisma.JobWhereInput = { isActive: true };
+  // Hide jobs the signed-in user has dismissed (cancelled / wrong) from the main board.
+  if (userId) where.dismissedBy = { none: { userId } };
   if (f.fresher) where.isFresher = true;
   if (f.region) where.region = f.region;
   if (f.workMode) where.workMode = f.workMode;
@@ -55,7 +57,10 @@ export async function getSimilarJobs(jobId: string, region: string, skills: stri
 export async function getCompanyBySlug(slug: string) {
   return db.company.findUnique({
     where: { slug },
-    include: { jobs: { where: { isActive: true }, orderBy: { postedAt: "desc" }, include: { company: true } } },
+    include: {
+      jobs: { where: { isActive: true }, orderBy: { postedAt: "desc" }, include: { company: true } },
+      comments: { orderBy: { createdAt: "desc" }, include: { user: { select: { name: true } } } },
+    },
   });
 }
 
