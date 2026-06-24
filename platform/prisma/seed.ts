@@ -41,8 +41,9 @@ const data: Seed[] = [
     jobs: [{ slug: "oriserve-backend-software-engineer", title: "Backend Software Engineer (Fresher)", workMode: "ONSITE", region: "NCR", location: "Noida", experience: "FRESHER", skills: ["Python", "FastAPI", "NLP", "LLM"], applyUrl: "https://oriserve.com/careers/" }] },
   { slug: "innovaccer", name: "Innovaccer", region: "NCR", city: "Noida (Sec 62)", website: "https://innovaccer.com", careersUrl: "https://innovaccer.com/careers", industries: ["Healthcare AI", "Data"], techStack: ["Python", "ML", "Cloud"], hiringStatus: "CONFIRMED", aiRelevance: 9, sizeRange: "1000+", phone: "+91 120 431 1139",
     jobs: [{ slug: "innovaccer-data-engineer", title: "Associate Data / ML Engineer", workMode: "HYBRID", region: "NCR", location: "Noida", experience: "FRESHER", skills: ["Python", "SQL", "ML", "Data"], applyUrl: "https://innovaccer.com/careers" }] },
-  { slug: "sarvam-ai", name: "Sarvam AI", region: "METRO", city: "Bengaluru / Delhi", website: "https://www.sarvam.ai", careersUrl: "https://www.sarvam.ai/careers", industries: ["LLM Foundation Models"], techStack: ["Python", "PyTorch", "Transformers"], hiringStatus: "PROGRAM", aiRelevance: 10, sizeRange: "50-200",
-    jobs: [{ slug: "sarvam-applied-ai-intern", title: "Applied AI Engineer / Intern", workMode: "HYBRID", region: "METRO", location: "Bengaluru", experience: "FRESHER", skills: ["Python", "PyTorch", "Transformers", "LLM"], applyUrl: "https://www.sarvam.ai/careers" }] },
+  // Sarvam: public Ashby board lists only 3-5yr/senior roles (verified 2026-06-24) — no current fresher opening, so VERIFY + no fresher job.
+  { slug: "sarvam-ai", name: "Sarvam AI", region: "METRO", city: "Bengaluru / Delhi", website: "https://www.sarvam.ai", careersUrl: "https://www.sarvam.ai/careers", industries: ["LLM Foundation Models"], techStack: ["Python", "PyTorch", "Transformers"], hiringStatus: "VERIFY", aiRelevance: 10, sizeRange: "50-200",
+    jobs: [] },
 
   // ===== Added 16 Jun 2026 — all regions =====
   { slug: "incture", name: "Incture Technologies", region: "TRICITY", city: "Mohali (STPI, Sec 75)", website: "https://incture.com", careersUrl: "https://incture.com/careers/", industries: ["SAP BTP", "Enterprise Apps"], techStack: ["Java", "Python", "SAP", "React"], hiringStatus: "CONFIRMED", aiRelevance: 5, sizeRange: "1000+",
