@@ -1,0 +1,77 @@
+{
+  "_meta": {
+    "generated": "2026-06-24",
+    "market": "India + Remote",
+    "use": "Seed for SEO facet landing pages (/jobs/[role]-[city]), meta tags, ad groups, and content clusters. Volume/difficulty are directional estimates — validate in GSC/Ahrefs.",
+    "assumptions_labeled": true
+  },
+  "primary_clusters": {
+    "ai_jobs": [
+      "ai jobs", "ai engineer jobs", "artificial intelligence jobs", "machine learning jobs",
+      "ml engineer jobs", "deep learning jobs", "nlp jobs", "computer vision jobs",
+      "generative ai jobs", "genai jobs", "llm engineer jobs", "rag engineer jobs",
+      "agentic ai jobs", "applied ai engineer jobs", "ai developer jobs", "ai research jobs",
+      "prompt engineer jobs", "mlops jobs", "ai jobs in india", "ai jobs remote"
+    ],
+    "fresher_jobs": [
+      "fresher jobs", "fresher it jobs", "fresher software jobs", "fresher ai ml jobs",
+      "fresher data science jobs", "graduate engineer trainee jobs", "entry level jobs",
+      "0-1 years experience jobs", "fresher python developer jobs", "fresher jobs 2026",
+      "off campus drive 2026", "associate software engineer fresher", "fresher remote jobs",
+      "b.tech fresher jobs", "campus placement jobs 2026"
+    ],
+    "internship": [
+      "ai internship", "machine learning internship", "data science internship",
+      "python internship", "software engineering internship", "remote internship india",
+      "paid internship 2026", "summer internship 2026", "internship with ppo",
+      "winter internship", "research internship ai", "internship for freshers",
+      "work from home internship", "6 months internship", "generative ai internship"
+    ],
+    "remote_jobs": [
+      "remote jobs india", "remote software jobs", "work from home jobs", "remote ai jobs",
+      "remote data science jobs", "remote python developer jobs", "remote internship",
+      "remote fresher jobs", "remote first companies india", "hybrid jobs ncr",
+      "remote backend developer jobs", "remote ml engineer jobs"
+    ],
+    "software_engineering": [
+      "software engineer jobs", "software developer jobs", "backend developer jobs",
+      "full stack developer jobs", "python developer jobs", "fastapi developer jobs",
+      "java developer jobs", "node js developer jobs", "react developer jobs",
+      "associate software engineer jobs", "sde jobs", "sde-1 jobs", "graduate software engineer jobs",
+      "api developer jobs", "devops engineer jobs", "cloud engineer jobs"
+    ],
+    "data_science": [
+      "data scientist jobs", "data analyst jobs", "data engineer jobs", "junior data scientist jobs",
+      "business analyst jobs", "analytics jobs", "power bi developer jobs", "sql developer jobs",
+      "data science fresher jobs", "decision scientist jobs", "ml data analyst jobs",
+      "associate data engineer jobs"
+    ]
+  },
+  "by_city": {
+    "tricity": ["jobs in chandigarh", "it jobs in mohali", "software jobs in panchkula", "ai ml jobs in mohali", "fresher jobs in chandigarh", "data science jobs in mohali", "python jobs in chandigarh", "stpi mohali jobs"],
+    "ncr": ["jobs in noida", "jobs in gurugram", "jobs in delhi", "ai jobs in gurugram", "software jobs in noida", "data scientist jobs in gurgaon", "fresher jobs in delhi ncr", "machine learning jobs in noida", "python developer jobs in gurugram", "remote jobs delhi ncr"],
+    "metro": ["jobs in bengaluru", "ai jobs in bengaluru", "software engineer jobs bangalore", "data science jobs hyderabad", "machine learning jobs pune", "fresher jobs in bangalore", "startup jobs bengaluru", "llm jobs bangalore"]
+  },
+  "facet_landing_pages": {
+    "pattern": "/jobs/[role]-jobs-in-[city]",
+    "examples": [
+      "ai-engineer-jobs-in-bengaluru", "machine-learning-jobs-in-noida", "data-scientist-jobs-in-gurugram",
+      "python-developer-jobs-in-mohali", "fresher-ai-ml-jobs-in-chandigarh", "remote-ml-engineer-jobs-india",
+      "computer-vision-jobs-in-noida", "generative-ai-jobs-in-bengaluru", "nlp-engineer-jobs-india",
+      "associate-software-engineer-jobs-in-gurugram", "data-analyst-fresher-jobs-in-delhi", "llm-engineer-jobs-remote"
+    ]
+  },
+  "long_tail": [
+    "ai jobs for freshers 2026 india", "remote machine learning jobs for 0-1 years",
+    "generative ai internship with ppo", "entry level data scientist jobs in india no experience",
+    "python fastapi fresher jobs remote", "computer vision jobs for b.tech freshers",
+    "off campus ai ml drive 2026", "best companies hiring ai freshers in ncr",
+    "llm rag engineer fresher jobs", "ai jobs in mohali stpi for freshers",
+    "fresher software jobs with good salary in chandigarh", "remote ai startups hiring freshers india"
+  ],
+  "intent_buckets": {
+    "transactional": ["apply for ai engineer jobs", "ai jobs hiring now", "fresher jobs apply online"],
+    "informational": ["how to become an ai engineer in india", "ai engineer salary fresher india", "skills for machine learning jobs"],
+    "navigational": ["xenonstack careers", "fractal analytics jobs", "innovaccer careers fresher"]
+  }
+}
