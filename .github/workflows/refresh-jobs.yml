@@ -1,0 +1,27 @@
+name: Weekly job refresh
+
+# Pulls live AI/ML/fresher roles from each configured company ATS (platform/scripts/sources.ts),
+# upserts them into the DB and de-activates roles that disappeared. Runs weekly + on demand.
+
+on:
+  schedule:
+    - cron: "0 4 * * 1" # Mondays 04:00 UTC (~09:30 IST)
+  workflow_dispatch: {}
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: platform
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm install --no-audit --no-fund
+      - run: npx prisma generate
+      - run: npm run refresh
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}

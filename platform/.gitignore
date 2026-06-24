@@ -9,3 +9,5 @@ build
 next-env.d.ts
 /prisma/migrations/dev.db*
 .DS_Store
+
+backups/
